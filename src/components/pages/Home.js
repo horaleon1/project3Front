@@ -7,7 +7,7 @@ const particleOpt = {
       value: 80,
       density: {
         enable: true,
-        value_area: 1500
+        value_area: 1200
       },
       color: {
         value: "#FE280A"

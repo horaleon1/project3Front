@@ -64,7 +64,7 @@ body{
 .container {
   height: 55px;
   border-bottom: 0.1px solid white ;
-  background-color: black;
+  background-color:#010009;
 }
 .leftSide li, .rightSide li{
   display: inline;
@@ -85,10 +85,31 @@ body{
 .rightSide li{
   margin-left: 15px;
 }
-
+.logoNavbar{
+  position: absolute;
+  color: white;
+  margin: 0 auto;
+  top: 3%;
+  left: 45%;
+}
 /* footer */
 .footerContainer{
-  height: 200px;
-  background-color: #2C2C2C;
+  border-top: 1px solid white ;
+  height: 150px;
+  background-color: #01000F;
+}
+.footerContainer div{
+  text-align: center;
+  margin: 0 auto;
+  line-height: 30px;
+  padding-top: 15px;
+  color: white;
+}
+.listFooter{
+  text-decoration: none;
+}
+.listFooter li, .listSocialFooter li {
+  display: inline;
+  margin-right: 25px;
 }
 

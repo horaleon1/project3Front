@@ -50,9 +50,9 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <ul style={{ textDecoration:"none"}}>
-        <li style={{ color:"white", textDecoration: "none", position:"absolute", left:"45%"}}>Logo</li>
-      </ul>
+      <div className="logoNavbar">
+        Logo
+      </div>
 
       <ul className="rightSide">
         <li>
