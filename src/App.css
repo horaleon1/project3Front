@@ -16,7 +16,7 @@ body{
   position: absolute;
   z-index: 9999;
   margin:0 auto;
-  top:40%;
+  top:45%;
   color: white;
   left: 40%;
   font-size:170%;
@@ -25,7 +25,7 @@ body{
 .typingText{
   position: absolute;
   z-index: 9999;
-  top:50%;
+  top:55%;
   width: 16em;
   margin:0 auto;
   border-right: 2px solid rgba(255,255,255,0.75);

@@ -56,8 +56,8 @@ const Navbar = () => {
 
       <ul className="rightSide">
         <li>
-          <Link to="/lognin" style={{ textDecoration: "none", color: "white" }}>
-            Log In
+          <Link to="/signin" style={{ textDecoration: "none", color: "white" }}>
+            Sign in 
           </Link>
         </li>
         <li>
