@@ -95,14 +95,14 @@ body{
 /* footer */
 .footerContainer{
   border-top: 1px solid white ;
-  height: 150px;
+  height: 180px;
   background-color: #01000F;
 }
 .footerContainer div{
   text-align: center;
   margin: 0 auto;
   line-height: 30px;
-  padding-top: 15px;
+  padding-top: 25px;
   color: white;
 }
 .listFooter{
@@ -111,5 +111,6 @@ body{
 .listFooter li, .listSocialFooter li {
   display: inline;
   margin-right: 25px;
+  margin-left: 25px;
 }
 
