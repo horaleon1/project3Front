@@ -9,7 +9,7 @@ const particleOpt = {
       value: 80,
       density: {
         enable: true,
-        value_area: 400
+        value_area: 1200
       },
       color: {
         value: "#FE280A"
@@ -18,7 +18,7 @@ const particleOpt = {
 
     move: {
       enable: true,
-      speed: 2.0,
+      speed: 1.5,
       direction: "right",
       random: false,
       straight: false,
@@ -36,6 +36,7 @@ const particleOpt = {
 const Navbar = () => {
   return (
     <div className="container">
+     
       <ul className="leftSide">
         <li>
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
@@ -48,6 +49,11 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+
+      <ul style={{ textDecoration:"none"}}>
+        <li style={{ color:"white", textDecoration: "none", position:"absolute", left:"45%"}}>Logo</li>
+      </ul>
+
       <ul className="rightSide">
         <li>
           <Link to="/lognin" style={{ textDecoration: "none", color: "white" }}>

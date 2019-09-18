@@ -7,7 +7,7 @@ const particleOpt = {
       value: 80,
       density: {
         enable: true,
-        value_area: 400
+        value_area: 1500
       },
       color: {
         value: "#FE280A"
@@ -16,7 +16,7 @@ const particleOpt = {
     
     "move": {
       "enable": true,
-      "speed": 2.0,
+      "speed": 1.5,
       "direction": "right",
       "random": false,
       "straight": false,
