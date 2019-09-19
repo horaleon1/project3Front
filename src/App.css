@@ -5,12 +5,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 body{
-  height: calc(100vh - 55px);
+  height: calc(100vh - 60px);
 }
 /* home */
 .homeContainer {
   min-height: 90vh;
-  background-color: black;
+  background-color: #141747;
 }
 .typingTextStatic{
   position: absolute;
@@ -18,7 +18,7 @@ body{
   margin:0 auto;
   top:45%;
   color: white;
-  left: 40%;
+  left: 39%;
   font-size:170%;
 }
 /* home Animation Text  */
@@ -34,7 +34,7 @@ body{
   white-space: nowrap;
   overflow: hidden;transform: translateY(-50%);
   color: white;
-  left: 40%;
+  left: 39%;
 }
 .animationText{
   animation: writing 7s  steps(40) 1s infinite  normal both,
@@ -62,9 +62,9 @@ body{
 }
 /* Navbar  */
 .container {
-  height: 55px;
+  height: 60px;
   border-bottom: 0.1px solid white ;
-  background-color:#010009;
+  background-color:#E73546 ;
 }
 .leftSide li, .rightSide li{
   display: inline;
