@@ -7,7 +7,7 @@ const particleOpt = {
       value: 80,
       density: {
         enable: true,
-        value_area: 2500
+        value_area: 2800
       }
     },
     move: {

@@ -9,7 +9,7 @@ const particleOpt = {
       value: 80,
       density: {
         enable: true,
-        value_area: 2500
+        value_area: 2800
       }
     },
     color: {
@@ -52,9 +52,11 @@ const Register = () => {
   const onSubmit = e => {
     e.preventDefault();
     if (name === "" || email === "" || password === "") {
-      setAlert("Llena todos los campos", "danger");
+      setAlert("Llena todos los campos");
     } else if (password !== passwordCon) {
-      setAlert("Las contraseñas deben de ser iguales", "danger");
+      setAlert("Las contraseñas deben de ser iguales");
+    } else if(password.length < 8){
+      setAlert("La Contraseña debe ser de mas de 8 caracteres");
     } else {
       console.log("Register submit");
     }
