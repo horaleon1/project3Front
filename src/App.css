@@ -171,5 +171,9 @@ body{
  z-index: auto;
 }
 
-
-/* Particles  Register  */
+/* Alert  Register  */
+.alerts{
+  margin-top: 40px;
+  color: #E73546;
+  font-size: 20px;
+}

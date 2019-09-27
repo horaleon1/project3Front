@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
-import AlertContext from './AlertContext';
+import uuid from 'uuid';
+import AlertContext from './alertContext';
 import alertReducer from './alertReducer';
 
 
@@ -15,8 +16,14 @@ const AuthState = props => {
 
   const [state, dispatch] = useReducer( alertReducer, initialState);
 
-  const setAlert = (msg, type) => {
+  const setAlert = (msg, type, timeout = 5000) => {
+   const id = uuid.v4();
+   dispatch({
+     type: SET_ALERT,
+     payload: { msg, type, id}
+   });
 
+   setTimeout(() => dispatch({ type: REMOVE_ALERT, payload:id }), timeout)
   }
 
   // set Alert

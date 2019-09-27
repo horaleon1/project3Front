@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import AlertContext from "../../context/alert/alertContext";
 import Particles from "react-particles-js";
+import Alerts from '../layouts/Alerts';
 
 const particleOpt = {
   particles: {
@@ -27,12 +29,15 @@ const particleOpt = {
         rotateX: 600,
         rotateY: 600
       }
-    },
-   
+    }
   }
 };
 
-const Signup = () => {
+const Register = () => {
+  const alertContext = useContext(AlertContext);
+
+  const { setAlert } = alertContext;
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -46,18 +51,21 @@ const Signup = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log("Register submit");
+    if (name === "" || email === "" || password === "") {
+      setAlert("Llena todos los campos", "danger");
+    } else if (password !== passwordCon) {
+      setAlert("Las contraseñas deben de ser iguales", "danger");
+    } else {
+      console.log("Register submit");
+    }
   };
 
   return (
     <div className="containerRegister">
-      <Particles
-          params={particleOpt}
-          className="particlesRegister"
-        />
+      <Particles params={particleOpt} className="particlesRegister" />
       <div className="containerResgiterForm">
-      
         <h1>Regístrate</h1>
+        <Alerts />
         <form onSubmit={onSubmit}>
           <div className="formContainer">
             <label>Nombre</label>
@@ -102,11 +110,9 @@ const Signup = () => {
           <input type="submit" value="Regístrarse" className="submit" />
         </form>
       </div>
-      <div className="containerParticlesRegister">
-        
-      </div>
+      <div className="containerParticlesRegister"></div>
     </div>
   );
 };
 
-export default Signup;
+export default Register;
