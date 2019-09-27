@@ -7,6 +7,7 @@ import Footer from "./components/layouts/Footer";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 // import AuthState from "./context/auth/AuthState";
+
 import "./App.css";
 
 const App = () => {

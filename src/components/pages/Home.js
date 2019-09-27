@@ -34,7 +34,7 @@ const particleOpt = {
 const Home = () => {
   return (
     <div className="homeContainer">
-      <Particles params={particleOpt} />
+      <Particles params={particleOpt} id="particles"/>
       <div>
          <h1 className="typingTextStatic">A new generation of </h1>
         <h1 className="typingText animationText">Blockchain</h1>
