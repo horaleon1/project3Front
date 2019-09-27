@@ -128,14 +128,15 @@ body{
 .containerRegister{
   height: 825px;
   background-color:#141747;
-  margin-top: -3.5%;
+  margin-top: -3.6%;
 }
 .containerResgiterForm{
-  margin: 50px auto;
+  margin: 50px;
   position: relative;
-  left: 38.5%;
+  left: 34%;
   font-size: 1.5em;
   color:#ffffff;
+  width: 55%;
 }
 .containerResgiterForm h1{
   padding-top: 60px;
@@ -169,7 +170,6 @@ body{
 .containerParticlesRegister{
   margin-top: 100px;
   height: 200px;
-  width: 100%;
 }
 
 /* Particles  Register  */
