@@ -73,11 +73,13 @@ body{
   float: left;
   margin-left: 5%;
   margin-top: 1.5%;
+  margin-bottom: 1.5%;
 }
 .rightSide{
   float: right;
   margin-right: 5%;
-  margin-top: 1.5%
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;  
 }
 .leftSide li{
   margin-right: 15px;
@@ -116,11 +118,28 @@ body{
 /* Register */
 
 .containerRegister{
-  margin: 30px auto;
+  margin: 50px auto;
+  position: relative;
+  left: 40%;
+  font-size: 1.5em;
 }
 .formContainer:nth-child(1),.containerRegister .submit{
- margin-top: 20px;
+ margin-top: 50px;
 }
 .formContainer:not(:nth-child(1)){
-  margin-top: 10px;
+  margin-top: 30px;
+}
+.formContainer input{
+ margin-left: 15px;
+ border-radius: 6px;
+ padding: 3px;
+ width: 200px;
+}
+.formContainer{
+  font-size: 1em;
+}
+.submit{
+ margin-left: 5%;
+ width: 11%;
+ font-size: 40px;
 }

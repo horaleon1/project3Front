@@ -19,7 +19,7 @@ const Signup = () => {
 
   return (
     <div className="containerRegister">
-      <h1>Registrate</h1>
+      <h1>Regístrate</h1>
       <form onSubmit={onSubmit}>
         <div className="formContainer">
           <label>

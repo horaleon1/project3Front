@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import video from '../../assets/video.mp4';
+import img from '../../assets/logo192.png';
 // import Particles from "react-particles-js";
 
 const particleOpt = {
@@ -36,8 +37,10 @@ const particleOpt = {
 const Navbar = () => {
   return (
     <div className="container">
-     
       <ul className="leftSide">
+        {/* <li>
+          <img img={img} style={{ height:"50px", width:"50px", position:"absolute" }}/>
+        </li> */}
         <li>
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             Home
@@ -50,10 +53,6 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div className="logoNavbar">
-        Logo
-      </div>
-
       <ul className="rightSide">
         <li>
           <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
@@ -61,7 +60,10 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/register" style={{ textDecoration: "none", color: "white" }}>
+          <Link
+            to="/register"
+            style={{ textDecoration: "none", color: "white" }}
+          >
             Register
           </Link>
         </li>
