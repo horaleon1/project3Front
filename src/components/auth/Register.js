@@ -7,27 +7,28 @@ const particleOpt = {
       value: 80,
       density: {
         enable: true,
-        value_area: 400
-      },
-      color: {
-        value: "red"
+        value_area: 500
       }
+    },
+    color: {
+      value: "#fff"
     },
 
     move: {
       enable: true,
       speed: 1,
-      direction: "down",
-      random: false,
+      direction: "center",
+      random: true,
       straight: false,
       out_mode: "out",
-      bounce: false,
+      bounce: true,
       attract: {
         enable: false,
         rotateX: 600,
-        rotateY: 1200
+        rotateY: 600
       }
-    }
+    },
+   
   }
 };
 
@@ -95,9 +96,12 @@ const Signup = () => {
           </div>
           <input type="submit" value="Regístrarse" className="submit" />
         </form>
-        </div>
+      </div>
       <div className="containerParticlesRegister">
-      <Particles params={particleOpt} className="particlesRegister" />
+        <Particles
+          params={particleOpt}
+          id="particlesRegister"
+        />
       </div>
     </div>
   );

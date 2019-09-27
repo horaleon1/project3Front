@@ -8,11 +8,13 @@ body{
   /* height: calc(100vh - 60px); */
   
 }
-
+canvas{
+  height: 30%;
+}
 /* home */
 .homeContainer {
   background-color: #141747;
-  min-height: 815px;
+  min-height: 820px;
   position: relative;
 }
 .typingTextStatic{
@@ -126,11 +128,10 @@ body{
 /* Register // Login  */
 
 .containerRegister{
-  height: 825px;
+  height: 900px;
   background-color:#141747;
 }
 .containerResgiterForm{
-  margin: 50px;
   position: relative;
   left: 34%;
   font-size: 1.5em;
@@ -168,7 +169,7 @@ body{
 }
 .containerParticlesRegister{
   margin-top: 100px;
-  height: 200px;
 }
+
 
 /* Particles  Register  */
