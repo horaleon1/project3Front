@@ -56,13 +56,13 @@ const Navbar = () => {
 
       <ul className="rightSide">
         <li>
-          <Link to="/signin" style={{ textDecoration: "none", color: "white" }}>
-            Sign in 
+          <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
+            Login
           </Link>
         </li>
         <li>
-          <Link to="/signup" style={{ textDecoration: "none", color: "white" }}>
-            Sign up
+          <Link to="/register" style={{ textDecoration: "none", color: "white" }}>
+            Register
           </Link>
         </li>
       </ul>

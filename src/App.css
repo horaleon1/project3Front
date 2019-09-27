@@ -113,4 +113,14 @@ body{
   margin-right: 25px;
   margin-left: 25px;
 }
+/* Register */
 
+.containerRegister{
+  margin: 30px auto;
+}
+.formContainer:nth-child(1),.containerRegister .submit{
+ margin-top: 20px;
+}
+.formContainer:not(:nth-child(1)){
+  margin-top: 10px;
+}
