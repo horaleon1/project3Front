@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import video from '../../assets/video.mp4';
-import img from '../../assets/logo192.png';
+import img from "../../assets/logo192.png";
 // import Particles from "react-particles-js";
 
 const particleOpt = {
@@ -38,25 +38,23 @@ const Navbar = () => {
   return (
     <div className="container">
       <ul className="leftSide">
-        {/* <li>
-          <img img={img} style={{ height:"50px", width:"50px", position:"absolute" }}/>
-        </li> */}
-        <li>
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/about" style={{ textDecoration: "none", color: "white" }}>
-            About
-          </Link>
-        </li>
+        <li>Logo</li>
       </ul>
 
       <ul className="rightSide">
         <li>
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            Inicio
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" style={{ textDecoration: "none", color: "white" }}>
+            ¿Qué es Blockchain?
+          </Link>
+        </li>
+        <li>
           <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
-            Login
+            Iniciar Sesión
           </Link>
         </li>
         <li>
@@ -64,7 +62,7 @@ const Navbar = () => {
             to="/register"
             style={{ textDecoration: "none", color: "white" }}
           >
-            Register
+            Regístrase
           </Link>
         </li>
       </ul>

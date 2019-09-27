@@ -71,28 +71,21 @@ body{
 }
 .leftSide{
   float: left;
-  margin-left: 5%;
-  margin-top: 1.5%;
-  margin-bottom: 1.5%;
+  margin-left: 3%;
+  position: relative;
+  top:35%;
 }
 .rightSide{
   float: right;
-  margin-right: 5%;
-  margin-top: 1.5%;
-  margin-bottom: 1.5%;  
+  margin-right: 3%;
+  position: relative;
+  top: 35%;
 }
 .leftSide li{
-  margin-right: 15px;
+ color: white;
 }
 .rightSide li{
   margin-left: 15px;
-}
-.logoNavbar{
-  position: absolute;
-  color: white;
-  margin: 0 auto;
-  top: 3%;
-  left: 45%;
 }
 /* footer */
 .footerContainer{
@@ -139,7 +132,11 @@ body{
   font-size: 1em;
 }
 .submit{
- margin-left: 5%;
- width: 11%;
- font-size: 40px;
+ margin-left: 6.5%;
+ width: 6%;
+ font-size: 20px;
+ color: white;
+ background-color: #141747;
+ border-radius: 10px;
+ padding: 7px;
 }

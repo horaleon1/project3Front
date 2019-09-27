@@ -45,7 +45,7 @@ const Signup = () => {
           </label>
           <input type="password" name="passwordCon" value={passwordCon} onChange={onChange} autoComplete="on"/>
         </div>
-        <input type="submit" value="Registrase" className="submit"/>
+        <input type="submit" value="Regístrase" className="submit"/>
       </form>
     </div>
   );
