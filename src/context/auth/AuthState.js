@@ -25,7 +25,7 @@ const AuthState = props => {
     error: null
   };
 
-  // const [state, dispatch] = useReducer(authReducer, initialState);
+ const [state, dispatch] = useReducer(authReducer, initialState);
 
   // Load User
   // const loadUser = async () => {
@@ -109,11 +109,6 @@ const AuthState = props => {
         loading: state.loading,
         user: state.user,
         error: state.error,
-        register,
-        loadUser,
-        login,
-        logout,
-        clearErrors
       }}
     >
       {props.children}

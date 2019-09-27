@@ -7,13 +7,13 @@ import Footer from "./components/layouts/Footer";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Explorer from './components/layouts/Explorer';
-// import AuthState from "./context/auth/AuthState";
+import AuthState from "./context/auth/AuthState";
 
 import "./App.css";
 
 const App = () => {
   return (
-    // <AuthState>
+    <AuthState>
       <Router>
         <Fragment>
           <Navbar />
@@ -29,7 +29,7 @@ const App = () => {
           <Footer />
         </Fragment>
       </Router>
-    // </AuthState>
+    </AuthState>
   );
 };
 
