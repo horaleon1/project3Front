@@ -67,7 +67,7 @@ const Navbar = () => {
             to="/register"
             style={{ textDecoration: "none", color: "white" }}
           >
-            Regístrase
+            Regístrarse
           </Link>
         </li>
       </ul>
