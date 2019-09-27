@@ -53,6 +53,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
+          <Link to="/explorer" style={{ textDecoration: "none", color: "white" }}>
+            Explorador
+          </Link>
+        </li>
+        <li>
           <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
             Iniciar Sesión
           </Link>

@@ -6,16 +6,20 @@
 }
 body{
   /* height: calc(100vh - 60px); */
+  
 }
+
 /* home */
 .homeContainer {
   background-color: #141747;
+  min-height: 815px;
+  position: relative;
 }
 .typingTextStatic{
   position: absolute;
   z-index: 9999;
   margin:0 auto;
-  top:45%;
+  top:35%;
   color: white;
   left: 39%;
   font-size:170%;
@@ -24,7 +28,7 @@ body{
 .typingText{
   position: absolute;
   z-index: 9999;
-  top:55%;
+  top:43%;
   width: 16em;
   margin:0 auto;
   border-right: 2px solid rgba(255,255,255,0.75);
@@ -63,7 +67,7 @@ body{
 .container {
   height: 60px;
   border-bottom: 0.1px solid white ;
-  background-color:#E73546 ;
+  background-color:#E73546;
 }
 .leftSide li, .rightSide li{
   display: inline;
@@ -83,15 +87,20 @@ body{
 .leftSide li{
  color: white;
 }
+
 .rightSide li{
   margin-left: 15px;
+}
+
+.rightSide li:nth-child(4){
+  margin-left: 50px;
 }
 /* footer */
 .footerContainer{
   border-top: 1px solid white ;
   height: 190px;
   background-color: #01000F;
-  bottom:-22%;
+  bottom:-190px;
   width: 100%;
   position: absolute;
 }
@@ -117,33 +126,50 @@ body{
 /* Register // Login  */
 
 .containerRegister{
+  height: 825px;
+  background-color:#141747;
+  margin-top: -3.5%;
+}
+.containerResgiterForm{
   margin: 50px auto;
   position: relative;
-  left: 40%;
+  left: 38.5%;
   font-size: 1.5em;
+  color:#ffffff;
+}
+.containerResgiterForm h1{
+  padding-top: 60px;
 }
 .formContainer:nth-child(1),.containerRegister .submit{
  margin-top: 50px;
 }
 .formContainer:not(:nth-child(1)){
-  margin-top: 30px;
+  margin-top: 45px;
 }
 .formContainer input{
  margin-left: 15px;
  border-radius: 6px;
  padding: 3px;
  width: 200px;
+ border: 1px solid #141747;
 }
 .formContainer{
   font-size: 1em;
 }
 .submit{
- margin-left: 8%;
- width: 9%;
+ margin-left: 130px;
+ width: 140px;
  font-size: 20px;
  color: white;
  background-color: #141747;
  border-radius: 10px;
  padding: 7px;
+ z-index: 0;
 }
+.containerParticlesRegister{
+  margin-top: 100px;
+  height: 200px;
+  width: 100%;
+}
+
 /* Particles  Register  */
