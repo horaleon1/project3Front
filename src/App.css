@@ -8,9 +8,6 @@ body{
   /* height: calc(100vh - 60px); */
   
 }
-canvas{
-  height: 30%;
-}
 /* home */
 .homeContainer {
   background-color: #141747;
@@ -128,7 +125,7 @@ canvas{
 /* Register // Login  */
 
 .containerRegister{
-  height: 900px;
+  height: 815px;
   background-color:#141747;
 }
 .containerResgiterForm{
@@ -153,6 +150,7 @@ canvas{
  padding: 3px;
  width: 200px;
  border: 1px solid #141747;
+ z-index: 9999;
 }
 .formContainer{
   font-size: 1em;
@@ -167,8 +165,10 @@ canvas{
  padding: 7px;
  z-index: 0;
 }
-.containerParticlesRegister{
-  margin-top: 100px;
+.particlesRegister{
+ position: absolute;
+ width: 100%;
+ z-index: auto;
 }
 
 

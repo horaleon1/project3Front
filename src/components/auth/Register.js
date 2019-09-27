@@ -7,11 +7,11 @@ const particleOpt = {
       value: 80,
       density: {
         enable: true,
-        value_area: 500
+        value_area: 2500
       }
     },
     color: {
-      value: "#fff"
+      value: "#FFF"
     },
 
     move: {
@@ -51,7 +51,12 @@ const Signup = () => {
 
   return (
     <div className="containerRegister">
+      <Particles
+          params={particleOpt}
+          className="particlesRegister"
+        />
       <div className="containerResgiterForm">
+      
         <h1>Regístrate</h1>
         <form onSubmit={onSubmit}>
           <div className="formContainer">
@@ -98,10 +103,7 @@ const Signup = () => {
         </form>
       </div>
       <div className="containerParticlesRegister">
-        <Particles
-          params={particleOpt}
-          id="particlesRegister"
-        />
+        
       </div>
     </div>
   );

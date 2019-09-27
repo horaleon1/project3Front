@@ -7,7 +7,7 @@ const particleOpt = {
       value: 80,
       density: {
         enable: true,
-        value_area: 600
+        value_area: 2500
       }
     },
     move: {
@@ -44,6 +44,7 @@ const Signin = () => {
 
   return (
     <div className="containerRegister">
+      <Particles params={particleOpt} className="particlesRegister" />
       <div className="containerResgiterForm">
         <h1>Iniciar Sesión</h1>
         <form onSubmit={onSubmit}>
@@ -70,9 +71,6 @@ const Signin = () => {
 
           <input type="submit" value="Inicio" className="submit" />
         </form>
-      </div>
-      <div className="containerParticlesRegister">
-        <Particles params={particleOpt} className="particlesRegister" />
       </div>
     </div>
   );
