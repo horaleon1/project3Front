@@ -97,9 +97,9 @@ body{
 /* footer */
 .footerContainer{
   border-top: 1px solid white ;
-  height: 190px;
+  height: 280px;
   background-color: #01000F;
-  bottom:-190px;
+  bottom:-290px;
   width: 100%;
   position: absolute;
 }

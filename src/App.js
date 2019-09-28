@@ -9,29 +9,36 @@ import Register from "./components/auth/Register";
 import Explorer from "./components/layouts/Explorer";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
+import setAuthToken from "./utilities/setAuthToken";
+// import WalletState from "./context/wallet/WalletState";
 // import Alerts from './components/layouts/Alerts';
 import "./App.css";
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
   return (
     <AuthState>
       <AlertState>
-        <Router>
-          <Fragment>
-            <Navbar />
-            <div className="containerApp">
-            
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/explorer" component={Explorer} />
-              </Switch>
-            </div>
-            <Footer />
-          </Fragment>
-        </Router>
+        {/* <WalletState> */}
+          <Router>
+            <Fragment>
+              <Navbar />
+              <div className="containerApp">
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/about" component={About} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/register" component={Register} />
+                  <Route exact path="/explorer" component={Explorer} />
+                </Switch>
+              </div>
+              <Footer />
+            </Fragment>
+          </Router>
+        {/* </WalletState> */}
       </AlertState>
     </AuthState>
   );

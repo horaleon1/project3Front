@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import video from "../../assets/video.mp4";
 
 
 const footer = () => {
@@ -41,6 +42,14 @@ const footer = () => {
       <div>
         <ul className="listSocialFooter">
           <li> <a href="www.facebook.com" target="_blank">Facebook</a></li>
+          <li>
+          <video loop autoPlay style={{ height:"120px", width:"120px" }}>
+            <source
+              src={video}
+              type="video/mp4"
+            />
+          </video>
+          </li>
           <li> <a href="www.twitter.com" target="_blank">Twitter</a></li>
         </ul>
       </div>
