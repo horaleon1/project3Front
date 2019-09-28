@@ -32,7 +32,7 @@ const AuthState = props => {
     }
 
     try {
-      const res = await axios.get('https://blockchainp3b.herokuapp.com/auth/');
+      const res = await axios.get('http://localhost:4000/auth/');
 
       dispatch({
         type: USER_LOADED,
@@ -52,7 +52,7 @@ const AuthState = props => {
     };
 
     try {
-      const res = await axios.post('https://blockchainp3b.herokuapp.com/users/', formData, config);
+      const res = await axios.post('http://localhost:4000/users/', formData, config);
 
       dispatch({
         type: REGISTER_SUCCESS,
@@ -77,7 +77,7 @@ const AuthState = props => {
     };
 
     try {
-      const res = await axios.post('https://blockchainp3b.herokuapp.com/auth/', formData, config);
+      const res = await axios.post('http://localhost:4000/auth/', formData, config);
 
       dispatch({
         type: LOGIN_SUCCESS,
