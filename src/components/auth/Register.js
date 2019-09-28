@@ -1,7 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alert/alertContext";
 import Particles from "react-particles-js";
 import Alerts from '../layouts/Alerts';
+import AuthContext from '../../context/auth/authContext';
 
 const particleOpt = {
   particles: {
@@ -35,8 +36,18 @@ const particleOpt = {
 
 const Register = () => {
   const alertContext = useContext(AlertContext);
+  const authContext = useContext(AuthContext);
 
   const { setAlert } = alertContext;
+
+  const { register, error, clearErrors } = authContext;
+
+  useEffect( () => {
+    if(error === 'El usuario ya existe'){
+      setAlert('El usuario ya existe');
+      clearErrors();
+    }
+  })
 
   const [user, setUser] = useState({
     name: "",
@@ -58,7 +69,11 @@ const Register = () => {
     } else if(password.length < 8){
       setAlert("La Contraseña debe ser de mas de 8 caracteres");
     } else {
-      console.log("Register submit");
+      register({
+        name,
+        email,
+        password
+      })
     }
   };
 

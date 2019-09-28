@@ -2,9 +2,7 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
-
-// import setAuthToken from '../../utils/setAuthToken';
-
+import setAuthToken from '../../utilities/setAuthToken';
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -25,81 +23,81 @@ const AuthState = props => {
     error: null
   };
 
- const [state, dispatch] = useReducer(authReducer, initialState);
+  const [state, dispatch] = useReducer(authReducer, initialState);
 
   // Load User
-  // const loadUser = async () => {
-  //   if (localStorage.token) {
-  //     setAuthToken(localStorage.token);
-  //   }
+  const loadUser = async () => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
 
-  //   try {
-  //     const res = await axios.get('/api/auth');
+    try {
+      const res = await axios.get('http://localhost:4000/auth/');
 
-  //     dispatch({
-  //       type: USER_LOADED,
-  //       payload: res.data
-  //     });
-  //   } catch (err) {
-  //     dispatch({ type: AUTH_ERROR });
-  //   }
-  // };
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data
+      });
+    } catch (err) {
+      dispatch({ type: AUTH_ERROR });
+    }
+  };
 
   // Register User
-  // const register = async formData => {
-  //   const config = {
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     }
-  //   };
+  const register = async formData => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
 
-  //   try {
-  //     const res = await axios.post('/api/users', formData, config);
+    try {
+      const res = await axios.post('http://localhost:4000/users/', formData, config);
 
-  //     dispatch({
-  //       type: REGISTER_SUCCESS,
-  //       payload: res.data
-  //     });
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: res.data
+      });
 
-  //     loadUser();
-  //   } catch (err) {
-  //     dispatch({
-  //       type: REGISTER_FAIL,
-  //       payload: err.response.data.msg
-  //     });
-  //   }
-  // };
+      loadUser();
+    } catch (err) {
+      dispatch({
+        type: REGISTER_FAIL,
+        payload: err.response.data.msg
+      });
+    }
+  };
 
   // Login User
-  // const login = async formData => {
-  //   const config = {
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     }
-  //   };
+  const login = async formData => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
 
-  //   try {
-  //     const res = await axios.post('/api/auth', formData, config);
+    try {
+      const res = await axios.post('http://localhost:4000/auth/', formData, config);
 
-  //     dispatch({
-  //       type: LOGIN_SUCCESS,
-  //       payload: res.data
-  //     });
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data
+      });
 
-  //     loadUser();
-  //   } catch (err) {
-  //     dispatch({
-  //       type: LOGIN_FAIL,
-  //       payload: err.response.data.msg
-  //     });
-  //   }
-  // };
+      loadUser();
+    } catch (err) {
+      dispatch({
+        type: LOGIN_FAIL,
+        payload: err.response.data.msg
+      });
+    }
+  };
 
   // Logout
-  // const logout = () => dispatch({ type: LOGOUT });
+  const logout = () => dispatch({ type: LOGOUT });
 
   // Clear Errors
-  // const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
+  const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
 
   return (
     <AuthContext.Provider
@@ -109,6 +107,11 @@ const AuthState = props => {
         loading: state.loading,
         user: state.user,
         error: state.error,
+        register,
+        loadUser,
+        login,
+        logout,
+        clearErrors
       }}
     >
       {props.children}
