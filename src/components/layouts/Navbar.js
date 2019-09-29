@@ -11,6 +11,11 @@ const Navbar = () => {
       </ul>
 
       <ul className="rightSide">
+      <li>
+          <Link to="/user" style={{ textDecoration: "none", color: "white" }}>
+           User
+          </Link>
+        </li>
         <li>
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             Inicio

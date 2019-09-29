@@ -11,7 +11,7 @@ import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utilities/setAuthToken";
 // import WalletState from "./context/wallet/WalletState";
-// import Alerts from './components/layouts/Alerts';
+import User from './components/pages/User';
 import "./App.css";
 
 if (localStorage.token) {
@@ -33,6 +33,7 @@ const App = () => {
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/explorer" component={Explorer} />
+                  <Route exact path="/user" component={User} />
                 </Switch>
               </div>
               <Footer />
