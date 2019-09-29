@@ -181,22 +181,27 @@ a {
 }
 /* User */
 .sidebarUser {
-  display: block;
-  width: 100px;
-
+ 
+ width: 100%;
+ margin-right: 20px;
+ 
 }
 .sidebarUser ul {
  list-style: none;
 }
-.sidebarUser ul {
-  margin-left: 20px;
-  border: 1px solid black;
+.userMenu{
+  width: 15%;
+  height: 650px;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
-.rightSideUser {
-  display: block;
-  right: 0%;
-  position: absolute;
+.userMenuList{
+  margin: -1px 10px;
 }
-.sidebarUser ul li{
-  margin-top: 20px;
+.userMenuList li {
+  padding-top:25px;
+}
+.barUser{
+  height: 30px;
+  background-color: #141747;
 }
