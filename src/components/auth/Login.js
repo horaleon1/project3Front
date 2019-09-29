@@ -48,7 +48,7 @@ const Login = (props) => {
     }
 
 
-    if (error === 'Invalid credentials') {
+    if (error === 'Invalid Credentials') {
       setAlert('El correo o la contraseña son incorrectos');
       clearErrors();
     }
