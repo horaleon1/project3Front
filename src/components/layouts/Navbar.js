@@ -5,7 +5,11 @@ import AuthContext from "../../context/auth/authContext";
 const Navbar = () => {
   const authContext = useContext(AuthContext);
 
-  const { isAutheticated, user } = authContext;
+  const { isAutheticated, user, logout } = authContext;
+
+  const onLogout = () => {
+    logout();
+  }
 
   const authLinks = (
     <Fragment>
@@ -27,7 +31,11 @@ const Navbar = () => {
       <li style={{ textDecoration: "none", color: "white" }}>
         Hola, {user && user.name}
       </li>
-      <li style={{ textDecoration: "none", color: "white" }}>Salir</li>
+      <li style={{ textDecoration: "none", color: "white" }}>
+        <a onClick={onLogout} href='#!'>
+        Salir
+        </a>
+        </li>
     </Fragment>
   );
   const guestLinks = (
@@ -72,8 +80,9 @@ const Navbar = () => {
       </ul>
       <ul className="rightSide"> {
 
-       isAutheticated ? authLinks : guestLinks
+    isAutheticated ? authLinks : guestLinks
 
+      
       } </ul>
     </div>
   );
