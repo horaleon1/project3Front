@@ -22,21 +22,32 @@ export default class extends Component {
     return (
       <div>
         <div className="sidebarUser">
-          <div className="barUser">BTC</div>
+
+          <div className="barUser"> BTC
+          {/* {Object.keys(this.state.cryptos).map((key) => (
+            <div>
+              <span>{key}</span>
+              <span>{this.state.cryptos[key].USD}</span>
+            </div>
+          ))} */}
+          </div>
           <ul>
             <li className="userMenu">
               <ul className="userMenuList">
                 <li>
-                  <a>Inicio</a>
+                  <a href="">Inicio</a>
                 </li>
                 <li>
-                  <a>Enviar</a>
+                  <a href="">Enviar</a>
                 </li>
                 <li>
-                  <a>Recibir</a>
+                  <a href="">Recibir</a>
                 </li>
                 <li>
-                  <a>Ayuda</a>
+                  <a href="">Salir</a>
+                </li>
+                <li>
+                  <a href="">Ayuda</a>
                 </li>
               </ul>
             </li>

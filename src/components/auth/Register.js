@@ -36,6 +36,7 @@ const particleOpt = {
 
 const Register = props  => {
   const alertContext = useContext(AlertContext);
+  
   const authContext = useContext(AuthContext);
 
   const { setAlert } = alertContext;

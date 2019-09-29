@@ -1,5 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Particles from "react-particles-js";
+import AuthContext from "../../context/auth/authContext";
+import AlertContext from "../../context/alert/alertContext";
+import Alerts from "../layouts/Alerts";
+
+
 
 const particleOpt = {
   particles: {
@@ -27,7 +32,28 @@ const particleOpt = {
   }
 };
 
-const Signin = () => {
+const Login = (props) => {
+
+  const alertContext = useContext(AlertContext);
+  
+  const authContext = useContext(AuthContext);
+
+  const { setAlert } = alertContext;
+
+  const { login, error, clearErrors, isAuthenticated } = authContext;
+
+  useEffect(() => {
+    if(isAuthenticated){
+      props.history.push('/');
+    }
+
+
+    if (error === "Invalid Credentials") {
+      setAlert('El correo o la contraseña son incorrectos');
+      clearErrors();
+    }
+  });
+
   const [user, setUser] = useState({
     email: "",
     password: ""
@@ -39,7 +65,14 @@ const Signin = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log("Login submit");
+    if(email === '' || password === ''){
+      setAlert('Rellena todos los campos')
+    }else{
+     login({
+       email,
+       password
+     })
+    }
   };
 
   return (
@@ -47,6 +80,7 @@ const Signin = () => {
       <Particles params={particleOpt} className="particlesRegister" />
       <div className="containerResgiterForm">
         <h1>Iniciar Sesión</h1>
+        <Alerts />
         <form onSubmit={onSubmit}>
           <div className="formContainer">
             <label>Correo Electrónico</label>
@@ -76,4 +110,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Login;
