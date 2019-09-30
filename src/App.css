@@ -11,7 +11,7 @@ body {
 /* home */
 .homeContainer {
   background-color: #141747;
-  height: 95vh;
+  height: 100vh;
   position: relative;
   width: 100%;
 }
@@ -99,9 +99,8 @@ body {
 /* footer */
 .footerContainer {
   border-top: 1px solid white;
-  height: 280px;
+  height: 250px;
   background-color: #01000f;
-  /* //bottom: -290px; */
   width: 100%;
 }
 .footerContainer div {
@@ -128,7 +127,7 @@ a {
 /* Register // Login  */
 
 .containerRegister {
-  height: 95vh;
+  height: 100vh;
   background-color: #141747;
 }
 .containerResgiterForm {

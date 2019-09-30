@@ -43,7 +43,7 @@ const footer = () => {
         <ul className="listSocialFooter">
           <li> <a href="www.facebook.com" target="_blank">Facebook</a></li>
           <li>
-          <video loop autoPlay style={{ height:"120px", width:"120px" }}>
+          <video loop autoPlay style={{ height:"100px", width:"100px" }}>
             <source
               src={video}
               type="video/mp4"
