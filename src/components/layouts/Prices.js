@@ -6,87 +6,96 @@ export default class extends Component {
     super(props);
 
     this.state = {
-      cryptos: [],
-      cryptos2: [],
-      cryptos3: [],
-      cryptos4: [],
-      cryptos5: []
+      btc:[],
+      eth: [],
+      xrp: [],
+      ltc: [],
+      bch: []
     };
   }
   componentDidMount() {
-    axios
-      .get(
-        "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,EUR,MXN"
-      )
-      .then(res => {
-        const cryptos = res.data;
-        console.log(cryptos);
-        this.setState({ cryptos: cryptos });
-      });
-    axios
+   
+    setInterval( () => {
+        axios .get("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,EUR,MXN")
+        .then( res => {
+          const btc = res.data;
+          //console.log(btc);
+          this.setState({ btc });
+        })
+    }, 1000);
+    
+    setInterval(() => {
+      axios
       .get(
         "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,EUR,MXN"
       )
       .then(res => {
-        const cryptos2 = res.data;
-        console.log(cryptos2);
-        this.setState({ cryptos2: cryptos2 });
+        const eth = res.data;
+        //console.log(eth);
+        this.setState({ eth });
       });
-    axios
+    }, 1000);
+    
+    setInterval(() => {
+      axios
       .get(
         "https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD,EUR,MXN"
       )
       .then(res => {
-        const cryptos3 = res.data;
-        console.log(cryptos3);
-        this.setState({ cryptos3: cryptos3 });
+        const xrp = res.data;
+        //console.log(xrp);
+        this.setState({ xrp });
       });
+    }, 1000);
+
+   setInterval(() => {
     axios
-      .get(
-        "https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD,EUR,MXN"
-      )
-      .then(res => {
-        const cryptos4 = res.data;
-        console.log(cryptos4);
-        this.setState({ cryptos4: cryptos4 });
-      });
+    .get(
+      "https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD,EUR,MXN"
+    )
+    .then(res => {
+      const ltc = res.data;
+      //console.log(ltc);
+      this.setState({ ltc });
+    });
+   }, 1000);
+    
+   setInterval(() => {
     axios
-      .get(
-        "https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD,EUR,MXN"
-      )
-      .then(res => {
-        const cryptos5 = res.data;
-        console.log(cryptos5);
-        this.setState({ cryptos5 });
-      });
+    .get(
+      "https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD,EUR,MXN"
+    )
+    .then(res => {
+      const bch = res.data;
+      //console.log(bch);
+      this.setState({ bch });
+    });
+   }, 1000);
+    
   }
   render() {
     return (
       <div className="barUser">
         <div className="dataBarUser">
           <span>
-            ₿ BTC/USD {this.state.cryptos.USD} | BTC/MXN{" "}
-            {this.state.cryptos.MXN}
+            ₿ BTC/USD {this.state.btc.USD} | BTC/MXN{" "}
+            {this.state.btc.MXN}
           </span>
           <span>
-            {" "}
-            Ξ ETH/USD {this.state.cryptos2.USD} | ETH/MXN{" "}
-            {this.state.cryptos2.MXN}
+            Ξ ETH/USD {this.state.eth.USD} | ETH/MXN{" "}
+            {this.state.eth.MXN}
           </span>
           <span>
-            {" "}
-            Ʀ XRP/USD {this.state.cryptos3.USD} | XRP/MXN{" "}
-            {this.state.cryptos3.MXN}
+            Ʀ XRP/USD {this.state.xrp.USD} | XRP/MXN{" "}
+            {this.state.xrp.MXN}
           </span>
           <span>
-            {" "}
-            Ł LTC/USD {this.state.cryptos4.USD} | LTC/MXN{" "}
-            {this.state.cryptos4.MXN}{" "}
+            Ł LTC/USD {this.state.ltc.USD} | LTC/MXN{" "}
+            {this.state.ltc.MXN}{" "}
           </span>
           <span>
-            {" "}
-            ฿ BCH/USD {this.state.cryptos5.USD} | BCH/MXN{" "}
-            {this.state.cryptos5.MXN}
+            ฿ BCH/USD {this.state.bch.USD} | BCH/MXN{" "}
+            {this.state.bch.MXN}
           </span>
         </div>
       </div>

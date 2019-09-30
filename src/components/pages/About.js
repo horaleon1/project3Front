@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Component } from 'react'
 import Video from "../../assets/bitgo.mp4";
 import PricesB from '../layouts/PricesB';
 
-const About = () => {
-  return (
-    <div className="aboutContainer">
+export default class About extends Component {
+  render() {
+    return (
+      <div className="aboutContainer">
       <p>
       Un blockchain o una cadena de bloques,
       es una lista creciente <br/> de registros, llamados bloques, que están 
@@ -32,7 +33,6 @@ const About = () => {
      
 
     </div>
-  );
-};
-
-export default About;
+    )
+  }
+}
