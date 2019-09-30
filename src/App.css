@@ -216,16 +216,17 @@ a {
 .dataBarUser span{
   display: inline-block;
   margin-right: 20px;
-  animation: line 25s linear infinite;
+  animation: line 40s linear infinite;
 }
 @keyframes line {
   0%{
-    transform: translate(1vh,0);
+    transform: translate(210vh,0);
   }
-  
+  50%{
+    transform: translate(0vh,0);
+  }
   100%{
-    transform: translate(-155vh,0);
-
+    transform: translate(-190vh,0);
   }
 }
 

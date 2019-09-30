@@ -1,5 +1,6 @@
 import React from "react";
 import Particles from "react-particles-js";
+import Prices from '../layouts/Prices';
 
 const particleOpt = {
   particles: {
@@ -34,6 +35,7 @@ const particleOpt = {
 const Home = () => {
   return (
     <div className="homeContainer">
+      <Prices />
       <Particles params={particleOpt} id="particles"/>
       <div>
          <h1 className="typingTextStatic">A new generation of </h1>
