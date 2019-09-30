@@ -72,7 +72,9 @@ const Navbar = () => {
   return (
     <div className="container">
       <ul className="leftSide">
-        <li>logo</li>
+        <li>
+         <h4>Logo</h4>
+        </li>
         <li>
           <Link to="/user">
             User
