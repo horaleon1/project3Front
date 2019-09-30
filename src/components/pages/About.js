@@ -18,10 +18,10 @@ const About = () => {
        Lo que la hace muy segura para transaccionar. 
       </p>
 
-      <h3>
+      {/* <h3>
         Mandar dinero a cualquier parte del <br/>
       mundo por una fracción.
-      </h3>
+      </h3> */}
 
       <div className="containerVideoAbout">
         <video autoPlay >

@@ -238,7 +238,7 @@ a {
 /* About */
 .aboutContainer p:nth-child(1){
 left: 5%;
-top:15%;
+top: 20%;
 position: absolute;
 color: #ffffff;
 line-height: 30px;
@@ -248,7 +248,7 @@ font-size: 20px;
 }
 .aboutContainer p:nth-child(2){
 left: 5%;
-top:36%;
+top: 40%;
 position: absolute;
 color: #ffffff;
 line-height: 30px;
