@@ -4,7 +4,7 @@ import axios from "axios";
 
 const User = () => {
   return (
-    <div>
+    <div className="containerUser">
       <Prices />
       <div className="sidebarUser">
         <ul>
@@ -27,8 +27,12 @@ const User = () => {
               </li>
             </ul>
           </li>
+          <li>
+        Balance
+      </li>
         </ul>
       </div>
+      
     </div>
   );
 };

@@ -180,6 +180,9 @@ a {
   font-size: 20px;
 }
 /* User */
+.containerUser{
+  width: 100%;
+}
 .sidebarUser {
  
  width: 100%;
@@ -201,10 +204,12 @@ a {
 .userMenuList li {
   padding-top:25px;
 }
+/* Price Component  */
 .barUser{
   height: 30px;
   background-color: #141747;
   color:white;
+  width: 100%;
 }
 .dataBarUser{
   padding-top: 7px;
@@ -231,6 +236,62 @@ a {
 }
 
 /* About */
-.aboutContainer h1{
-text-align: center;
+.aboutContainer p:nth-child(1){
+left: 5%;
+top:15%;
+position: absolute;
+color: #ffffff;
+line-height: 30px;
+text-align: justify;
+text-justify: inter-word;
+font-size: 20px;
+}
+.aboutContainer p:nth-child(2){
+left: 5%;
+top:36%;
+position: absolute;
+color: #ffffff;
+line-height: 30px;
+text-align: justify;
+text-justify: inter-word;
+font-size: 20px;
+}
+.aboutContainer h3{
+left: 5%;
+top:50%;
+position: absolute;
+color: #ffffff;
+line-height: 40px;
+text-align: justify;
+text-justify: inter-word;
+font-size: 30px;
+}
+.containerVideoAbout video{
+  max-width: 1490px;
+}
+.barAbout{
+  height: 50px;
+}
+.barUserB{
+  height: 130px;
+  margin-top: -100px;
+  color: #ffffff;
+  background-color: #141747;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.dataBarUserB ul{
+  list-style: none;
+  margin-left: 35px;
+  padding-top: 20px;
+}
+.dataBarUserB ul li{
+  display: inline-block; 
+  margin-right: 30px; 
+  padding-right: 30px;
+  font-size: 20px;
+}
+.dataBarUserB ul li:not(:nth-child(5)){
+  border-right:  1px solid lightgrey;
 }

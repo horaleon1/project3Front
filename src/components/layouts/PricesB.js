@@ -62,32 +62,30 @@ export default class extends Component {
   }
   render() {
     return (
-      <div className="barUser">
-        <div className="dataBarUser">
-          <span>
-            ₿ BTC/USD {this.state.cryptos.USD} | BTC/MXN{" "}
-            {this.state.cryptos.MXN}
-          </span>
-          <span>
-            {" "}
-            Ξ ETH/USD {this.state.cryptos2.USD} | ETH/MXN{" "}
-            {this.state.cryptos2.MXN}
-          </span>
-          <span>
-            {" "}
-            Ʀ XRP/USD {this.state.cryptos3.USD} | XRP/MXN{" "}
-            {this.state.cryptos3.MXN}
-          </span>
-          <span>
-            {" "}
-            Ł LTC/USD {this.state.cryptos4.USD} | LTC/MXN{" "}
-            {this.state.cryptos4.MXN}{" "}
-          </span>
-          <span>
-            {" "}
-            ฿ BCH/USD {this.state.cryptos5.USD} | BCH/MXN{" "}
-            {this.state.cryptos5.MXN}
-          </span>
+      <div className="barUserB">
+        <div className="dataBarUserB">
+          <ul>
+            <li>
+              ₿ BTC/USD {this.state.cryptos.USD} <br /><br/>
+              ₿ BTC/MXN {this.state.cryptos.MXN}
+            </li>
+            <li>
+              Ξ ETH/USD {this.state.cryptos2.USD}<br /><br/>
+              Ξ ETH/MXN {this.state.cryptos2.MXN}
+            </li>
+            <li>
+              Ʀ XRP/USD {this.state.cryptos3.USD}<br /><br/>
+              Ʀ XRP/MXN {this.state.cryptos3.MXN}
+            </li>
+            <li>
+              Ł LTC/USD {this.state.cryptos4.USD} <br/><br/>
+              Ł LTC/MXN {this.state.cryptos4.MXN}
+            </li>
+            <li>
+              ฿ BCH/USD {this.state.cryptos5.USD} <br/><br/>
+              ฿ BCH/MXN {this.state.cryptos5.MXN}
+            </li>
+          </ul>
         </div>
       </div>
     );
