@@ -10,7 +10,8 @@ export default class extends Component {
       eth: [],
       xrp: [],
       ltc: [],
-      bch: []
+      bch: [],
+      eos: []
     };
   }
   componentDidMount() {
@@ -73,6 +74,17 @@ export default class extends Component {
           this.setState({ bch });
         });
     }, 1000);
+    setInterval(() => {
+      axios
+        .get(
+          "https://min-api.cryptocompare.com/data/price?fsym=EOS&tsyms=USD,EUR,MXN"
+        )
+        .then(res => {
+          const eos = res.data;
+          //console.log(bch);
+          this.setState({ eos });
+        });
+    }, 1000);
   }
   render() {
     return (
@@ -80,7 +92,6 @@ export default class extends Component {
         <div className="dataBarUser">
           {/* <span className="live"></span> */}
           <span><i>Live:</i></span>
-
           <span>
             ₿ BTC/USD {this.state.btc.USD} | BTC/EUR {this.state.btc.EUR} | BTC/MXN {this.state.btc.MXN}
           </span>
@@ -96,6 +107,9 @@ export default class extends Component {
           <span>
             ฿ BCH/USD {this.state.bch.USD} | BCH/EUR {this.state.bch.EUR} | BCH/MXN {this.state.bch.MXN}
           </span>
+          {/* <span>
+            Ȅ EOS/USD {this.state.bch.EOS} | EOS/EUR {this.state.bch.EOS} | EOS/MXN {this.state.bch.EOS}
+          </span> */}
         </div>
       </div>
     );
