@@ -206,6 +206,28 @@ a {
   background-color: #141747;
   color:white;
 }
+.dataBarUser{
+  padding-top: 7px;
+  padding-left: 5px;
+  color:white;
+  font-size: 13px;
+}
+
+.dataBarUser span{
+  display: inline-block;
+  margin-right: 20px;
+  animation: line 25s linear infinite;
+}
+@keyframes line {
+  0%{
+    transform: translate(1vh,0);
+  }
+  
+  100%{
+    transform: translate(-155vh,0);
+
+  }
+}
 
 /* About */
 .aboutContainer h1{
