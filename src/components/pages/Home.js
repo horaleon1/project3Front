@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from 'react'
 import Particles from "react-particles-js";
 import Prices from '../layouts/Prices';
 
@@ -32,9 +32,10 @@ const particleOpt = {
   }
 };
 
-const Home = () => {
-  return (
-    <div className="homeContainer">
+export default class Home extends Component {
+  render() {
+    return (
+      <div className="homeContainer">
       <Prices />
       <Particles params={particleOpt} id="particles"/>
       <div>
@@ -42,7 +43,7 @@ const Home = () => {
         <h1 className="typingText animationText">Blockchain</h1>
       </div>
     </div>
-  );
-};
+    )
+  }
+}
 
-export default Home;

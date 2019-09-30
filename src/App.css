@@ -11,9 +11,9 @@ body {
 /* home */
 .homeContainer {
   background-color: #141747;
-  min-height: 820px;
+  height: 95vh;
   position: relative;
-  
+  width: 100%;
 }
 .typingTextStatic {
   position: absolute;
@@ -101,9 +101,8 @@ body {
   border-top: 1px solid white;
   height: 280px;
   background-color: #01000f;
-  bottom: -290px;
+  /* //bottom: -290px; */
   width: 100%;
-  position: absolute;
 }
 .footerContainer div {
   text-align: center;
@@ -129,7 +128,7 @@ a {
 /* Register // Login  */
 
 .containerRegister {
-  height: 815px;
+  height: 95vh;
   background-color: #141747;
 }
 .containerResgiterForm {
@@ -210,7 +209,7 @@ a {
 
 /* The sidebar menu */
 .sidenav {
-  height: 640px; /* Full-height: remove this if you want "auto" height */
+  height: 90vh; /* Full-height: remove this if you want "auto" height */
   width: 160px; /* Set the width of the sidebar */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -299,6 +298,10 @@ a {
 }
 
 /* About */
+.aboutContainer{
+  width: 100%;
+  height: 100%;
+}
 .aboutContainer p:nth-child(1){
 left: 5%;
 top: 20%;
@@ -330,7 +333,7 @@ text-justify: inter-word;
 font-size: 30px;
 }
 .containerVideoAbout video{
-  max-width: 1490px;
+  width: 100%;
 }
 .barAbout{
   height: 50px;

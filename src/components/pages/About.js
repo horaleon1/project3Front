@@ -31,6 +31,9 @@ export default class About extends Component {
         </video>
       </div>
       <PricesB />
+      <div className="afterPricesB">
+
+      </div>
      
 
     </div>
