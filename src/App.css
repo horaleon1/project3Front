@@ -206,3 +206,8 @@ a {
   background-color: #141747;
   color:white;
 }
+
+/* About */
+.aboutContainer h1{
+text-align: center;
+}

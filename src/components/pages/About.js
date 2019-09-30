@@ -4,8 +4,9 @@ const About = () => {
   return (
     <div className="aboutContainer">
       <h1>
-        About
+        ¿Qué es Blockchain?
       </h1>
+      
     </div>
   )
 }
