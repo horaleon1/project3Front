@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Video from "../../assets/bitgo.mp4";
 import PricesB from '../layouts/PricesB';
 
+
 export default class About extends Component {
   render() {
     return (

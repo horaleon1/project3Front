@@ -21,7 +21,7 @@ export default class extends Component {
         )
         .then(res => {
           const btc = res.data;
-          console.log(btc);
+          //console.log(btc);
           this.setState({ btc: btc });
         });
     }, 1000);
@@ -32,7 +32,7 @@ export default class extends Component {
         )
         .then(res => {
           const eth = res.data;
-          console.log(eth);
+          //console.log(eth);
           this.setState({ eth: eth });
         });
     }, 1000);
@@ -43,7 +43,7 @@ export default class extends Component {
         )
         .then(res => {
           const xrp = res.data;
-          console.log(xrp);
+          //console.log(xrp);
           this.setState({ xrp: xrp });
         });
     }, 1000);
@@ -54,7 +54,7 @@ export default class extends Component {
         )
         .then(res => {
           const ltc = res.data;
-          console.log(ltc);
+          //console.log(ltc);
           this.setState({ ltc: ltc });
         });
     }, 1000);
@@ -65,7 +65,7 @@ export default class extends Component {
         )
         .then(res => {
           const bch = res.data;
-          console.log(bch);
+          //console.log(bch);
           this.setState({ bch });
         });
     }, 1000);

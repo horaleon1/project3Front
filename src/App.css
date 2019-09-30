@@ -276,6 +276,28 @@ a {
   }
 }
 
+.live {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: red;
+  display: inline-block;
+  margin-right: 5px;
+  animation: pulse 1s infinite;
+  opacity: 1;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #f91a1a;
+    opacity: 1;
+  }
+  
+  100% {
+    box-shadow: 0 0 0 0 #f91a1a;
+    opacity: 0.2;
+  }
+}
+
 /* About */
 .aboutContainer p:nth-child(1){
 left: 5%;

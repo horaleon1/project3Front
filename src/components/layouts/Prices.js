@@ -6,7 +6,7 @@ export default class extends Component {
     super(props);
 
     this.state = {
-      btc:[],
+      btc: [],
       eth: [],
       xrp: [],
       ltc: [],
@@ -14,88 +14,87 @@ export default class extends Component {
     };
   }
   componentDidMount() {
-   
-    setInterval( () => {
-        axios .get("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,EUR,MXN")
-        .then( res => {
+    setInterval(() => {
+      axios
+        .get(
+          "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,EUR,MXN"
+        )
+        .then(res => {
           const btc = res.data;
           //console.log(btc);
           this.setState({ btc });
-        })
-    }, 1000);
-    
-    setInterval(() => {
-      axios
-      .get(
-        "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,EUR,MXN"
-      )
-      .then(res => {
-        const eth = res.data;
-        //console.log(eth);
-        this.setState({ eth });
-      });
-    }, 1000);
-    
-    setInterval(() => {
-      axios
-      .get(
-        "https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD,EUR,MXN"
-      )
-      .then(res => {
-        const xrp = res.data;
-        //console.log(xrp);
-        this.setState({ xrp });
-      });
+        });
     }, 1000);
 
-   setInterval(() => {
-    axios
-    .get(
-      "https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD,EUR,MXN"
-    )
-    .then(res => {
-      const ltc = res.data;
-      //console.log(ltc);
-      this.setState({ ltc });
-    });
-   }, 1000);
-    
-   setInterval(() => {
-    axios
-    .get(
-      "https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD,EUR,MXN"
-    )
-    .then(res => {
-      const bch = res.data;
-      //console.log(bch);
-      this.setState({ bch });
-    });
-   }, 1000);
-    
+    setInterval(() => {
+      axios
+        .get(
+          "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,EUR,MXN"
+        )
+        .then(res => {
+          const eth = res.data;
+          //console.log(eth);
+          this.setState({ eth });
+        });
+    }, 1000);
+
+    setInterval(() => {
+      axios
+        .get(
+          "https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD,EUR,MXN"
+        )
+        .then(res => {
+          const xrp = res.data;
+          //console.log(xrp);
+          this.setState({ xrp });
+        });
+    }, 1000);
+
+    setInterval(() => {
+      axios
+        .get(
+          "https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD,EUR,MXN"
+        )
+        .then(res => {
+          const ltc = res.data;
+          //console.log(ltc);
+          this.setState({ ltc });
+        });
+    }, 1000);
+
+    setInterval(() => {
+      axios
+        .get(
+          "https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD,EUR,MXN"
+        )
+        .then(res => {
+          const bch = res.data;
+          //console.log(bch);
+          this.setState({ bch });
+        });
+    }, 1000);
   }
   render() {
     return (
       <div className="barUser">
         <div className="dataBarUser">
+          {/* <span className="live"></span> */}
+          <span><i>Live:</i></span>
+
           <span>
-            ₿ BTC/USD {this.state.btc.USD} | BTC/MXN{" "}
-            {this.state.btc.MXN}
+            ₿ BTC/USD {this.state.btc.USD} | BTC/MXN {this.state.btc.MXN}
           </span>
           <span>
-            Ξ ETH/USD {this.state.eth.USD} | ETH/MXN{" "}
-            {this.state.eth.MXN}
+            Ξ ETH/USD {this.state.eth.USD} | ETH/MXN {this.state.eth.MXN}
           </span>
           <span>
-            Ʀ XRP/USD {this.state.xrp.USD} | XRP/MXN{" "}
-            {this.state.xrp.MXN}
+            Ʀ XRP/USD {this.state.xrp.USD} | XRP/MXN {this.state.xrp.MXN}
           </span>
           <span>
-            Ł LTC/USD {this.state.ltc.USD} | LTC/MXN{" "}
-            {this.state.ltc.MXN}{" "}
+            Ł LTC/USD {this.state.ltc.USD} | LTC/MXN {this.state.ltc.MXN}{" "}
           </span>
           <span>
-            ฿ BCH/USD {this.state.bch.USD} | BCH/MXN{" "}
-            {this.state.bch.MXN}
+            ฿ BCH/USD {this.state.bch.USD} | BCH/MXN {this.state.bch.MXN}
           </span>
         </div>
       </div>

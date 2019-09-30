@@ -34,7 +34,7 @@ const User = () => {
          </li>
         </ul>
       </div> */}
-      <div class="sidenav">
+      <div className="sidenav">
         <a href="#">About</a>
         <a href="#">Services</a>
         <a href="#">Clients</a>
