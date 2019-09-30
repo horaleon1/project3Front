@@ -4,6 +4,7 @@ import Particles from "react-particles-js";
 import Alerts from "../layouts/Alerts";
 import AuthContext from "../../context/auth/authContext";
 
+
 const particleOpt = {
   particles: {
     number: {

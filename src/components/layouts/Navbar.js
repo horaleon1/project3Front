@@ -2,6 +2,7 @@ import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 
+
 const Navbar = () => {
   const authContext = useContext(AuthContext);
 
@@ -75,6 +76,9 @@ const Navbar = () => {
         <li>
           <Link to="/user">
             User
+          </Link>
+          <Link to="/portfolio">
+           Portfolio
           </Link>
         </li>
       </ul>

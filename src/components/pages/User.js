@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import Prices from "../layouts/Prices";
 
 export default class User extends Component {
   render() {
     return (
       <div className="containerUser">
-      <Prices />
       
       <div className="sidenav">
 {/* /////////////////////////////////////////////////////////////Fixed */}
