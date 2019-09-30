@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 body {
   /* height: calc(100vh - 60px); */
@@ -14,7 +13,7 @@ body {
   height: 100vh;
   position: relative;
   width: 100%;
-  z-index:0;
+  z-index: 0;
 }
 .typingTextStatic {
   position: absolute;
@@ -86,14 +85,14 @@ body {
   position: relative;
   top: 35%;
 }
-.leftSide li a{
+.leftSide li a {
   color: white;
 }
-.rightSide li a{
-  color:white;
+.rightSide li a {
+  color: white;
 }
-.rightSide li a:hover{
-  color:#141747;
+.rightSide li a:hover {
+  color: #141747;
 }
 .rightSide li {
   margin-left: 15px;
@@ -105,7 +104,6 @@ body {
 
 /* footer */
 .footerContainer {
-  border-top: 1px solid white;
   height: 250px;
   background-color: #01000f;
   width: 100%;
@@ -113,15 +111,15 @@ body {
 }
 .footerContainer div {
   text-align: center;
-  margin: 0 auto;
   line-height: 30px;
   padding-top: 25px;
   color: white;
 }
-.listFooter li a{
-  color:white;
+.listFooter li a {
+  color: white;
 }
-.footerContainer div:hover, .listFooter li a:hover{
+.footerContainer div:hover,
+.listFooter li a:hover {
   color: #e73546;
 }
 .listFooter,
@@ -137,8 +135,8 @@ a {
 .listSocialFooter a {
   color: #ffffff;
 }
-.listSocialFooter a:hover{
-  color:#e73546;
+.listSocialFooter a:hover {
+  color: #e73546;
 }
 /* Register // Login  */
 
@@ -185,8 +183,8 @@ a {
   z-index: 0;
   border: 1px solid white;
 }
-.submit:hover{
- border: 2px solid #e73546;
+.submit:hover {
+  border: 2px solid #e73546;
 }
 .particlesRegister {
   position: absolute;
@@ -200,31 +198,30 @@ a {
   font-size: 20px;
 }
 /* User */
-.containerUser{
+.containerUser {
   width: 100%;
   overflow: hidden;
 }
 .sidebarUser {
- width: 100%;
- margin-right: 20px;
+  width: 100%;
+  margin-right: 20px;
 }
 .sidebarUser ul {
- list-style: none;
+  list-style: none;
 }
 
-.userMenu{
+.userMenu {
   width: 15%;
   height: 650px;
   border-radius: 2px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
-.userMenuList{
+.userMenuList {
   margin: -1px 10px;
 }
 .userMenuList li {
-  padding-top:25px;
+  padding-top: 25px;
 }
-
 
 /* The sidebar menu */
 .sidenav {
@@ -235,7 +232,7 @@ a {
   left: 0;
   background-color: #ffffff; /* Black */
   padding-top: 150px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.10);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   float: left;
 }
 
@@ -250,47 +247,47 @@ a {
 .sidenav a:hover {
   color: #e73546;
 }
-.sidenav ul{
+.sidenav ul {
   margin-top: 50px;
   margin-left: 20px;
   list-style: none;
 }
-.second h1{
+.second h1 {
   font-size: 40px;
   float: right;
   margin-top: 20px;
   margin-right: 20px;
-  color: #2F3134;
+  color: #2f3134;
 }
 
 /* Price Component  */
-.barUser{
+.barUser {
   height: 30px;
   background-color: #141747;
-  color:white;
+  color: white;
   width: 100%;
 }
-.dataBarUser{
+.dataBarUser {
   padding-top: 7px;
   padding-left: 5px;
-  color:white;
+  color: white;
   font-size: 13px;
 }
 
-.dataBarUser span{
+.dataBarUser span {
   display: inline-block;
   margin-right: 20px;
-  animation: line 40s linear infinite;
+  animation: line 50s linear infinite;
 }
 @keyframes line {
-  0%{
-    transform: translate(210vh,0);
+  0% {
+    transform: translate(210vh, 0);
   }
-  50%{
-    transform: translate(0vh,0);
+  50% {
+    transform: translate(0vh, 0);
   }
-  100%{
-    transform: translate(-190vh,0);
+  100% {
+    transform: translate(-190vh, 0);
   }
 }
 
@@ -309,7 +306,7 @@ a {
     box-shadow: 0 0 0 0 #f91a1a;
     opacity: 1;
   }
-  
+
   100% {
     box-shadow: 0 0 0 0 #f91a1a;
     opacity: 0.2;
@@ -317,48 +314,52 @@ a {
 }
 
 /* About */
-.aboutContainer{
+.aboutContainer {
   width: 100%;
   height: 100%;
 }
-.aboutContainer p:nth-child(1){
-left: 5%;
-top: 20%;
-position: absolute;
-color: #ffffff;
-line-height: 30px;
-text-align: justify;
-text-justify: inter-word;
-font-size: 20px;
+.aboutContainer p:nth-child(1) {
+  left: 5%;
+  top: 20%;
+  position: absolute;
+  color: #ffffff;
+  line-height: 30px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 20px;
 }
-.aboutContainer p:nth-child(2){
-left: 5%;
-top: 40%;
-position: absolute;
-color: #ffffff;
-line-height: 30px;
-text-align: justify;
-text-justify: inter-word;
-font-size: 20px;
+.aboutContainer p:nth-child(2) {
+  left: 5%;
+  top: 40%;
+  position: absolute;
+  color: #ffffff;
+  line-height: 30px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 20px;
 }
-.aboutContainer h3{
-left: 5%;
-top:50%;
-position: absolute;
-color: #ffffff;
-line-height: 40px;
-text-align: justify;
-text-justify: inter-word;
-font-size: 30px;
+.aboutContainer h3 {
+  left: 5%;
+  top: 50%;
+  position: absolute;
+  color: #ffffff;
+  line-height: 40px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 30px;
 }
-.containerVideoAbout video{
+.containerVideoAbout {
+  height: 100%;
+}
+.containerVideoAbout video {
   width: 100%;
+  height: 100%;
 }
-.barAbout{
+.barAbout {
   height: 50px;
 }
 /* Second price Component */
-.barUserB{
+.barUserB {
   height: 130px;
   margin-top: -100px;
   color: #ffffff;
@@ -367,17 +368,21 @@ font-size: 30px;
   position: relative;
   text-align: center;
 }
-.dataBarUserB ul{
+.dataBarUserB ul {
   list-style: none;
   margin-left: 35px;
   padding-top: 20px;
 }
-.dataBarUserB ul li{
-  display: inline-block; 
-  margin-right: 30px; 
+.dataBarUserB ul li {
+  display: inline-block;
+  margin-right: 30px;
   padding-right: 30px;
   font-size: 20px;
 }
-.dataBarUserB ul li:not(:nth-child(5)){
-  border-right:  1px solid lightgrey;
+.dataBarUserB ul li:not(:nth-child(5)) {
+  border-right: 1px solid lightgrey;
+}
+/* ////Portfolio */
+.portfolioContainer {
+  height: 90vh;
 }

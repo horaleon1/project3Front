@@ -82,19 +82,19 @@ export default class extends Component {
           <span><i>Live:</i></span>
 
           <span>
-            ₿ BTC/USD {this.state.btc.USD} | BTC/MXN {this.state.btc.MXN}
+            ₿ BTC/USD {this.state.btc.USD} | BTC/EUR {this.state.btc.EUR} | BTC/MXN {this.state.btc.MXN}
           </span>
           <span>
-            Ξ ETH/USD {this.state.eth.USD} | ETH/MXN {this.state.eth.MXN}
+            Ξ ETH/USD {this.state.eth.USD} | ETH/EUR {this.state.eth.EUR} | ETH/MXN {this.state.eth.MXN}
           </span>
           <span>
-            Ʀ XRP/USD {this.state.xrp.USD} | XRP/MXN {this.state.xrp.MXN}
+            Ʀ XRP/USD {this.state.xrp.USD} | XRP/EUR {this.state.xrp.EUR} | XRP/MXN {this.state.xrp.MXN}
           </span>
           <span>
-            Ł LTC/USD {this.state.ltc.USD} | LTC/MXN {this.state.ltc.MXN}{" "}
+            Ł LTC/USD {this.state.ltc.USD} | LTC/EUR {this.state.ltc.EUR} | LTC/MXN {this.state.ltc.MXN}
           </span>
           <span>
-            ฿ BCH/USD {this.state.bch.USD} | BCH/MXN {this.state.bch.MXN}
+            ฿ BCH/USD {this.state.bch.USD} | BCH/EUR {this.state.bch.EUR} | BCH/MXN {this.state.bch.MXN}
           </span>
         </div>
       </div>
