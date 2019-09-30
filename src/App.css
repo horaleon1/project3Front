@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 body {
   /* height: calc(100vh - 60px); */
@@ -12,6 +13,7 @@ body {
   background-color: #141747;
   min-height: 820px;
   position: relative;
+  
 }
 .typingTextStatic {
   position: absolute;
@@ -182,16 +184,16 @@ a {
 /* User */
 .containerUser{
   width: 100%;
+  overflow: hidden;
 }
 .sidebarUser {
- 
  width: 100%;
  margin-right: 20px;
- 
 }
 .sidebarUser ul {
  list-style: none;
 }
+
 .userMenu{
   width: 15%;
   height: 650px;
@@ -204,6 +206,45 @@ a {
 .userMenuList li {
   padding-top:25px;
 }
+
+
+/* The sidebar menu */
+.sidenav {
+  height: 640px; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #ffffff; /* Black */
+  padding-top: 150px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.10);
+  float: left;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #141747;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #e73546;
+}
+.sidenav ul{
+  margin-top: 50px;
+  margin-left: 20px;
+  list-style: none;
+}
+.second h1{
+  font-size: 40px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+  color: #2F3134;
+}
+
 /* Price Component  */
 .barUser{
   height: 30px;
@@ -272,6 +313,7 @@ font-size: 30px;
 .barAbout{
   height: 50px;
 }
+/* Second price Component */
 .barUserB{
   height: 130px;
   margin-top: -100px;
