@@ -14,24 +14,24 @@ const Navbar = () => {
   const authLinks = (
     <Fragment>
       <li>
-        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+        <Link to="/">
           Inicio
         </Link>
       </li>
       <li>
-        <Link to="/about" style={{ textDecoration: "none", color: "white" }}>
+        <Link to="/about" >
           ¿Qué es Blockchain?
         </Link>
       </li>
       <li>
-        <Link to="/explorer" style={{ textDecoration: "none", color: "white" }}>
+        <Link to="/explorer">
           Explorador
         </Link>
       </li>
-      <li style={{ textDecoration: "none", color: "white" }}>
+      <li>
         Hola, {user && user.name}
       </li>
-      <li style={{ textDecoration: "none", color: "white" }}>
+      <li>
         <a onClick={onLogout} href='#!'>
         Salir
         </a>
@@ -41,27 +41,27 @@ const Navbar = () => {
   const guestLinks = (
     <Fragment>
       <li>
-        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+        <Link to="/">
           Inicio
         </Link>
       </li>
       <li>
-        <Link to="/about" style={{ textDecoration: "none", color: "white" }}>
+        <Link to="/about">
           ¿Qué es Blockchain?
         </Link>
       </li>
       <li>
-        <Link to="/explorer" style={{ textDecoration: "none", color: "white" }}>
+        <Link to="/explorer">
           Explorador
         </Link>
       </li>
       <li>
-        <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
+        <Link to="/login">
           Iniciar Sesión
         </Link>
       </li>
       <li>
-        <Link to="/register" style={{ textDecoration: "none", color: "white" }}>
+        <Link to="/register">
           Regístrarse
         </Link>
       </li>
@@ -73,7 +73,7 @@ const Navbar = () => {
       <ul className="leftSide">
         <li>logo</li>
         <li>
-          <Link to="/user" style={{ textDecoration: "none", color: "white" }}>
+          <Link to="/user">
             User
           </Link>
         </li>

@@ -14,6 +14,7 @@ body {
   height: 100vh;
   position: relative;
   width: 100%;
+  z-index:0;
 }
 .typingTextStatic {
   position: absolute;
@@ -85,10 +86,15 @@ body {
   position: relative;
   top: 35%;
 }
-.leftSide li {
+.leftSide li a{
   color: white;
 }
-
+.rightSide li a{
+  color:white;
+}
+.rightSide li a:hover{
+  color:#141747;
+}
 .rightSide li {
   margin-left: 15px;
 }
@@ -96,12 +102,14 @@ body {
 .rightSide li:nth-child(4) {
   margin-left: 50px;
 }
+
 /* footer */
 .footerContainer {
   border-top: 1px solid white;
   height: 250px;
   background-color: #01000f;
   width: 100%;
+  z-index: 9999;
 }
 .footerContainer div {
   text-align: center;
@@ -109,6 +117,12 @@ body {
   line-height: 30px;
   padding-top: 25px;
   color: white;
+}
+.listFooter li a{
+  color:white;
+}
+.footerContainer div:hover, .listFooter li a:hover{
+  color: #e73546;
 }
 .listFooter,
 a {
@@ -123,7 +137,9 @@ a {
 .listSocialFooter a {
   color: #ffffff;
 }
-
+.listSocialFooter a:hover{
+  color:#e73546;
+}
 /* Register // Login  */
 
 .containerRegister {
@@ -167,6 +183,10 @@ a {
   border-radius: 10px;
   padding: 7px;
   z-index: 0;
+  border: 1px solid white;
+}
+.submit:hover{
+ border: 2px solid #e73546;
 }
 .particlesRegister {
   position: absolute;
