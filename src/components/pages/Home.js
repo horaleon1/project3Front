@@ -37,7 +37,7 @@ const Home = () => {
     <div className="homeContainer">
       <Particles params={particleOpt} id="particles"/>
       <div>
-         <h1 className="typingTextStatic"> Cartera</h1>
+         <h1 className="typingTextStatic"> Mundo</h1>
         <h1 className="typingText animationText">Blockchain</h1>
       </div>
     </div>

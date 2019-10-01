@@ -90,7 +90,7 @@ export default class extends Component {
     return (
       <div className="barUser">
         <div className="dataBarUser">
-          {/* <span className="live"></span> */}
+          <span className="live"></span>
           <span>
             <i>En vivo:</i>
           </span>
