@@ -9,13 +9,14 @@ const Elements = styled.div`
     css`
       color: #ffffff;
       background-color: #141747;
+      cursor:pointer;
     `}
 `;
 function ControlElements({ name }) {
   return (
     <Context.Consumer>
-      {({page}) => (
-      <Elements active={ page === name }> {name} </Elements>        
+      {({page, setPage}) => (
+      <Elements active={ page === name } onClick={ () => setPage(name)}> {name} </Elements>        
       )}
     </Context.Consumer>
   )
