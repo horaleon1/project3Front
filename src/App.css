@@ -382,15 +382,7 @@ a {
 .dataBarUserB ul li:not(:nth-child(5)) {
   border-right: 1px solid lightgrey;
 }
-/* ////Portfolio */
-.portfolioContainer {
-  padding: 30px 20px;
-  height: 90vh;
-}
-.barPortfolio{
-  display: grid;
-  grid-template-columns: 100px auto 250px 250px;
-}
+
 /* //News */
 
 .containerNews{
@@ -511,4 +503,31 @@ margin-bottom: 2%;
 .news ul{
   list-style: none;
 }
+/* Portolio Carpet */
+/* ////Portfolio */
+.portfolioContainer {
+  height: 90vh;
+}
 
+.sidebarP{
+  width: 160px; /* Set the width of the sidebar */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #ffffff; /* Black */
+  padding-top: 150px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  float: left;
+  margin-right: 40px;
+}
+
+.sidebarP a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+}
+
+.sidebarP a:hover {
+
+}

@@ -1,15 +1,21 @@
-import React, {Component} from "react";
-// import styled from "styled-components";
+import React, { Component } from "react";
+import styled from "styled-components";
+import Layout from "./Layout";
+import Sidebar from "./Sidebar";
+
+const Logo = styled.div`
+  font-size: 2em;
+`;
 
 const cc = require("cryptocompare");
 
 export default class extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
-      coinList:[]
-    }
+      coinList: []
+    };
   }
 
   componentDidMount = () => {
@@ -19,28 +25,16 @@ export default class extends Component {
   fetchCoins = async () => {
     let coinList = (await cc.coinList()).Data;
     console.log(coinList);
-    this.setState = ({ coinList });
+    this.setState = { coinList };
   };
-  render (){
-    return(
-    <div className="portfolioContainer">
-      <div className="barPortfolio">
-        <div>NAME</div>
-        <div />
-        <div>Dashboard</div>
-        <div>Settings</div>
+  render() {
+    return (
+      <div className="portfolioContainer">
+        <Sidebar />
+        <Layout>
+          <Logo>Criptofolio</Logo>
+        </Layout>
       </div>
-      <div className="list">
-        <ul>
-          <li>
-          Coins:
-          <span>
-        {this.state.coinList.LTC}           
-          </span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    )
+    );
   }
 }
