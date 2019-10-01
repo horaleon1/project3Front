@@ -41,7 +41,7 @@ export default class News extends Component {
                   <i>Fuente: </i>
                   {this.state.spanish2.source}
                 </h3>
-                <a href={this.state.spanish2.guid}> Leer Noticia </a>
+                <a href={this.state.spanish2.guid} target="_blank" > Leer Noticia </a>
                 <img src={this.state.spanish2.imageurl} alt="News" />
               </div>
             </li>
@@ -52,7 +52,7 @@ export default class News extends Component {
                   <i>Fuente: </i>
                   {this.state.spanish3.source}
                 </h3>
-                <a href={this.state.spanish3.guid}> Leer Noticia </a>
+                <a href={this.state.spanish3.guid} target="_blank" > Leer Noticia </a>
                 <img src={this.state.spanish3.imageurl} alt="News" />
               </div>
             </li>
@@ -63,7 +63,7 @@ export default class News extends Component {
                   <i>Fuente: </i>
                   {this.state.spanish4.source}
                 </h3>
-                <a href={this.state.spanish4.guid}> Leer Noticia </a>
+                <a href={this.state.spanish4.guid} target="_blank" > Leer Noticia </a>
                 <img src={this.state.spanish4.imageurl} alt="News" />
               </div>
             </li>
@@ -77,6 +77,7 @@ export default class News extends Component {
               lo que pasa en <br />
               el mundo de las criptomonedas.
             </h3>
+            <a href="/newsEnglish">Noticias en Inglés</a>
           </div>
           {this.state.spanish.map(e => (
             <div className="containerNew" key={e.id}>
@@ -91,7 +92,7 @@ export default class News extends Component {
                     {e.source}
                     {/* {this.state.spanish.source} */}
                   </h3>
-                  <a href={e.guid}> Leer Noticia </a>
+                  <a href={e.guid} target="_blank" > Leer Noticia </a>
                   {/* <a href={this.state.spanish.guid}> Leer Noticia </a> */}
                 </li>
               </ul>

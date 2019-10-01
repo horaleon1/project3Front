@@ -35,6 +35,9 @@ const Footer = () => {
             <Link to="/about">¿Qué es Blockchain?</Link>
           </li>
           <li>
+            <Link to="/news">Noticias</Link>
+          </li>
+          <li>
             <Link to="/login">Iniciar Sesión</Link>
           </li>
           <li>

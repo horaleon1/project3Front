@@ -418,7 +418,7 @@ a {
   margin-top: 10px;
   text-align: left;
   font-size: 20px;
-  width: 30%;
+  width: 72%;
 }
 .containerNew ul li img{
   margin-top: 10px;
@@ -446,8 +446,23 @@ a {
   margin-top: 30px;
   text-align:left;
   font-size: 35px;
-  padding-top: 100px;
-  padding-left: 100px;
+  padding-top: 30px;
+  padding-left: 80px;
+}
+.textNews h3{
+  padding-bottom: 70px;
+}
+.textNews a{
+  color: #141747;
+  border: 1px solid #141747;
+  padding: 10px;
+  border-radius: 10px;
+}
+.textNews a:hover{
+  color: #ffffff;
+  border: 1px solid #141747;
+  background-color: #e73546;
+
 }
 .news1, .news2, .news3{
   width: 100%;
@@ -459,23 +474,29 @@ a {
 }
 .news1 h1, .news2 h1, .news3 h1{
   position: absolute;
-  color:white;
+  color:#ffffff;
   width: 20%;
   margin-left: 20px;
-  margin-top: 150px;
+  margin-top: 20px;
   font-size: 20px;
+  font-weight: 600;
+  text-shadow: 1px 2px 1px rgba(0,0,0,.75);
 }
 .news1 h3, .news2 h3, .news3 h3{
   position: absolute;
   color:white;
   margin-left: 20px;
   margin-top: 290px;
+  font-weight: 600;
+  text-shadow: 1px 2px 1px rgba(0,0,0,.75);
 }
 .news1 a, .news2 a, .news3 a{
   position: absolute;
   color:white;
   margin-left: 20px;
   margin-top: 350px;
+  font-weight: 600;
+  text-shadow: 1px 2px 1px rgba(0,0,0,.75);
 }
 .news1 a:hover, .news2 a:hover, .news3 a:hover{
   color: #e73546;
