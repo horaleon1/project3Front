@@ -75,7 +75,7 @@ export default class News extends Component {
             <h3>
               Descrube todo <br />
               lo que pasa en <br />
-              el mundo de las criptomonedas.
+              el mundo de las <br /> criptomonedas.
             </h3>
             <a href="/newsEnglish">Noticias en Inglés</a>
           </div>

@@ -11,7 +11,7 @@ import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utilities/setAuthToken";
 import PrivateRoute from './components/Routing/PrivateRoute';
-import Portfolio from './components/pages/Portfolio';
+import Portfolio from './components/pages/Portfolio/Portfolio';
 import News from './components/pages/News';
 // import WalletState from "./context/wallet/WalletState";
 import User from './components/pages/User';
