@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Video from "../../assets/bitgo.mp4";
-// import PricesB from '../layouts/PricesB';
+import PricesB from '../layouts/PricesB';
 
 
 export default class About extends Component {
@@ -30,7 +30,7 @@ export default class About extends Component {
           <source src={Video} type="video/mp4" />
         </video>
       </div>
-      {/* <PricesB /> */}
+      <PricesB />
       <div className="afterPricesB">
 
       </div>

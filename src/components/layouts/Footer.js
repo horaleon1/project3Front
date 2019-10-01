@@ -4,7 +4,7 @@ import video from "../../assets/video.mp4";
 
 const Footer = () => {
   return (
-    <footer className="footerContainer">
+    <div className="footerContainer">
       <div>
         <ul className="listSocialFooter">
           <li>
@@ -12,11 +12,11 @@ const Footer = () => {
               Facebook
             </a>
           </li>
-          <li>
+          {/* <li>
             <video loop autoPlay style={{ height: "100px", width: "100px" }}>
               <source src={video} type="video/mp4" />
             </video>
-          </li>
+          </li> */}
           <li>
             <a href="www.twitter.com" target="_blank">
               Twitter
@@ -46,7 +46,7 @@ const Footer = () => {
         Copyright &copy; Blockchain Technologies {new Date().getFullYear()} all
         rights reserved
       </div>
-    </footer>
+    </div>
   );
 };
 

@@ -52,8 +52,8 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link to="/explorer">
-          Explorador
+        <Link to="/news">
+          Noticias
         </Link>
       </li>
       <li>
