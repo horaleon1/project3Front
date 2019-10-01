@@ -39,9 +39,23 @@ export default class News extends Component {
                 <h1> {this.state.spanish2.title}.</h1>
                 <h3>
                   <i>Fuente: </i>
+
+
+
+                  {function toUpperCase(lower) {
+                    return lower.charAt(0).toUpperCase() + lower.substr(1);
+                  }}
                   {this.state.spanish2.source}
+
+
+
+
+
                 </h3>
-                <a href={this.state.spanish2.guid} target="_blank" > Leer Noticia </a>
+                <a href={this.state.spanish2.guid} target="_blank">
+                  {" "}
+                  Leer Noticia{" "}
+                </a>
                 <img src={this.state.spanish2.imageurl} alt="News" />
               </div>
             </li>
@@ -52,7 +66,10 @@ export default class News extends Component {
                   <i>Fuente: </i>
                   {this.state.spanish3.source}
                 </h3>
-                <a href={this.state.spanish3.guid} target="_blank" > Leer Noticia </a>
+                <a href={this.state.spanish3.guid} target="_blank">
+                  {" "}
+                  Leer Noticia{" "}
+                </a>
                 <img src={this.state.spanish3.imageurl} alt="News" />
               </div>
             </li>
@@ -63,7 +80,10 @@ export default class News extends Component {
                   <i>Fuente: </i>
                   {this.state.spanish4.source}
                 </h3>
-                <a href={this.state.spanish4.guid} target="_blank" > Leer Noticia </a>
+                <a href={this.state.spanish4.guid} target="_blank">
+                  {" "}
+                  Leer Noticia{" "}
+                </a>
                 <img src={this.state.spanish4.imageurl} alt="News" />
               </div>
             </li>
@@ -92,7 +112,10 @@ export default class News extends Component {
                     {e.source}
                     {/* {this.state.spanish.source} */}
                   </h3>
-                  <a href={e.guid} target="_blank" > Leer Noticia </a>
+                  <a href={e.guid} target="_blank">
+                    {" "}
+                    Leer Noticia{" "}
+                  </a>
                   {/* <a href={this.state.spanish.guid}> Leer Noticia </a> */}
                 </li>
               </ul>

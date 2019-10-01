@@ -510,8 +510,8 @@ margin-bottom: 2%;
 }
 
 .sidebarP{
+  height: 75vh;
   width: 160px; /* Set the width of the sidebar */
-  z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
   background-color: #ffffff; /* Black */
@@ -521,7 +521,7 @@ margin-bottom: 2%;
   margin-right: 40px;
 }
 
-.sidebarP a {
+ .elementsSidebar{
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
