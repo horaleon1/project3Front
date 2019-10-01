@@ -24,6 +24,7 @@ body {
   color: white;
   left: 39%;
   font-size: 170%;
+  letter-spacing: 2px;
 }
 /* home Animation Text  */
 .typingText {
@@ -396,6 +397,7 @@ a {
   width: 100%;
   height: 100%;
   padding: 30px;
+  background-color: #F8F8F9;
 }
 
 .newsSpanish{
@@ -449,7 +451,7 @@ a {
 }
 .news1, .news2, .news3{
   width: 100%;
-  margin-left: 5%;
+  margin-left: 9%;
 }
 .news1 img, .news2 img, .news3 img{
   width: 400px;
