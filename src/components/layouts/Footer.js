@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import bitso from '../../assets/bitso.png';
 // import video from "../../assets/video.mp4";
 
 const facebook = 'https://www.facebook.com';
 
 const twitter = 'https://www.twitter.com';
+
+const bitsoLink = 'https://bitso.com/?ref=avfk'
 
 const Footer = () => {
   return (
@@ -47,7 +50,15 @@ const Footer = () => {
           <li>
             <Link to="/register">Regístrase</Link>
           </li>
+          <li>
+            <a href={bitsoLink} target="_blank" rel="noopener noreferrer">
+            Compra Bitcoin
+            {/* <img src={bitso} style={{width:"30px", height:"30px"}} />               */}
+            </a>
+          </li>
         </ul>
+          
+        
       </div>
       <div>
         Copyright &copy; Blockchain Technologies {new Date().getFullYear()} all
