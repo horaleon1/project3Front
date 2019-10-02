@@ -25,29 +25,69 @@ export default class News extends Component {
 
     return (
       <div className="containerNews">
-        <div id="fb-root"></div>
-        <script
-          async
-          defer
-          crossorigin="anonymous"
-          src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v4.0"
-        ></script>
-        
         <div className="news">
           <ul>
             <li>
-              {this.state.spanish.slice(46, 49).map(e => (
+              {this.state.spanish.slice(48, 49).map(e => (
                 <div className="news1" key={e.id}>
-                  <h1> {e.title}.</h1>
-                  <h3>
-                    <i>Fuente: </i>
-                    {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
-                  </h3>
-                  <a href={e.guid} target="_blank" rel="noopener noreferrer">
-                    Leer Noticia
-                  </a>
-                  <img src={e.imageurl} alt="News" />
+                  <div className="seccion1News1">
+                    <h1> {e.title}.</h1>
+                    <h3>
+                      <i>Fuente: </i>
+                      {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
+                    </h3>
+                    <a href={e.guid} target="_blank" rel="noopener noreferrer">
+                      Leer Noticia
+                    </a>
 
+                    <img src={e.imageurl} alt="News" />
+                  </div>
+                  <div
+                    class="fb-share-button"
+                    data-href={e.guid}
+                    data-layout="button"
+                  ></div>
+                </div>
+              ))}
+            </li>
+            <li>
+              {this.state.spanish.slice(47, 48).map(e => (
+                <div className="news1" key={e.id}>
+                  <div className="seccion1News1">
+                    <h1> {e.title}.</h1>
+                    <h3>
+                      <i>Fuente: </i>
+                      {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
+                    </h3>
+                    <a href={e.guid} target="_blank" rel="noopener noreferrer">
+                      Leer Noticia
+                    </a>
+
+                    <img src={e.imageurl} alt="News" />
+                  </div>
+                  <div
+                    class="fb-share-button"
+                    data-href={e.guid}
+                    data-layout="button"
+                  ></div>
+                </div>
+              ))}
+            </li>
+            <li>
+              {this.state.spanish.slice(46, 47).map(e => (
+                <div className="news1" key={e.id}>
+                  <div className="seccion1News1">
+                    <h1> {e.title}.</h1>
+                    <h3>
+                      <i>Fuente: </i>
+                      {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
+                    </h3>
+                    <a href={e.guid} target="_blank" rel="noopener noreferrer">
+                      Leer Noticia
+                    </a>
+
+                    <img src={e.imageurl} alt="News" />
+                  </div>
                   <div
                     class="fb-share-button"
                     data-href={e.guid}
@@ -81,6 +121,11 @@ export default class News extends Component {
                   <a href={e.guid} target="_blank" rel="noopener noreferrer">
                     Leer Noticia{" "}
                   </a>
+                  <div
+                    class="fb-share-button"
+                    data-href={e.guid}
+                    data-layout="button"
+                  ></div>
                 </li>
               </ul>
             </div>
