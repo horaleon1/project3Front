@@ -36,6 +36,8 @@ export default class News extends Component {
   };
 
   render() {
+    const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${this.state.spanish3.guid}`;
+
     return (
       <div className="containerNews">
         <div className="news">
@@ -47,12 +49,33 @@ export default class News extends Component {
                   <i>Fuente: </i>
                   {this.state.spanish2.source}
                 </h3>
-                <a href={this.state.spanish2.guid} target="_blank" rel="noopener noreferrer">
-                  {" "}
+                <a
+                  href={this.state.spanish2.guid}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Leer Noticia{" "}
                 </a>
                 <img src={this.state.spanish2.imageurl} alt="News" />
               </div>
+
+
+              {/* <div
+                class="fb-share-button"
+                data-href="https://developers.facebook.com/docs/plugins/"
+                data-layout="button"
+                data-size="small"
+              >
+                <a
+                  target="_blank"
+                  href={facebookShare}
+                  class="fb-xfbml-parse-ignore"
+                >
+                  Compartir
+                </a>
+              </div> */}
+
+
             </li>
             <li>
               <div className="news2">
@@ -61,7 +84,11 @@ export default class News extends Component {
                   <i>Fuente: </i>
                   {this.state.spanish3.source}
                 </h3>
-                <a href={this.state.spanish3.guid} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={this.state.spanish3.guid}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {" "}
                   Leer Noticia{" "}
                 </a>
@@ -75,7 +102,11 @@ export default class News extends Component {
                   <i>Fuente: </i>
                   {this.state.spanish4.source}
                 </h3>
-                <a href={this.state.spanish4.guid} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={this.state.spanish4.guid}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {" "}
                   Leer Noticia{" "}
                 </a>
@@ -98,20 +129,15 @@ export default class News extends Component {
             <div className="containerNew" key={e.id}>
               <ul>
                 <li>
-                  {/* <img src={this.state.spanish.imageurl} alt="News" /> */}
                   <img src={e.imageurl} alt="" />
                   <h1>{e.title}</h1>
-                  {/* <h1> {this.state.spanish.title}.</h1> */}
                   <h3>
                     <i>Fuente: </i>
                     {e.source}
-                    {/* {this.state.spanish.source} */}
                   </h3>
                   <a href={e.guid} target="_blank" rel="noopener noreferrer">
-                    {" "}
                     Leer Noticia{" "}
                   </a>
-                  {/* <a href={this.state.spanish.guid}> Leer Noticia </a> */}
                 </li>
               </ul>
             </div>
