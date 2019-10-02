@@ -7,8 +7,7 @@ const Elements = styled.div`
   ${props =>
     props.active &&
     css`
-      color: #ffffff;
-      background-color: #141747;
+      color: #e73546;
       cursor:pointer;
     `}
 `;

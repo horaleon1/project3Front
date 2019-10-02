@@ -9,9 +9,25 @@ export default class Provider extends Component {
     super(props);
     this.state = {
       page: "Inicio",
-      // ...this.savedSettings(),
+      ...this.savedSettings(),
       setPage: this.setPage
     };
+  }
+  confirmFavorites = () => {
+    this.setState({
+      fisrtVisit:false,page:"Inicio"
+    });
+      localStorage.setItem('Mundo Blockchain',JSON.stringify({
+        test:"hello"
+      }));
+  }
+
+  savedSettings(){
+    let siteData = JSON.parse(localStorage.getItem('Mundo Blockchain'));
+    if(!siteData){
+      return {page:"Inicio", firstVisit:true}       
+    }
+    return {};
   }
   setPage = page => this.setState({ page });
 

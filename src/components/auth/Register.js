@@ -46,7 +46,7 @@ const Register = props  => {
 
   useEffect(() => {
     if(isAuthenticated){
-      props.history.push('/user');
+      props.history.push('/login');
     }
 
 
