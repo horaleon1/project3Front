@@ -456,53 +456,18 @@ a {
   border: 1px solid #141747;
   background-color: #e73546;
 }
-.news1, .news2, .news3{
-  width: 100%;
+
+/* ///NEws tops */
+
+.news{
+  width: 90%;
 }
-.news1 img, .news2 img, .news3 img{
-  width: 450px;
-  height: 450px;
-}
-.news1 h1, .news2 h1, .news3 h1{
-  position: absolute;
-  color:#ffffff;
-  width: 22%;
-  margin-left: 20px;
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: 600;
-  text-shadow: 1px 2px 1px rgba(0,0,0,.75);
-  text-align: left;
-}
-.news1 h3, .news2 h3, .news3 h3{
-  position: absolute;
-  color:white;
-  margin-left: 20px;
-  margin-top: 290px;
-  font-weight: 600;
-  text-shadow: 1px 2px 1px rgba(0,0,0,.75);
-}
-.news1 a, .news2 a, .news3 a{
-  position: absolute;
-  color:white;
-  margin-left: 20px;
-  margin-top: 350px;
-  font-weight: 600;
-  text-shadow: 1px 2px 1px rgba(0,0,0,.75);
-}
-.news1 a:hover, .news2 a:hover, .news3 a:hover{
-  color: #e73546;
-}
-.news:not(h1){
-text-align: center;
-margin-bottom: 2%;
-}
-.news ul li {
+.news1 {
   display: inline-block;
 }
-.news ul{
-  list-style: none;
-}
+.news
+
+
 /* Portolio Carpet */
 /* ////Portfolio */
 .portfolioContainer {
