@@ -8,7 +8,8 @@ export default class Provider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: "Balance",
+      page: "Inicio",
+      // ...this.savedSettings(),
       setPage: this.setPage
     };
   }

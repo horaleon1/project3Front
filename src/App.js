@@ -16,6 +16,7 @@ import News from './components/pages/News';
 // import WalletState from "./context/wallet/WalletState";
 import User from './components/pages/User';
 import Price from './components/layouts/Prices';
+import English from './components/pages/NewsEnglish';
 import "./App.css";
 
 
@@ -31,7 +32,7 @@ const App = () => {
           <Router>
             <Fragment>
               <Navbar />
-              <Price />
+              {/* <Price /> */}
               <div className="containerApp">
                 <Switch>
                   <Route exact path="/" component={Home}/>
@@ -41,6 +42,7 @@ const App = () => {
                   <Route exact path="/explorer" component={Explorer} />
                   <Route exact path="/portfolio" component={Portfolio} />
                   <Route exact path="/news" component={News} />
+                  <Route exact path="/newsEnglish" component={English} />
                   <PrivateRoute exact path="/user" component={User} />
                 </Switch>
               </div>

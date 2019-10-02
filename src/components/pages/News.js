@@ -19,8 +19,14 @@ export default class News extends Component {
       .then(res => {
         const spanish = res.data.Data;
         const spanish2 = res.data.Data[49];
+        spanish2.source =
+          spanish2.source.charAt(0).toUpperCase() + spanish2.source.substr(1);
         const spanish3 = res.data.Data[48];
+        spanish3.source =
+          spanish3.source.charAt(0).toUpperCase() + spanish3.source.substr(1);
         const spanish4 = res.data.Data[47];
+        spanish4.source =
+          spanish4.source.charAt(0).toUpperCase() + spanish4.source.substr(1);
         this.setState({ spanish });
         this.setState({ spanish2 });
         this.setState({ spanish3 });
@@ -39,20 +45,9 @@ export default class News extends Component {
                 <h1> {this.state.spanish2.title}.</h1>
                 <h3>
                   <i>Fuente: </i>
-
-
-
-                  {function toUpperCase(lower) {
-                    return lower.charAt(0).toUpperCase() + lower.substr(1);
-                  }}
                   {this.state.spanish2.source}
-
-
-
-
-
                 </h3>
-                <a href={this.state.spanish2.guid} target="_blank">
+                <a href={this.state.spanish2.guid} target="_blank" rel="noopener noreferrer">
                   {" "}
                   Leer Noticia{" "}
                 </a>
@@ -66,7 +61,7 @@ export default class News extends Component {
                   <i>Fuente: </i>
                   {this.state.spanish3.source}
                 </h3>
-                <a href={this.state.spanish3.guid} target="_blank">
+                <a href={this.state.spanish3.guid} target="_blank" rel="noopener noreferrer">
                   {" "}
                   Leer Noticia{" "}
                 </a>
@@ -80,7 +75,7 @@ export default class News extends Component {
                   <i>Fuente: </i>
                   {this.state.spanish4.source}
                 </h3>
-                <a href={this.state.spanish4.guid} target="_blank">
+                <a href={this.state.spanish4.guid} target="_blank" rel="noopener noreferrer">
                   {" "}
                   Leer Noticia{" "}
                 </a>
@@ -112,7 +107,7 @@ export default class News extends Component {
                     {e.source}
                     {/* {this.state.spanish.source} */}
                   </h3>
-                  <a href={e.guid} target="_blank">
+                  <a href={e.guid} target="_blank" rel="noopener noreferrer">
                     {" "}
                     Leer Noticia{" "}
                   </a>
