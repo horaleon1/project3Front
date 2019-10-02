@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+// const random = Math.floor(Math.random() * (49 - +47) + +47);
+
 export default class NewsEnglish extends Component {
   constructor(props) {
     super(props);
@@ -49,10 +51,11 @@ export default class NewsEnglish extends Component {
                 </h3>
                 <a href={this.state.english2.guid} target="_blank" rel="noopener noreferrer">
                   {" "}
-                  Leer Noticia{" "}
+                  Read More{" "}
                 </a>
                 <img src={this.state.english2.imageurl} alt="News" />
               </div>
+
             </li>
             <li>
               <div className="news2">
@@ -63,7 +66,7 @@ export default class NewsEnglish extends Component {
                 </h3>
                 <a href={this.state.english3.guid} target="_blank" rel="noopener noreferrer">
                   {" "}
-                  Leer Noticia{" "}
+                  Read More{" "}
                 </a>
                 <img src={this.state.english3.imageurl} alt="News" />
               </div>
@@ -76,8 +79,7 @@ export default class NewsEnglish extends Component {
                   {this.state.english4.source}
                 </h3>
                 <a href={this.state.english4.guid} target="_blank" rel="noopener noreferrer">
-                  {" "}
-                  Leer Noticia{" "}
+                  Read More{" "}
                 </a>
                 <img src={this.state.english4.imageurl} alt="News" />
               </div>
@@ -88,13 +90,15 @@ export default class NewsEnglish extends Component {
         <div className="newsSpanish">
           <div className="textNews">
             <h3>
-              Descrube todo <br />
-              lo que pasa en <br />
-              el mundo de las <br /> criptomonedas.
+            Discover the latest <br />
+            news from the world<br />
+            of cryptocurrencies.
             </h3>
-            <a href="/news">News on english</a>
+              
+            <a href="/news">News on Spanish</a>
           </div>
-          {this.state.english.map(e => (
+
+          {this.state.english.map(e => ( 
             <div className="containerNew" key={e.id}>
               <ul>
                 <li>
@@ -105,8 +109,7 @@ export default class NewsEnglish extends Component {
                     {e.source}
                   </h3>
                   <a href={e.guid} target="_blank" rel="noopener noreferrer">
-                    {" "}
-                    Leer Noticia{" "}
+                    Read More
                   </a>
                 </li>
               </ul>

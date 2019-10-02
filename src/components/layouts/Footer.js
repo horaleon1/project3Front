@@ -2,13 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import video from "../../assets/video.mp4";
 
+const facebook = 'https://www.facebook.com';
+
+const twitter = 'https://www.twitter.com';
+
 const Footer = () => {
   return (
     <div className="footerContainer">
       <div>
         <ul className="listSocialFooter">
           <li>
-            <a href="www.facebook.com" target="_blank">
+            <a href={facebook} target="_blank" rel="noopener noreferrer">
               Facebook
             </a>
           </li>
@@ -18,7 +22,7 @@ const Footer = () => {
             </video>
           </li> */}
           <li>
-            <a href="www.twitter.com" target="_blank">
+            <a href={twitter} target="_blank" rel="noopener noreferrer">
               Twitter
             </a>
           </li>
