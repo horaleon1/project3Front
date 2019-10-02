@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-
 export default class News extends Component {
   constructor(props) {
     super(props);
@@ -22,10 +21,18 @@ export default class News extends Component {
   };
 
   render() {
-    const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${this.state.spanish.guid}`;
+    // const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${this.state.spanish.guid}`;
 
     return (
       <div className="containerNews">
+        <div id="fb-root"></div>
+        <script
+          async
+          defer
+          crossorigin="anonymous"
+          src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v4.0"
+        ></script>
+        
         <div className="news">
           <ul>
             <li>
@@ -37,26 +44,17 @@ export default class News extends Component {
                     {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
                   </h3>
                   <a href={e.guid} target="_blank" rel="noopener noreferrer">
-                    Leer Noticia{" "}
+                    Leer Noticia
                   </a>
                   <img src={e.imageurl} alt="News" />
+
+                  <div
+                    class="fb-share-button"
+                    data-href={e.guid}
+                    data-layout="button"
+                  ></div>
                 </div>
               ))}
-
-              {/* <div
-                class="fb-share-button"
-                data-href="https://developers.facebook.com/docs/plugins/"
-                data-layout="button"
-                data-size="small"
-              >
-                <a
-                  target="_blank"
-                  href={facebookShare}
-                  class="fb-xfbml-parse-ignore"
-                >
-                  Compartir
-                </a>
-              </div> */}
             </li>
           </ul>
         </div>
