@@ -10,14 +10,14 @@ export default function Sidebar2() {
         <ul>
           <li>
             <h3>
-              Balance USD:
-              <br />$
+              Balance BTC:
+              <br />₿
             </h3>
           </li>
           <li>
             <h3>
-              Balance BTC:
-              <br />₿
+              Balance USD:
+              <br />$
             </h3>
           </li>
           <li>

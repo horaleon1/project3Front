@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Search from "./Search";
+import CoinsPortfolio from "./CoinsPortfolio";
 
 export default class CoinsLoading extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      coinList: []
+      coinList: [],
+      saveCoin:[]
     };
   }
 
@@ -20,16 +23,22 @@ export default class CoinsLoading extends Component {
       });
   };
 
+  
+
   render() {
+
+   
+
     return (
       <div className="coinsLoading">
+        <Search />        
         <div className="loadingCoinsText">
           <ul>
             {Object.keys(this.state.coinList)
               .slice(0, 100)
               .map(e => (
                 <li key={e.id}>
-                  <h1>{e}</h1>
+                  <h1>{ e }</h1>
                   <img
                     src={`http://cryptocompare.com/${this.state.coinList[e].ImageUrl}`}
                     className="coinsLoadingImg"

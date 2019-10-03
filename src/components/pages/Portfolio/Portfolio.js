@@ -59,7 +59,9 @@ export default class extends Component {
             <CoinsPortfolio />
             {/* <Favorite /> */}
             {/* <Coins /> */}
-            <LogoCoins>Mas de 5,000 criptomonedas que puedes agregar</LogoCoins>
+            <LogoCoins>
+              Mas de 5,000 criptomonedas que puedes encontrar.
+            </LogoCoins>
             <CoinsLoading />
           </Layout>
         </Provider>

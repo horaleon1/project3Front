@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Context from './Context';
- 
+// import Context from './Context';
 
+export const Context = React.createContext();
 
 export default class Provider extends Component {
 
@@ -10,7 +10,8 @@ export default class Provider extends Component {
     this.state = {
       page: "Inicio",
       ...this.savedSettings(),
-      setPage: this.setPage
+      setPage: this.setPage,
+      filterCoins : this.filterCoins
     };
   }
   confirmFavorites = () => {
@@ -30,6 +31,8 @@ export default class Provider extends Component {
     return {};
   }
   setPage = page => this.setState({ page });
+
+  filterCoins = (filteredCoins) => this.setState({filteredCoins});
 
   render() {
     return (

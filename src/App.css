@@ -551,17 +551,17 @@ width: 450px;
   font-size: 25px;
   display: block;
 }
-.coinsLoading{
+.coinsLoading, .coinsLoading2Portfolio{
   margin-top: 50px;
   margin-left: 240px;
 }
-.coinsLoading ul {
+.coinsLoading ul,.coinsLoading2Portfolio ul {
  display: grid;
  grid-template-columns: repeat(4, 1fr);
  grid-gap: 15px;
  list-style: none;
 }
-.coinsLoading ul li{
+.coinsLoading ul li, .coinsLoading2Portfolio ul li{
   padding:10px;
   width: 90%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); 
@@ -571,16 +571,36 @@ width: 450px;
  border: 2px solid #141747;
  background-color: #F0F0F0;
 }
-.coinsLoading ul li{
+.coinsLoading2Portfolio ul li:hover{
+  border: 2px solid #141747;
+}
+
+
+.coinsLoading ul li, .coinsLoading2Portfolio ul li{
   display: grid;
   grid-template-columns: repeat(2,1fr);
   border-radius: 10px;
 }
-.coinsLoading ul li h1,.coinsLoading ul li h3{
+.coinsLoading ul li h1,.coinsLoading ul li h3,.coinsLoading2Portfolio ul li h3, .coinsLoading2Portfolio ul li h1{
   padding-left: 10%;
 }
 .coinsLoadingImg{
   height: 80px;
   width: 80px;
-  margin-left: 10px;
+  margin-left: 25px;
+}
+.eliminateCoin{
+  margin-left: 25px;
+  margin-right: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 2px;
+  border: 1px solid #e73546;
+  text-align: center;
+  border-radius: 5px;
+  color: #141747;
+}
+.searchContainer{
+  font-size:30px;
+  margin: 40px 0px;
 }
