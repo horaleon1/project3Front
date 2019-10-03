@@ -6,7 +6,6 @@ export default class User extends Component {
       <div className="containerUser">
       
       <div className="sidenav">
-{/* /////////////////////////////////////////////////////////////Fixed */}
         <a href="/about">About</a>
         <a href="/about">Services</a>
         <a href="/about">Clients</a>

@@ -20,7 +20,7 @@ body {
   position: absolute;
   z-index: 9999;
   margin: 0 auto;
-  top: 35%;
+  top: 42%;
   color: white;
   left: 39%;
   font-size: 170%;
@@ -30,7 +30,7 @@ body {
 .typingText {
   position: absolute;
   z-index: 9999;
-  top: 43%;
+  top: 50%;
   width: 16em;
   margin: 0 auto;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
@@ -67,10 +67,13 @@ body {
 }
 /* Navbar  */
 .container {
-  height: 70px;
+  height: 65px;
   border-bottom: 0.1px solid white;
   background-color: #e73546;
   font-size: 1.1em;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
 }
 .leftSide li,
 .rightSide li {
@@ -147,13 +150,13 @@ a {
 }
 .containerResgiterForm {
   position: relative;
-  left: 34%;
+  left: 35%;
   font-size: 1.5em;
   color: #ffffff;
   width: 55%;
 }
 .containerResgiterForm h1 {
-  padding-top: 80px;
+  padding-top: 160px;
 }
 .formContainer:nth-child(1),
 .containerRegister .submit {
@@ -210,7 +213,6 @@ a {
 .sidebarUser ul {
   list-style: none;
 }
-
 .userMenu {
   width: 15%;
   height: 650px;
@@ -224,32 +226,30 @@ a {
   padding-top: 25px;
 }
 
-/* The sidebar menu */
-.sidenav {
-  height: 90vh; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+/* Sidebar2*/
+.sidenav2 {
+  height: 100vh; /* Full-height: remove this if you want "auto" height */
+  width: 220px; /* Set the width of the sidebar */
   left: 0;
-  background-color: #ffffff; /* Black */
-  padding-top: 150px;
+  top: 10px;
+  padding-top: 100px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   float: left;
+  position:fixed;
 }
 
-.sidenav a {
-  padding: 6px 8px 6px 16px;
+.sidenav2 a {
   text-decoration: none;
-  font-size: 25px;
+  font-size: 35px;
   color: #141747;
   display: block;
+  text-align: center;
 }
 
-.sidenav a:hover {
+.sidenav2 a:hover {
   color: #e73546;
 }
 .sidenav ul {
-  margin-top: 50px;
   margin-left: 20px;
   list-style: none;
 }
@@ -260,6 +260,20 @@ a {
   margin-right: 20px;
   color: #2f3134;
 }
+.sidenav2Balance{
+  text-align: center;
+  padding-top: 60px;
+  color: #141747;
+  border-bottom: 1px solid #141747;
+  margin-left: 10%;
+  width: 80%;
+}
+.sidenav2Balance ul{
+  list-style: none;
+}
+.sidenav2Balance ul li{
+  padding-bottom: 20px;
+}
 
 /* Price Component  */
 .barUser {
@@ -267,6 +281,9 @@ a {
   background-color: #141747;
   color: white;
   width: 100%;
+  margin-top: 65px;
+  position: fixed;
+  z-index: 9999;
 }
 .dataBarUser {
   padding-top: 7px;
@@ -321,6 +338,7 @@ a {
 .aboutContainer {
   width: 100%;
   height: 100%;
+  padding-top: 95px;
 }
 .aboutContainer p:nth-child(1) {
   left: 5%;
@@ -390,6 +408,8 @@ a {
 .containerNews{
   width: 100%;
   height: 100%;
+  margin-left: 10px;
+  padding-top: 90px;
 }
 
 .newsSpanish{
@@ -457,7 +477,7 @@ a {
   background-color: #e73546;
 }
 
-/* ///NEws tops */
+/* ///News tops */
 
 .news ul li {
   display: inline-block;
@@ -522,7 +542,7 @@ width: 450px;
   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); */
   float: left;
   position:fixed;
-  margin-top: 235px;
+  margin-top: 110px;
 }
 
  .elementsSidebar{
@@ -533,7 +553,7 @@ width: 450px;
 }
 .coinsLoading{
   margin-top: 50px;
-  margin-left: 200px;
+  margin-left: 240px;
 }
 .coinsLoading ul {
  display: grid;
