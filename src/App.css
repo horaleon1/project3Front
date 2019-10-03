@@ -614,7 +614,7 @@ a {
   text-align: center;
 }
 .infoSelectedData {
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: center;
 }
 .infoSelectedData h4 {
@@ -629,4 +629,14 @@ a {
 }
 .firstDataCoin ul li{
   margin-top: 10px;
+}
+.loadingCoins ul li h3{
+  padding-top: 10px;
+  padding-left: 30px;
+}
+.favoriteHeart{
+  color:lightgray;
+}
+.favoriteHeart:hover{
+  color:#f91a1a;
 }

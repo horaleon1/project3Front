@@ -6,10 +6,10 @@ import Sidebar2 from "./Sidebar2";
 import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
 import fuzzy from "fuzzy";
-import ReactHighcharts from "react-highcharts";
+import Reacthighcharts from "react-highcharts";
 import Highcharts from "./Highcharts";
 import HighchartsTheme from "./HighchartsTheme";
-ReactHighcharts.Highcharts.setOptions(HighchartsTheme);
+Reacthighcharts.Highcharts.setOptions(HighchartsTheme);
 
 const Grid = styled.div`
   display: grid;
@@ -39,8 +39,8 @@ const LogoCoins = styled.div`
 `;
 
 const numberFormat = n => {
-  return + (n + '').slice(0,7)
-}
+  return +(n + "").slice(0, 7);
+};
 
 export default class CoinsLoading extends Component {
   constructor(props) {
@@ -89,8 +89,6 @@ export default class CoinsLoading extends Component {
     //console.log(fuzzySearch);
   };
 
-  
-
   render() {
     return (
       <div className="coinsLoading">
@@ -116,17 +114,28 @@ export default class CoinsLoading extends Component {
               </div>
               {/* ////////////////// */}
             </div>
+            <div></div>
           </div>
 
           {/* //////////////////// */}
+
           <div className="firstDataCoin">
             Mercado de Capitalización: <br /> ${this.state.prices.MKTCAP} USD
             <ul>
               <li>
-                <h2>24 Horas</h2><br/>
-                <h4>Recomendación:<br/> Vender</h4>
+                <h2>24 Horas</h2>
+                <br />
+                <h4>
+                  Recomendación:
+                  <br /> Vender
+                </h4>
               </li>
               <li>
+                {this.state.prices.HIGH24HOUR > this.state.prices.PRICE ? (
+                  <i class="fas fa-arrow-up" style={{ color: "green" }}></i>
+                ) : (
+                  <i class="fas fa-arrow-down" style={{ color: "red" }}></i>
+                )}
                 Precio Máximo: <br />${this.state.prices.HIGH24HOUR} USD
               </li>
               <li>
@@ -135,15 +144,18 @@ export default class CoinsLoading extends Component {
               <li>
                 Precio Minimo: <br /> ${this.state.prices.LOW24HOUR} USD
               </li>
-              Volumen total: <br/>
+              Volumen total: <br />
               {this.state.prices.VOLUME24HOUR}
               {this.state.prices.FROMSYMBOL}
             </ul>
             <ul>
               <li>
-                <h2>1 Hora</h2><br/>
-                <h4>Recomendación: <br/>
-                  Vender</h4>
+                <h2>1 Hora</h2>
+                <br />
+                <h4>
+                  Recomendación: <br />
+                  Vender
+                </h4>
               </li>
               <li>
                 Precio Máximo: <br /> ${this.state.prices.HIGHHOUR} USD
@@ -154,9 +166,9 @@ export default class CoinsLoading extends Component {
               <li>
                 Precio Minimo: <br /> ${this.state.prices.LOWHOUR} USD
               </li>
-              Volumen total: <br/>
+              Volumen total: <br />
               {this.state.prices.VOLUMEHOUR}
-              {this.state.prices.FROMSYMBOL} 
+              {this.state.prices.FROMSYMBOL}
             </ul>
           </div>
           {/* ////////////////// */}
@@ -168,17 +180,20 @@ export default class CoinsLoading extends Component {
             <Input onKeyUp={this.filterCoins} />
           </Grid>
         </div>
-        <div className="loadingCoinsText">
+        <div className="loadingCoins">
           <ul>
             {Object.keys(this.state.coinList)
               .slice(0, 100)
               .map(e => (
                 <li key={e.id}>
-                  <h1>{e}</h1>
+                  <i class="fas fa-heart favoriteHeart"></i>
                   <img
                     src={`http://cryptocompare.com/${this.state.coinList[e].ImageUrl}`}
                     className="coinsLoadingImg"
                   />
+
+                  <h1>{e}</h1>
+
                   <h3>{this.state.coinList[e].CoinName}</h3>
                 </li>
               ))}

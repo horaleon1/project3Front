@@ -1,7 +1,7 @@
-export default function (historical) {
+export default function () {
   return {
       title: {
-          text: ''
+          text: 'ETH'
       },
   
       yAxis: {
