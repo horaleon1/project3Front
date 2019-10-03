@@ -6,6 +6,10 @@ import Sidebar2 from "./Sidebar2";
 import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
 import fuzzy from "fuzzy";
+import ReactHighcharts from "react-highcharts";
+import Highcharts from "./Highcharts";
+import HighchartsTheme from "./HighchartsTheme";
+ReactHighcharts.Highcharts.setOptions(HighchartsTheme);
 
 const Grid = styled.div`
   display: grid;
@@ -30,7 +34,7 @@ const LogoCoins = styled.div`
   font-size: 2.5em;
   margin-bottom: 20px;
   margin-top: 10px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #141747;
 `;
 
@@ -41,7 +45,8 @@ export default class CoinsLoading extends Component {
     this.state = {
       coinList: [],
       saveCoin: [],
-      filterCoins: this.filterCoins
+      filterCoins: this.filterCoins,
+      prices: []
     };
   }
 
@@ -53,11 +58,18 @@ export default class CoinsLoading extends Component {
         // console.log(coinList);
         this.setState({ coinList });
       });
+    axios
+      .get(
+        "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=USD"
+      )
+      .then(res => {
+        const prices = res.data.RAW.ETH.USD;
+        console.log(prices);
+        this.setState({ prices });
+      });
   };
 
-  //  function filterCoins = (filteredCoins) => this.setState({filteredCoins});
-
-  filterCoins = (e, List) => {
+  filterCoins = e => {
     let coins = this.state.coinList;
     let inputValue = e.target.value;
     // console.log(inputValue);
@@ -76,29 +88,74 @@ export default class CoinsLoading extends Component {
   render() {
     return (
       <div className="coinsLoading">
+        <div className="dataCrypto"></div>
         <LayoutSidebar>
           <div className="sidenav2">
             <div className="sidenav2">
               <a href="#">Inicio</a>
             </div>
-            <div>
-              <h3
-                style={{
-                  textAlign: "center",
-                  marginTop: "70px",
-                  borderTop: "1px solid grey",
-                  width: "150px",
-                  marginLeft: "15%"
-                }}
-              >
-                Favoritos
-              </h3>
+            <div className="infoSelectedCrypto">
+              <h3>Criptomoneda Selecionada</h3>
+              {/* ///////////////// */}
+              <div className="infoSelectedData">
+                <h4>Ticker: {this.state.prices.FROMSYMBOL}</h4>
+                <img
+                  src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
+                  className="coinsLoadingImg"
+                />
+                <h4>Precio: {this.state.prices.PRICE} USD</h4>
+                <h4>
+                  Circulacióntotal: <br /> {this.state.prices.SUPPLY}
+                </h4>
+              </div>
+              {/* ////////////////// */}
             </div>
           </div>
+
+          {/* //////////////////// */}
+          <div className="firstDataCoin">
+            Mercado de Capitalización: <br /> ${this.state.prices.MKTCAP} USD
+            <ul>
+              <li>
+                <h2>24 Horas</h2><br/>
+                <h4>Recomendación:<br/> Vender</h4>
+              </li>
+              <li>
+                Precio Máximo: <br />${this.state.prices.HIGH24HOUR} USD
+              </li>
+              <li>
+                Último Precio: <br /> ${this.state.prices.PRICE} USD
+              </li>
+              <li>
+                Precio Minimo: <br /> ${this.state.prices.LOW24HOUR} USD
+              </li>
+              Volumen total: <br/>
+              {this.state.prices.VOLUME24HOUR}
+              {this.state.prices.FROMSYMBOL}
+            </ul>
+            <ul>
+              <li>
+                <h2>1 Hora</h2><br/>
+                <h4>Recomendación: <br/>
+                  Vender</h4>
+              </li>
+              <li>
+                Precio Máximo: <br /> ${this.state.prices.HIGHHOUR} USD
+              </li>
+              <li>
+                Último Precio: <br /> ${this.state.prices.PRICE} USD
+              </li>
+              <li>
+                Precio Minimo: <br /> ${this.state.prices.LOWHOUR} USD
+              </li>
+              Volumen total: <br/>
+              {this.state.prices.VOLUMEHOUR}
+              {this.state.prices.FROMSYMBOL} 
+            </ul>
+          </div>
+          {/* ////////////////// */}
         </LayoutSidebar>
-        <LogoCoins>
-              Mas de 5,000 criptomonedas que puedes encontrar.
-            </LogoCoins>
+        <LogoCoins>Encuentra mas de 5,000 criptomonedas.</LogoCoins>
         <div className="searchContainer">
           <Grid>
             <h3>Buscar</h3>

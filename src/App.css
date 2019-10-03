@@ -1,10 +1,9 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: "Be Vietnam", sans-serif;
 }
 body {
-  
   /* height: calc(100vh - 60px); */
 }
 
@@ -235,7 +234,7 @@ a {
   padding-top: 100px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   float: left;
-  position:fixed;
+  position: fixed;
 }
 
 .sidenav2 a {
@@ -260,7 +259,7 @@ a {
   margin-right: 20px;
   color: #2f3134;
 }
-.sidenav2Balance{
+.sidenav2Balance {
   text-align: center;
   padding-top: 60px;
   color: #141747;
@@ -268,10 +267,10 @@ a {
   margin-left: 10%;
   width: 80%;
 }
-.sidenav2Balance ul{
+.sidenav2Balance ul {
   list-style: none;
 }
-.sidenav2Balance ul li{
+.sidenav2Balance ul li {
   padding-bottom: 20px;
 }
 
@@ -308,7 +307,7 @@ a {
     transform: translate(-190vh, 0);
   }
 }
-.live{
+.live {
   height: 10px;
   width: 10px;
   border-radius: 50%;
@@ -332,7 +331,6 @@ a {
     opacity: 0.2;
   }
 }
-
 
 /* About */
 .aboutContainer {
@@ -405,73 +403,73 @@ a {
 
 /* //News */
 
-.containerNews{
+.containerNews {
   width: 100%;
   height: 100%;
   margin-left: 10px;
   padding-top: 90px;
 }
 
-.newsSpanish{
+.newsSpanish {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap:30px;
+  grid-gap: 30px;
   width: 90%;
   margin-left: auto;
 }
-.containerNew{
+.containerNew {
   margin-bottom: 20px;
   margin-left: 5%;
 }
 
-.containerNew ul{
+.containerNew ul {
   list-style: none;
 }
-.containerNew ul li h1{
+.containerNew ul li h1 {
   margin-top: 10px;
   text-align: left;
   font-size: 20px;
   width: 60%;
 }
-.containerNew ul li img{
+.containerNew ul li img {
   margin-top: 10px;
   width: 410px;
   height: 290px;
   text-align: right;
 }
-.containerNew ul li h3{
+.containerNew ul li h3 {
   margin: 10px 0px 25px 0px;
 }
-.containerNew ul li a{
+.containerNew ul li a {
   margin-top: 30px;
   padding: 10px;
   border-radius: 10px;
   color: white;
   background-color: #141747;
 }
-.containerNew ul li a:hover{
+.containerNew ul li a:hover {
   color: #141747;
   background-color: #ffffff;
   border: 2px solid #141747;
   font-weight: 700;
 }
-.textNews{
+.textNews {
   margin-top: 30px;
-  text-align:left;
+  text-align: left;
   font-size: 35px;
   padding-top: 30px;
   padding-left: 18%;
 }
-.textNews h3{
+.textNews h3 {
   padding-bottom: 70px;
 }
-.textNews a{
+.textNews a {
   color: #141747;
   border: 1px solid #141747;
   padding: 10px;
   border-radius: 10px;
 }
-.textNews a:hover{
+.textNews a:hover {
   color: #ffffff;
   border: 1px solid #141747;
   background-color: #141747;
@@ -482,49 +480,48 @@ a {
 .news ul li {
   display: inline-block;
 }
-.news1{
+.news1 {
   margin-left: 10%;
   margin-top: 10%;
 }
-.news1 img{
-height: 450px;
-width: 450px;
+.news1 img {
+  height: 450px;
+  width: 450px;
 }
-.news1 h1{
+.news1 h1 {
   position: absolute;
-  color:#ffffff;
+  color: #ffffff;
   width: 20%;
   margin-left: 20px;
   margin-top: 20px;
   font-size: 20px;
   font-weight: 600;
-  text-shadow: 1px 2px 1px rgba(0,0,0,.75);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
 }
-.news1 h3{
+.news1 h3 {
   position: absolute;
-  color:white;
+  color: white;
   margin-left: 20px;
   margin-top: 360px;
   font-weight: 600;
-  text-shadow: 1px 2px 1px rgba(0,0,0,.75);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
 }
-.news1 a{
+.news1 a {
   position: absolute;
-  color:white;
+  color: white;
   margin-left: 20px;
   margin-top: 410px;
   font-weight: 600;
-  text-shadow: 1px 2px 1px rgba(0,0,0,.75);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
 }
-.news1 a:hover{
+.news1 a:hover {
   color: #e73546;
 }
-.fb-share-button{
+.fb-share-button {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 37%;
 }
-
 
 /* Portolio Carpet */
 /* ////Portfolio */
@@ -532,7 +529,7 @@ width: 450px;
   height: 100%;
 }
 
-.sidebarP{
+.sidebarP {
   height: 100vh;
   width: 220px; /* Set the width of the sidebar */
   top: 0; /* Stay at the top */
@@ -541,55 +538,60 @@ width: 450px;
   padding-top: 10px;
   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); */
   float: left;
-  position:fixed;
+  position: fixed;
   margin-top: 110px;
 }
 
- .elementsSidebar{
+.elementsSidebar {
   padding: 6px 0px 6px 16px;
   text-decoration: none;
   font-size: 25px;
   display: block;
 }
-.coinsLoading, .coinsLoading2Portfolio{
+.coinsLoading,
+.coinsLoading2Portfolio {
   margin-top: 50px;
   margin-left: 240px;
 }
-.coinsLoading ul,.coinsLoading2Portfolio ul {
- display: grid;
- grid-template-columns: repeat(4, 1fr);
- grid-gap: 15px;
- list-style: none;
+.coinsLoading ul,
+.coinsLoading2Portfolio ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  list-style: none;
 }
-.coinsLoading ul li, .coinsLoading2Portfolio ul li{
-  padding:10px;
+.coinsLoading ul li,
+.coinsLoading2Portfolio ul li {
+  padding: 10px;
   width: 90%;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
 }
-.coinsLoading ul li:hover{
- cursor: pointer;
- border: 2px solid #141747;
- background-color: #F0F0F0;
+.coinsLoading ul li:hover {
+  cursor: pointer;
+  border: 2px solid #141747;
 }
 .coinsLoading2Portfolio ul li:hover{
   border: 2px solid #141747;
 }
 
-
-.coinsLoading ul li, .coinsLoading2Portfolio ul li{
+.coinsLoading ul li,
+.coinsLoading2Portfolio ul li {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   border-radius: 10px;
 }
-.coinsLoading ul li h1,.coinsLoading ul li h3,.coinsLoading2Portfolio ul li h3, .coinsLoading2Portfolio ul li h1{
+.coinsLoading ul li h1,
+.coinsLoading ul li h3,
+.coinsLoading2Portfolio ul li h3,
+.coinsLoading2Portfolio ul li h1 {
   padding-left: 10%;
 }
-.coinsLoadingImg{
+.coinsLoadingImg {
   height: 80px;
   width: 80px;
   margin-left: 25px;
 }
-.eliminateCoin{
+.eliminateCoin {
   margin-left: 25px;
   margin-right: 5px;
   margin-top: 10px;
@@ -600,8 +602,31 @@ width: 450px;
   border-radius: 5px;
   color: #141747;
 }
-.searchContainer{
-  font-size:30px;
+.searchContainer {
+  font-size: 30px;
   margin: 40px 10px;
   text-align: center;
+}
+.infoSelectedCrypto {
+  padding-top: 70px;
+}
+.infoSelectedCrypto h3 {
+  text-align: center;
+}
+.infoSelectedData {
+  margin-top: 50px;
+  text-align: center;
+}
+.infoSelectedData h4 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.infoSelectedData img {
+  margin-left: 0px;
+}
+.firstDataCoin{
+ 
+}
+.firstDataCoin ul li{
+  margin-top: 10px;
 }
