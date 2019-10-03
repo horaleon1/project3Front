@@ -52,7 +52,6 @@ const Footer = () => {
           <li>
             <a href={bitsoLink} target="_blank" rel="noopener noreferrer">
               Comprar Bitcoin
-              {/* <img src={bitso} style={{width:"30px", height:"30px"}} />               */}
             </a>
           </li>
         </ul>

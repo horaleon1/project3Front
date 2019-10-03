@@ -2,69 +2,57 @@ import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 
-
 const Navbar = () => {
   const authContext = useContext(AuthContext);
 
   const { isAutheticated, user, logout } = authContext;
 
+  const bitsoLink = "https://bitso.com/?ref=avfk";
+
   const onLogout = () => {
     logout();
-  }
+  };
 
   const authLinks = (
     <Fragment>
       <li>
-        <Link to="/">
-          Inicio
-        </Link>
+        <Link to="/">Inicio</Link>
       </li>
       <li>
-        <Link to="/about" >
-          ¿Qué son las Criptomonedas?
-        </Link>
+        <Link to="/about">¿Qué son las Criptomonedas?</Link>
       </li>
       <li>
-        <Link to="/explorer">
-          Explorador
-        </Link>
+        <Link to="/explorer">Explorador</Link>
       </li>
+      <li>Hola, {user && user.name}</li>
       <li>
-        Hola, {user && user.name}
-      </li>
-      <li>
-        <a onClick={onLogout} href='#!'>
-        Salir
+        <a onClick={onLogout} href="#!">
+          Salir
         </a>
-        </li>
+      </li>
     </Fragment>
   );
   const guestLinks = (
     <Fragment>
       <li>
-        <Link to="/">
-          Inicio
-        </Link>
+        <Link to="/">Inicio</Link>
       </li>
       <li>
-        <Link to="/about">
-        ¿Qué son las Criptomonedas?
-        </Link>
+        <Link to="/about">¿Qué son las Criptomonedas?</Link>
       </li>
       <li>
-        <Link to="/news">
-          Noticias
-        </Link>
+        <Link to="/news">Noticias</Link>
       </li>
       <li>
-        <Link to="/login">
-          Iniciar Sesión
-        </Link>
+        <a href={bitsoLink} target="_blank" rel="noopener noreferrer">
+          Comprar Bitcoin
+        </a>
       </li>
       <li>
-        <Link to="/register">
-          Regístrarse
-        </Link>
+        <Link to="/login">Iniciar Sesión</Link>
+      </li>
+      <li>
+        <Link to="/register">Regístrarse</Link>
       </li>
     </Fragment>
   );
@@ -73,7 +61,7 @@ const Navbar = () => {
     <div className="container">
       <ul className="leftSide">
         <li>
-         <h4>Logo</h4>
+          <h4>Logo</h4>
         </li>
         {/* <li>
           <Link to="/user">
@@ -84,12 +72,7 @@ const Navbar = () => {
           </Link>
         </li> */}
       </ul>
-      <ul className="rightSide"> {
-
-    isAutheticated ? authLinks : guestLinks
-
-      
-      } </ul>
+      <ul className="rightSide"> {isAutheticated ? authLinks : guestLinks} </ul>
     </div>
   );
 };
