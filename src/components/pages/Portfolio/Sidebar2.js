@@ -8,7 +8,7 @@ export default function Sidebar2() {
       </div>
       <div className="sidenav2Balance">
         <ul>
-          <li>
+          {/* <li>
             <h3>
               Balance BTC:
               <br />₿
@@ -25,13 +25,11 @@ export default function Sidebar2() {
               Balance MXN:
               <br />$
             </h3>
-          </li>
+           </li> */}
         </ul>
       </div>
       <div>
-        <ul>
-          <li>Criptomoneda</li>
-        </ul>
+        <h3 style={{ textAlign: "center", marginTop: "20px" }}>Favoritos</h3>
       </div>
     </div>
   );
