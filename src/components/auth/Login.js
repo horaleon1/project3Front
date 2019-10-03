@@ -44,7 +44,7 @@ const Login = (props) => {
 
   useEffect(() => {
     if(isAuthenticated){
-      props.history.push('/user');
+      props.history.push('/portfolio');
     }
 
 

@@ -75,14 +75,14 @@ const Navbar = () => {
         <li>
          <h4>Logo</h4>
         </li>
-        <li>
+        {/* <li>
           <Link to="/user">
             User
           </Link>
           <Link to="/portfolio">
            Portfolio
           </Link>
-        </li>
+        </li> */}
       </ul>
       <ul className="rightSide"> {
 

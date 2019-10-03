@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 
-export default class CoinsLoading extends Component {
+export default class CoinsPortfolio extends Component {
   constructor(props) {
     super(props);
 
@@ -19,14 +19,14 @@ export default class CoinsLoading extends Component {
         this.setState({ coinList });
       });
   };
-
+  
   render() {
     return (
       <div className="coinsLoading">
         <div className="loadingCoinsText">
           <ul>
             {Object.keys(this.state.coinList)
-              .slice(0, 100)
+              .slice(101, 109)
               .map(e => (
                 <li key={e.id}>
                   <h1>{e}</h1>

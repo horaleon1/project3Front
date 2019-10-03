@@ -8,12 +8,21 @@ import Favorite from "./Favorite";
 import CoinsLoading from "./CoinsLoading";
 import FormatCoins from "./FormatCoins";
 import Coins from './Coins';
+import CoinsPortfolio from './CoinsPortfolio';
 
-const Logo = styled.div`
-  font-size: 2em;
-  margin-left:160px;
+const LogoInv = styled.div`
+  font-size: 3.5em;
+  margin-left:210px;
   margin-bottom: 30px;
-`;
+  letter-spacing:3px;
+`
+const LogoCoins = styled.div`
+ font-size:2.5em;
+ margin-left:210px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  letter-spacing:3px;
+`
 
 const cc = require("cryptocompare");
 
@@ -43,9 +52,11 @@ export default class extends Component {
             <Sidebar />
           </LayoutSidebar>
           <Layout>
-            <Logo>Criptofolio</Logo>
-            <Favorite />
+            <LogoInv>Criptofolio</LogoInv>
+            <CoinsPortfolio />
+            {/* <Favorite /> */}
             {/* <Coins /> */}
+            <LogoCoins>Mercado Cripto</LogoCoins>
             <CoinsLoading />
           </Layout>
         </Provider>
