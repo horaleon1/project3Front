@@ -435,15 +435,15 @@ a {
 }
 .containerNew ul li img{
   margin-top: 10px;
-  width: 430px;
-  height: 270px;
+  width: 410px;
+  height: 290px;
   text-align: right;
 }
 .containerNew ul li h3{
-  margin: 20px 0px;
+  margin: 10px 0px 25px 0px;
 }
 .containerNew ul li a{
-  margin-top: 10px;
+  margin-top: 30px;
   padding: 10px;
   border-radius: 10px;
   color: white;
@@ -474,7 +474,7 @@ a {
 .textNews a:hover{
   color: #ffffff;
   border: 1px solid #141747;
-  background-color: #e73546;
+  background-color: #141747;
 }
 
 /* ///News tops */
@@ -512,7 +512,7 @@ width: 450px;
   position: absolute;
   color:white;
   margin-left: 20px;
-  margin-top: 400px;
+  margin-top: 410px;
   font-weight: 600;
   text-shadow: 1px 2px 1px rgba(0,0,0,.75);
 }
