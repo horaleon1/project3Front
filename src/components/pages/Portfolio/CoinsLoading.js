@@ -38,6 +38,10 @@ const LogoCoins = styled.div`
   color: #141747;
 `;
 
+const numberFormat = n => {
+  return + (n + '').slice(0,7)
+}
+
 export default class CoinsLoading extends Component {
   constructor(props) {
     super(props);
@@ -85,6 +89,8 @@ export default class CoinsLoading extends Component {
     //console.log(fuzzySearch);
   };
 
+  
+
   render() {
     return (
       <div className="coinsLoading">
@@ -103,7 +109,7 @@ export default class CoinsLoading extends Component {
                   src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
                   className="coinsLoadingImg"
                 />
-                <h4>Precio: {this.state.prices.PRICE} USD</h4>
+                <h4>Precio: {numberFormat(this.state.prices.PRICE)} USD</h4>
                 <h4>
                   Circulacióntotal: <br /> {this.state.prices.SUPPLY}
                 </h4>
