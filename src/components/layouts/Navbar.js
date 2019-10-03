@@ -21,7 +21,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link to="/about" >
-          ¿Qué es Blockchain?
+          ¿Qué son las Criptomonedas?
         </Link>
       </li>
       <li>
@@ -48,7 +48,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link to="/about">
-          ¿Qué es Blockchain?
+        ¿Qué son las Criptomonedas?
         </Link>
       </li>
       <li>

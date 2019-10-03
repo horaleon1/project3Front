@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 // import bitso from '../../assets/bitso.png';
 // import video from "../../assets/video.mp4";
 
-const facebook = 'https://www.facebook.com';
+const facebook = "https://www.facebook.com";
 
-const twitter = 'https://www.twitter.com';
+const twitter = "https://www.twitter.com";
 
-const bitsoLink = 'https://bitso.com/?ref=avfk'
+const bitsoLink = "https://bitso.com/?ref=avfk";
 
 const Footer = () => {
   return (
@@ -32,14 +32,13 @@ const Footer = () => {
         </ul>
       </div>
 
-
       <div>
         <ul className="listFooter">
           <li>
             <Link to="/">Inicio</Link>
           </li>
           <li>
-            <Link to="/about">¿Qué es Blockchain?</Link>
+            <Link to="/about">¿Qué son las Criptomonedas?</Link>
           </li>
           <li>
             <Link to="/news">Noticias</Link>
@@ -52,13 +51,11 @@ const Footer = () => {
           </li>
           <li>
             <a href={bitsoLink} target="_blank" rel="noopener noreferrer">
-            Compra Bitcoin
-            {/* <img src={bitso} style={{width:"30px", height:"30px"}} />               */}
+              Comprar Bitcoin
+              {/* <img src={bitso} style={{width:"30px", height:"30px"}} />               */}
             </a>
           </li>
         </ul>
-          
-        
       </div>
       <div>
         Copyright &copy; Blockchain Technologies {new Date().getFullYear()} all
