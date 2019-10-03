@@ -534,9 +534,31 @@ width: 450px;
   display: block;
 }
 .coinsLoading{
+  margin-top: 50px;
   margin-left: 200px;
 }
 .coinsLoading ul {
  display: grid;
- grid-template-columns: repeat(5, 1fr);
+ grid-template-columns: repeat(4, 1fr);
+ grid-gap: 15px;
+ list-style: none;
+}
+.coinsLoading ul li{
+  padding:20px;
+  width: 80%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); 
+}
+.coinsLoading ul li:hover{
+ cursor: pointer;
+ color: #e73546;
+ opacity: 0.9;
+}
+.coinsLoading ul li{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.coinsLoadingImg{
+  height: 80px;
+  width: 80px;
+  margin-left: 10px;
 }

@@ -40,7 +40,7 @@ export default class extends Component {
       <div className="portfolioContainer">
         <Provider>
           <LayoutSidebar>
-            {/* <Sidebar /> */}
+            <Sidebar />
           </LayoutSidebar>
           <Layout>
             <Logo>Criptofolio</Logo>
