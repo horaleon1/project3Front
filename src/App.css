@@ -406,20 +406,20 @@ a {
 .containerNews {
   width: 100%;
   height: 100%;
-  margin-left: 10px;
+  margin-left:0.6%;
   padding-top: 90px;
 }
 
 .newsSpanish {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
   width: 90%;
   margin-left: auto;
 }
 .containerNew {
   margin-bottom: 20px;
-  margin-left: 5%;
+  margin-left: 0%;
 }
 
 .containerNew ul {
@@ -433,9 +433,10 @@ a {
 }
 .containerNew ul li img {
   margin-top: 10px;
-  width: 410px;
+  width: 310px;
   height: 290px;
   text-align: right;
+  border-radius: 10px;
 }
 .containerNew ul li h3 {
   margin: 10px 0px 25px 0px;
@@ -454,11 +455,9 @@ a {
   font-weight: 700;
 }
 .textNews {
-  margin-top: 30px;
-  text-align: left;
-  font-size: 35px;
-  padding-top: 30px;
-  padding-left: 18%;
+  margin-top: 40px;
+  font-size: 30px;
+  padding-top: 20px;
 }
 .textNews h3 {
   padding-bottom: 70px;
@@ -481,12 +480,14 @@ a {
   display: inline-block;
 }
 .news1 {
-  margin-left: 10%;
+  margin-left: 5%;
   margin-top: 10%;
 }
 .news1 img {
   height: 450px;
   width: 450px;
+  border-radius: 20px;
+  margin: 0px 5px;
 }
 .news1 h1 {
   position: absolute;
@@ -517,10 +518,15 @@ a {
 .news1 a:hover {
   color: #e73546;
 }
-.fb-share-button {
+.fb-share-button{
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 37%;
+  margin-left: 45%;
+}
+.fb-share-button:not(:nth-child(2)) {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 5%;
 }
 
 /* Portolio Carpet */
@@ -551,7 +557,7 @@ a {
 .coinsLoading,
 .coinsLoading2Portfolio {
   margin-top: 50px;
-  margin-left: 240px;
+  margin-left: 210px;
 }
 .coinsLoading ul,
 .coinsLoading2Portfolio ul {
@@ -623,9 +629,7 @@ a {
 .infoSelectedData img {
   margin-left: 0px;
 }
-.firstDataCoin{
- 
-}
+
 .firstDataCoin ul li{
   margin-top: 10px;
 }

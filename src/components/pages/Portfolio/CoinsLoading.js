@@ -70,28 +70,29 @@ export default class CoinsLoading extends Component {
   _handlePrice = label => {
     let url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${label}&tsyms=USD`;
     axios.get(url).then(res => {
-      if (Object.keys(res.data.RAW).length > 0) {
-        const prices = res.data.RAW[label].USD;
-        this.setState({ prices });
-        //console.log(prices);
-      } else {
-        console.log(
-          "No se puede mostrar información de esa criptomoneda en este momento"
-        );
-      }
+        if (Object.keys(res.data.RAW).length > 0) {
+          const prices = res.data.RAW[label].USD;
+          this.setState({ prices });
+          //console.log(prices);
+        } else {
+          console.log(
+            "No se puede mostrar información de esa criptomoneda en este momento"
+          );
+        }
     });
   };
 
   selectedCoin = value => {
     //this.state.coinList = this.setState({ label })
     //this.setState({label: value})
-
-    this._handlePrice(value);
+    if(Object.keys(value).length > 0){
+    this._handlePrice(value);      
+    }
   };
 
   filterCoins = e => {
     let coins = this.state.coinList;
-    let coinsCopy = this.state.coinListCopy;
+    //let coinsCopy = this.state.coinListCopy;
 
     let inputValue = e.target.value;
 
@@ -99,6 +100,7 @@ export default class CoinsLoading extends Component {
 
     let filtrado = coinSymbols.filter((el, i) => {
       return el.Symbol.includes(inputValue.toUpperCase());
+      //return el.Symbol === inputValue.toUpperCase();
     });
 
     if (inputValue.length === 0) {
@@ -108,6 +110,7 @@ export default class CoinsLoading extends Component {
       console.log("ingresa el simbolo completo");
       //console.log(filtrado);
     }
+
   };
 
   render() {
@@ -200,7 +203,7 @@ export default class CoinsLoading extends Component {
         <div className="loadingCoins">
           <ul>
             {Object.keys(this.state.coinListCopy)
-              .slice(0, 400)
+              .slice(0, 50)
               .map(e => (
                 <li key={e.id} onClick={() => this.selectedCoin(e)}>
                   <i class="fas fa-heart favoriteHeart"></i>
