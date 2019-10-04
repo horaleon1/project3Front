@@ -21,7 +21,7 @@ export default class About extends Component {
           transacciones financieras pública. <br />
           <br />
           La primera criptomoneda que empezó a operar fue el bitcoin <br />
-          en 20094​ y, desde entonces, han aparecido muchas otras con <br />
+          en 2009 y, desde entonces, han aparecido muchas otras con <br />
           diferentes características y protocolos como Litecoin, <br />
           Ethereum, Ripple, Dogecoin.
         </p>

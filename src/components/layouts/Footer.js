@@ -47,7 +47,7 @@ const Footer = () => {
             <Link to="/login">Iniciar Sesión</Link>
           </li>
           <li>
-            <Link to="/register">Regístrase</Link>
+            <Link to="/register">Regístrarse</Link>
           </li>
           <li>
             <a href={bitsoLink} target="_blank" rel="noopener noreferrer">
