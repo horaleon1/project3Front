@@ -73,7 +73,11 @@ export default class CoinsLoading extends Component {
       if (Object.keys(res.data.RAW).length > 0) {
         const prices = res.data.RAW[label].USD;
         this.setState({ prices });
-        console.log(prices);
+        //console.log(prices);
+      } else {
+        console.log(
+          "No se puede mostrar información de esa criptomoneda en este momento"
+        );
       }
     });
   };
@@ -81,35 +85,29 @@ export default class CoinsLoading extends Component {
   selectedCoin = value => {
     //this.state.coinList = this.setState({ label })
     //this.setState({label: value})
+
     this._handlePrice(value);
   };
 
   filterCoins = e => {
     let coins = this.state.coinList;
+    let coinsCopy = this.state.coinListCopy;
+
     let inputValue = e.target.value;
-    // console.log(inputValue);
+
     let coinSymbols = Object.values(coins);
 
-
     let filtrado = coinSymbols.filter((el, i) => {
-      return el.Symbol === inputValue.toUpperCase();
+      return el.Symbol.includes(inputValue.toUpperCase());
     });
 
-    console.log(filtrado)
-
-
-    // let coinNames = coinSymbols.map(e => coins[e].CoinName);
-    // console.log(coinNames);
-    // let allValuesCoins = coinNames.concat(coinSymbols);
-    // let allValuesCoins = coinSymbols
-    // console.log(allValuesCoins);
-    // let fuzzySearch = fuzzy
-    //   .filter(inputValue, coinSymbols, {})
-    //   .map(e => e.string);
-    // console.log(fuzzySearch);
-
-    // this.setState({ coinListCopy: fuzzySearch });
-    this.setState({ coinListCopy: filtrado });
+    if (inputValue.length === 0) {
+      this.setState({ coinListCopy: coins });
+    } else {
+      this.setState({ coinListCopy: filtrado });
+      console.log("ingresa el simbolo completo");
+      //console.log(filtrado);
+    }
   };
 
   render() {
@@ -123,7 +121,7 @@ export default class CoinsLoading extends Component {
             </div>
             <div className="infoSelectedCrypto">
               <h3>Criptomoneda Selecionada</h3>
-              {/* ///////////////// */}
+
               <div className="infoSelectedData">
                 <h4>Ticker: {this.state.prices.FROMSYMBOL}</h4>
                 <img
@@ -135,12 +133,9 @@ export default class CoinsLoading extends Component {
                   Circulación total: <br /> {this.state.prices.SUPPLY}
                 </h4>
               </div>
-              {/* ////////////////// */}
             </div>
             <div></div>
           </div>
-
-          {/* //////////////////// */}
 
           <div className="firstDataCoin">
             Mercado de Capitalización: <br /> ${this.state.prices.MKTCAP} USD
@@ -194,7 +189,6 @@ export default class CoinsLoading extends Component {
               {this.state.prices.FROMSYMBOL}
             </ul>
           </div>
-          {/* ////////////////// */}
         </LayoutSidebar>
         <LogoCoins>Encuentra mas de 5,000 criptomonedas.</LogoCoins>
         <div className="searchContainer">
@@ -214,7 +208,6 @@ export default class CoinsLoading extends Component {
                     src={`http://cryptocompare.com/${this.state.coinListCopy[e].ImageUrl}`}
                     className="coinsLoadingImg"
                   />
-
                   <h1>{this.state.coinListCopy[e].Symbol}</h1>
 
                   <h3>{this.state.coinListCopy[e].CoinName}</h3>
