@@ -1,6 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
+import Logo from '../../assets/MundoBlockchain.png';
 
 const Navbar = () => {
   const authContext = useContext(AuthContext);
@@ -61,7 +62,9 @@ const Navbar = () => {
     <div className="container">
       <ul className="leftSide">
         <li>
-          <h4>Logo</h4>
+          <a href="/">
+          <img src={Logo} className="Logo"/>
+          </a>
         </li>
         {/* <li>
           <Link to="/user">
