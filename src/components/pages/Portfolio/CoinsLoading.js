@@ -48,6 +48,7 @@ export default class CoinsLoading extends Component {
 
     this.state = {
       coinList: [],
+      coinListCopy: [],
       saveCoin: [],
       filterCoins: this.filterCoins,
       prices: []
@@ -60,33 +61,55 @@ export default class CoinsLoading extends Component {
       .then(res => {
         const coinList = res.data.Data;
         // console.log(coinList);
-        this.setState({ coinList });
+        this.setState({ coinList, coinListCopy: coinList });
       });
-    axios
-      .get(
-        "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=USD"
-      )
-      .then(res => {
-        const prices = res.data.RAW.ETH.USD;
-        console.log(prices);
+
+    this._handlePrice("BTC");
+  };
+
+  _handlePrice = label => {
+    let url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${label}&tsyms=USD`;
+    axios.get(url).then(res => {
+      if (Object.keys(res.data.RAW).length > 0) {
+        const prices = res.data.RAW[label].USD;
         this.setState({ prices });
-      });
+        console.log(prices);
+      }
+    });
+  };
+
+  selectedCoin = value => {
+    //this.state.coinList = this.setState({ label })
+    //this.setState({label: value})
+    this._handlePrice(value);
   };
 
   filterCoins = e => {
     let coins = this.state.coinList;
     let inputValue = e.target.value;
     // console.log(inputValue);
-    let coinSymbols = Object.keys(coins);
-    // console.log(coinSymbols);
-    let coinNames = coinSymbols.map(e => coins[e].CoinName);
+    let coinSymbols = Object.values(coins);
+
+
+    let filtrado = coinSymbols.filter((el, i) => {
+      return el.Symbol === inputValue.toUpperCase();
+    });
+
+    console.log(filtrado)
+
+
+    // let coinNames = coinSymbols.map(e => coins[e].CoinName);
     // console.log(coinNames);
-    let allValuesCoins = coinSymbols.concat(coinNames);
+    // let allValuesCoins = coinNames.concat(coinSymbols);
+    // let allValuesCoins = coinSymbols
     // console.log(allValuesCoins);
-    let fuzzySearch = fuzzy
-      .filter(inputValue, allValuesCoins, {})
-      .map(e => e.string);
-    //console.log(fuzzySearch);
+    // let fuzzySearch = fuzzy
+    //   .filter(inputValue, coinSymbols, {})
+    //   .map(e => e.string);
+    // console.log(fuzzySearch);
+
+    // this.setState({ coinListCopy: fuzzySearch });
+    this.setState({ coinListCopy: filtrado });
   };
 
   render() {
@@ -109,7 +132,7 @@ export default class CoinsLoading extends Component {
                 />
                 <h4>Precio: {numberFormat(this.state.prices.PRICE)} USD</h4>
                 <h4>
-                  Circulacióntotal: <br /> {this.state.prices.SUPPLY}
+                  Circulación total: <br /> {this.state.prices.SUPPLY}
                 </h4>
               </div>
               {/* ////////////////// */}
@@ -182,19 +205,19 @@ export default class CoinsLoading extends Component {
         </div>
         <div className="loadingCoins">
           <ul>
-            {Object.keys(this.state.coinList)
-              .slice(0, 100)
+            {Object.keys(this.state.coinListCopy)
+              .slice(0, 400)
               .map(e => (
-                <li key={e.id}>
+                <li key={e.id} onClick={() => this.selectedCoin(e)}>
                   <i class="fas fa-heart favoriteHeart"></i>
                   <img
-                    src={`http://cryptocompare.com/${this.state.coinList[e].ImageUrl}`}
+                    src={`http://cryptocompare.com/${this.state.coinListCopy[e].ImageUrl}`}
                     className="coinsLoadingImg"
                   />
 
-                  <h1>{e}</h1>
+                  <h1>{this.state.coinListCopy[e].Symbol}</h1>
 
-                  <h3>{this.state.coinList[e].CoinName}</h3>
+                  <h3>{this.state.coinListCopy[e].CoinName}</h3>
                 </li>
               ))}
           </ul>

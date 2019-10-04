@@ -557,13 +557,12 @@ a {
 .coinsLoading2Portfolio ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 15px;
+  grid-gap: 25px;
   list-style: none;
 }
 .coinsLoading ul li,
 .coinsLoading2Portfolio ul li {
-  padding: 10px;
-  width: 90%;
+  width: 95%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
 }
 .coinsLoading ul li:hover {
@@ -636,6 +635,8 @@ a {
 }
 .favoriteHeart{
   color:lightgray;
+  padding-left: 20px;
+  padding-top: 10px;
 }
 .favoriteHeart:hover{
   color:#f91a1a;
