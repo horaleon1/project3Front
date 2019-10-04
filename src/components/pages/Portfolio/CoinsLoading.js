@@ -70,24 +70,19 @@ export default class CoinsLoading extends Component {
   _handlePrice = label => {
     let url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${label}&tsyms=USD`;
     axios.get(url).then(res => {
-        if (Object.keys(res.data.RAW).length > 0) {
-          const prices = res.data.RAW[label].USD;
-          this.setState({ prices });
-          //console.log(prices);
-        } else {
-          console.log(
-            "No se puede mostrar información de esa criptomoneda en este momento"
-          );
+      if (Object.keys(res.data.RAW).length > 0) {
+        const prices = res.data.RAW[label].USD;
+        this.setState({ prices });
+        console.log(prices);
+        if (Object.keys(res.data.RAW).length === 0) {
+          console.log("nose puede mostrar");
         }
+      }
     });
   };
 
   selectedCoin = value => {
-    //this.state.coinList = this.setState({ label })
-    //this.setState({label: value})
-    if(Object.keys(value).length > 0){
-    this._handlePrice(value);      
-    }
+    this._handlePrice(value);
   };
 
   filterCoins = e => {
@@ -110,7 +105,6 @@ export default class CoinsLoading extends Component {
       console.log("ingresa el simbolo completo");
       //console.log(filtrado);
     }
-
   };
 
   render() {
@@ -141,42 +135,76 @@ export default class CoinsLoading extends Component {
           </div>
 
           <div className="firstDataCoin">
-            Mercado de Capitalización: <br /> ${this.state.prices.MKTCAP} USD
+            <h2>
+              {" "}
+              <i
+                class="fas fa-poll"
+                style={{ marginRight: "10px", color: "#f91a1a" }}
+              ></i>
+              Mercado de Capitalización: ${this.state.prices.MKTCAP} USD
+            </h2>
             <ul>
               <li>
-                <h2>24 Horas</h2>
-                <br />
-                <h4>
-                  Recomendación:
-                  <br /> Vender
-                </h4>
+                <h2 id="horas">
+                  <i class="far fa-clock" style={{ marginRight: "15px" }}></i>24
+                  Horas
+                </h2>
               </li>
+              {this.state.prices.HIGH24HOUR > this.state.prices.PRICE ? (
+                <li>
+                  <span className="arrow">
+                    Recomendación: <br />
+                    Comprar
+                    <i class="fas fa-arrow-up" style={{ color: "green" }}></i>
+                  </span>
+                </li>
+              ) : (
+                <li>
+                  <span className="arrow">
+                    Recomendación: <br />
+                    Vender
+                    <i class="fas fa-arrow-down" style={{ color: "red" }}></i>
+                  </span>
+                </li>
+              )}
               <li>
-                {this.state.prices.HIGH24HOUR > this.state.prices.PRICE ? (
-                  <i class="fas fa-arrow-up" style={{ color: "green" }}></i>
-                ) : (
-                  <i class="fas fa-arrow-down" style={{ color: "red" }}></i>
-                )}
-                Precio Máximo: <br />${this.state.prices.HIGH24HOUR} USD
+                <span className="arrow">
+                  Cambio: <br />
+                  {this.state.prices.CHANGEPCT24HOUR}
+                  {this.state.prices.CHANGEPCT24HOUR > 0 ? (
+                    <i class="fas fa-percent" style={{ color: "green" }}></i>
+                  ) : (
+                    <i class="fas fa-percent" style={{ color: "red" }}></i>
+                  )}
+                </span>
               </li>
-              <li>
-                Último Precio: <br /> ${this.state.prices.PRICE} USD
-              </li>
-              <li>
-                Precio Minimo: <br /> ${this.state.prices.LOW24HOUR} USD
-              </li>
-              Volumen total: <br />
+            </ul>
+
+            <div className="prices">
+              <ul>
+                <li>Precio Máximo: ${this.state.prices.HIGH24HOUR} USD</li>
+
+                <li>Último Precio: ${this.state.prices.PRICE} USD</li>
+                <li>Precio Minimo: ${this.state.prices.LOW24HOUR} USD</li>
+              </ul>
+            </div>
+
+            <h3>
+              <i
+                class="fas fa-coins"
+                style={{ marginRight: "10px", color: "#f91a1a" }}
+              ></i>
+              Volumen total:
               {this.state.prices.VOLUME24HOUR}
               {this.state.prices.FROMSYMBOL}
-            </ul>
+            </h3>
             <ul>
               <li>
-                <h2>1 Hora</h2>
-                <br />
-                <h4>
-                  Recomendación: <br />
-                  Vender
-                </h4>
+                <h2 id="horas">
+                  {" "}
+                  <i class="far fa-clock" style={{ marginRight: "10px" }}></i>1
+                  Hora
+                </h2>
               </li>
               <li>
                 Precio Máximo: <br /> ${this.state.prices.HIGHHOUR} USD
@@ -187,10 +215,15 @@ export default class CoinsLoading extends Component {
               <li>
                 Precio Minimo: <br /> ${this.state.prices.LOWHOUR} USD
               </li>
-              Volumen total: <br />
-              {this.state.prices.VOLUMEHOUR}
-              {this.state.prices.FROMSYMBOL}
             </ul>
+            <h3>
+              <i
+                class="fas fa-coins"
+                style={{ marginRight: "10px", color: "#f91a1a" }}
+              ></i>
+              Volumen total:{this.state.prices.VOLUMEHOUR}
+              {this.state.prices.FROMSYMBOL}
+            </h3>
           </div>
         </LayoutSidebar>
         <LogoCoins>Encuentra mas de 5,000 criptomonedas.</LogoCoins>

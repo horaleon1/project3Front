@@ -33,7 +33,7 @@ const App = () => {
           <Router>
             <Fragment>
               <Navbar />
-              {/* <Price /> */}
+              <Price />
               <div className="containerApp">
                 <Switch>
                   <Route exact path="/" component={Home}/>

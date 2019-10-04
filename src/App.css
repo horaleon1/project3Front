@@ -73,6 +73,7 @@ body {
   position: fixed;
   width: 100%;
   z-index: 9999;
+  overflow: auto;
 }
 .leftSide li,
 .rightSide li {
@@ -234,14 +235,13 @@ a {
 
 /* Sidebar2*/
 .sidenav2 {
-  height: 100vh; /* Full-height: remove this if you want "auto" height */
+  height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 220px; /* Set the width of the sidebar */
   left: 0;
-  top: 10px;
-  padding-top: 100px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   float: left;
   position: fixed;
+  z-index: 9999;
 }
 
 .sidenav2 a {
@@ -250,6 +250,7 @@ a {
   color: #141747;
   display: block;
   text-align: center;
+  padding-top: 20px;
 }
 
 .sidenav2 a:hover {
@@ -290,6 +291,7 @@ a {
   margin-top: 65px;
   position: fixed;
   z-index: 9999;
+  overflow: hidden;
 }
 .dataBarUser {
   padding-top: 7px;
@@ -561,13 +563,16 @@ a {
   font-size: 25px;
   display: block;
 }
+.coinsLoading{
+  overflow: hidden;
+}
 .coinsLoading,
 .coinsLoading2Portfolio {
   margin-top: 50px;
   margin-left: 210px;
 }
-.coinsLoading ul,
-.coinsLoading2Portfolio ul {
+.loadingCoins ul:not(#display2),
+.coinsLoading2Portfolio ul:not(#display2) {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 25px;
@@ -586,17 +591,29 @@ a {
   border: 2px solid #141747;
 }
 
-.coinsLoading ul li,
-.coinsLoading2Portfolio ul li {
+.firstDataCoin ul li{
+  display: grid;
+  
+  border-radius: 10px;
+}
+.loadingCoins{
+  margin-bottom: 30px;
+}
+.loadingCoins ul li {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-radius: 10px;
 }
 .coinsLoading ul li h1,
-.coinsLoading ul li h3,
 .coinsLoading2Portfolio ul li h3,
 .coinsLoading2Portfolio ul li h1 {
   padding-left: 10%;
+  padding-bottom: 10px;
+}
+.loadingCoins ul li h3{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 .coinsLoadingImg {
   height: 80px;
@@ -625,6 +642,7 @@ a {
 }
 .infoSelectedCrypto h3 {
   text-align: center;
+  padding-top: 10px;
 }
 .infoSelectedData {
   margin-top: 20px;
@@ -637,14 +655,38 @@ a {
 .infoSelectedData img {
   margin-left: 0px;
 }
-
+.firstDataCoin{
+  padding-top: 30px;
+}
+.firstDataCoin ul{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+}
+.firstDataCoin ul{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .firstDataCoin ul li{
-  margin-top: 10px;
+  border: 1px solid gray;
 }
-.loadingCoins ul li h3{
-  padding-top: 10px;
-  padding-left: 30px;
+#horas{
+  font-size: 40px;
+  margin: 10% 10% 10% 15%;
 }
+.arrow{
+  font-size: 2em;
+  text-align: left;
+  margin-left: 5%;
+  margin-top: 4%;
+}
+.arrow i{
+  padding-left: 20%;
+}
+.prices ul{
+  grid-template-columns: repeat(3,1fr);
+}
+/* //Favorite Icon Loading Coins */
 .favoriteHeart{
   color:lightgray;
   padding-left: 20px;
