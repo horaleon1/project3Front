@@ -9,6 +9,8 @@ import {
   CLEAR_ERRORS
 } from '../types';
 
+const token2 = 'token'
+
 export default (state, action) => {
   switch (action.type) {
     case USER_LOADED:
@@ -20,7 +22,8 @@ export default (state, action) => {
       };
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
-      localStorage.setItem('token', action.payload.token);
+      // localStorage.setItem('token', action.payload.token);
+      localStorage.setItem('token', token2);
       return {
         ...state,
         ...action.payload,
@@ -35,7 +38,8 @@ export default (state, action) => {
       return {
         ...state,
         token: null,
-        isAuthenticated: false,
+        // isAuthenticated: false,
+        isAuthenticated: true,
         loading: false,
         user: null,
         error: action.payload
