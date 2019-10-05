@@ -15,7 +15,7 @@ export default class extends Component {
     };
   }
   componentDidMount() {
-    // setInterval(() => {
+    setInterval(() => {
       axios
         .get(
           "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,EUR,MXN"
@@ -25,9 +25,9 @@ export default class extends Component {
           //console.log(btc);
           this.setState({ btc });
         });
-    // }, 1000);
+    }, 3000);
 
-    // setInterval(() => {
+    setInterval(() => {
       axios
         .get(
           "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,EUR,MXN"
@@ -37,9 +37,9 @@ export default class extends Component {
           //console.log(eth);
           this.setState({ eth });
         });
-    // }, 1000);
+    }, 3000);
 
-    // setInterval(() => {
+    setInterval(() => {
       axios
         .get(
           "https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD,EUR,MXN"
@@ -49,9 +49,9 @@ export default class extends Component {
           //console.log(xrp);
           this.setState({ xrp });
         });
-    // }, 1000);
+    }, 3000);
 
-    // setInterval(() => {
+    setInterval(() => {
       axios
         .get(
           "https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD,EUR,MXN"
@@ -61,9 +61,9 @@ export default class extends Component {
           //console.log(ltc);
           this.setState({ ltc });
         });
-    // }, 1000);
+    }, 3000);
 
-    // setInterval(() => {
+    setInterval(() => {
       axios
         .get(
           "https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD,EUR,MXN"
@@ -73,8 +73,8 @@ export default class extends Component {
           //console.log(bch);
           this.setState({ bch });
         });
-    // }, 1000);
-    // setInterval(() => {
+    }, 3000);
+    setInterval(() => {
       axios
         .get(
           "https://min-api.cryptocompare.com/data/price?fsym=EOS&tsyms=USD,EUR,MXN"
@@ -84,7 +84,7 @@ export default class extends Component {
           //console.log(bch);
           this.setState({ eos });
         });
-    // }, 1000);
+    }, 3000);
   }
   render() {
     return (
