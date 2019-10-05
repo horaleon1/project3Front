@@ -115,7 +115,10 @@ export default class CoinsLoading extends Component {
       console.log("ingresa el simbolo completo");
       //console.log(filtrado);
     }
+
   };
+
+  
 
   render() {
     return (
@@ -143,7 +146,9 @@ export default class CoinsLoading extends Component {
                 </h4>
               </div>
             </div>
-            <div></div>
+            <div>
+                
+            </div>
           </div>
 
           <div className="firstDataCoin">
@@ -289,13 +294,12 @@ export default class CoinsLoading extends Component {
               .slice(0, 50)
               .map(e => (
                 <li key={e.id} onClick={() => this.selectedCoin(e)}>
-                  <i class="fas fa-heart favoriteHeart"></i>
+                  {/* <i class="fas fa-heart favoriteHeart"></i> */}        
                   <img
                     src={`http://cryptocompare.com/${this.state.coinListCopy[e].ImageUrl}`}
                     className="coinsLoadingImg"
                   />
                   <h1>{this.state.coinListCopy[e].Symbol}</h1>
-
                   <h3>{this.state.coinListCopy[e].CoinName}</h3>
                 </li>
               ))}
