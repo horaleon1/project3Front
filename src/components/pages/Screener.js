@@ -19,7 +19,7 @@ export default function App() {
           defaultColumn: "overview",
           screener_type: "crypto_mkt",
           displayCurrency: "USD",
-          locale: "en"
+          locale: "es"
         }}
       />
       </Layout>
