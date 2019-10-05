@@ -38,9 +38,14 @@ const LogoCoins = styled.div`
   color: #141747;
 `;
 
-const numberFormat = n => {
-  return +(n + "").slice(0, 7);
-};
+
+const formatNumber = n => {
+  return new Intl.NumberFormat().format(n);
+}
+
+const usdFormat = n => {
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n)
+}
 
 export default class CoinsLoading extends Component {
   constructor(props) {
@@ -117,17 +122,17 @@ export default class CoinsLoading extends Component {
               <a href="#">Inicio</a>
             </div>
             <div className="infoSelectedCrypto">
-              <h3>Criptomoneda Selecionada</h3>
+              <h3>Criptomoneda Selecionada:</h3>
 
               <div className="infoSelectedData">
-                <h4>Ticker: {this.state.prices.FROMSYMBOL}</h4>
+                <h4> {this.state.prices.FROMSYMBOL}</h4>
                 <img
                   src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
                   className="coinsLoadingImg"
                 />
-                <h4>Precio: {numberFormat(this.state.prices.PRICE)} USD</h4>
+                <h4>Precio: {usdFormat(this.state.prices.PRICE)} USD</h4>
                 <h4>
-                  Circulación total: <br /> {this.state.prices.SUPPLY}
+                  Circulación total: <br /> {formatNumber(this.state.prices.SUPPLY)}
                 </h4>
               </div>
             </div>
@@ -141,7 +146,7 @@ export default class CoinsLoading extends Component {
                 class="fas fa-poll"
                 style={{ marginRight: "10px", color: "#f91a1a" }}
               ></i>
-              Mercado de Capitalización: ${this.state.prices.MKTCAP} USD
+              Mercado de Capitalización: {usdFormat(this.state.prices.MKTCAP)} USD
             </h2>
             <ul>
               <li>
@@ -170,7 +175,7 @@ export default class CoinsLoading extends Component {
               <li>
                 <span className="arrow">
                   Cambio: <br />
-                  {this.state.prices.CHANGEPCT24HOUR}
+                   {formatNumber(this.state.prices.CHANGEPCT24HOUR)}
                   {this.state.prices.CHANGEPCT24HOUR > 0 ? (
                     <i class="fas fa-percent" style={{ color: "green" }}></i>
                   ) : (
@@ -195,7 +200,7 @@ export default class CoinsLoading extends Component {
                 style={{ marginRight: "10px", color: "#f91a1a" }}
               ></i>
               Volumen total:
-              {this.state.prices.VOLUME24HOUR}
+              {formatNumber(this.state.prices.VOLUME24HOUR)}
               {this.state.prices.FROMSYMBOL}
             </h3>
             <ul>
@@ -221,7 +226,7 @@ export default class CoinsLoading extends Component {
                 class="fas fa-coins"
                 style={{ marginRight: "10px", color: "#f91a1a" }}
               ></i>
-              Volumen total:{this.state.prices.VOLUMEHOUR}
+              Volumen total:{formatNumber(this.state.prices.VOLUMEHOUR)}
               {this.state.prices.FROMSYMBOL}
             </h3>
           </div>

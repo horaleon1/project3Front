@@ -662,6 +662,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
+  width: 1000px;
 }
 .firstDataCoin ul{
   margin-top: 20px;
@@ -685,6 +686,10 @@ a {
 }
 .prices ul{
   grid-template-columns: repeat(3,1fr);
+}
+.prices ul li{
+  padding: 15px;
+
 }
 /* //Favorite Icon Loading Coins */
 .favoriteHeart{
