@@ -41,6 +41,9 @@ const Navbar = () => {
       <li>
         <Link to="/about">¿Qué son las Criptomonedas?</Link>
       </li>
+      {/* <li>
+        <Link to="/screener">Mercado</Link>
+      </li> */}
       <li>
         <Link to="/news">Noticias</Link>
       </li>
@@ -66,14 +69,6 @@ const Navbar = () => {
           <img src={Logo} className="Logo"/>
           </a>
         </li>
-        {/* <li>
-          <Link to="/user">
-            User
-          </Link>
-          <Link to="/portfolio">
-           Portfolio
-          </Link>
-        </li> */}
       </ul>
       <ul className="rightSide"> {isAutheticated ? authLinks : guestLinks} </ul>
     </div>
