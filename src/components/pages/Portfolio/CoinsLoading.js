@@ -25,13 +25,13 @@ const LogoInv = styled.div`
 const LogoCoins = styled.div`
   font-size: 2.5em;
   margin-bottom: 20px;
-  margin-top: 10px;
+  margin-top: 30px;
   letter-spacing: 2px;
   color: #141747;
-  margin-left: 20px;
+  margin-left: 25px;
 `;
 const LogoCoins2 = styled.div`
-  font-size: 2.2em;
+  font-size: 2.5em;
   margin-bottom: 20px;
   letter-spacing: 2px;
   color: #141747;
@@ -127,7 +127,7 @@ export default class CoinsLoading extends Component {
               <a href="#">Inicio</a>
             </div>
             <div className="infoSelectedCrypto">
-              <h3>Criptomoneda Selecionada:</h3>
+              <h3>Criptomoneda Seleccionada:</h3>
 
               <div className="infoSelectedData">
                 <h4> {this.state.prices.FROMSYMBOL}</h4>
