@@ -309,7 +309,7 @@ export default class CoinsLoading extends Component {
         <div className="loadingCoins">
           <ul>
             {Object.keys(this.state.coinListCopy)
-              .slice(0, 50)
+              .slice(0, 5000)
               .map(e => (
                 <li key={e.id} onClick={() => this.selectedCoin(e)}>
                   {/* <i class="fas fa-heart favoriteHeart"></i> */}
