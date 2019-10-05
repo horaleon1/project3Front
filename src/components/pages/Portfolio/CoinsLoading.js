@@ -152,7 +152,7 @@ export default class CoinsLoading extends Component {
             <LogoCoins2>Información Financiera</LogoCoins2>
             <h2>
               <i
-                class="fas fa-poll"
+                className="fas fa-poll"
                 style={{ marginRight: "10px", color: "#f91a1a" }}
               ></i>
               Mercado de Capitalización: {usdFormat(this.state.prices.MKTCAP)}{" "}
@@ -161,7 +161,7 @@ export default class CoinsLoading extends Component {
             <ul>
               <li>
                 <h2 id="horas">
-                  <i class="far fa-clock" style={{ marginRight: "15px" }}></i>24
+                  <i className="far fa-clock" style={{ marginRight: "15px" }}></i>24
                   Horas
                 </h2>
               </li>
@@ -171,7 +171,7 @@ export default class CoinsLoading extends Component {
                   <span className="arrow">
                     Recomendación: <br />
                     Comprar
-                    <i class="fas fa-arrow-up" style={{ color: "green" }}></i>
+                    <i className="fas fa-arrow-up" style={{ color: "green" }}></i>
                   </span>
                 </li>
               ) : (
@@ -179,7 +179,7 @@ export default class CoinsLoading extends Component {
                   <span className="arrow">
                     Recomendación: <br />
                     Vender
-                    <i class="fas fa-arrow-down" style={{ color: "red" }}></i>
+                    <i className="fas fa-arrow-down" style={{ color: "red" }}></i>
                   </span>
                 </li>
               )}
@@ -188,9 +188,9 @@ export default class CoinsLoading extends Component {
                   Cambio: <br />
                   {formatNumber(this.state.prices.CHANGEPCT24HOUR)}
                   {this.state.prices.CHANGEPCT24HOUR > 0 ? (
-                    <i class="fas fa-percent" style={{ color: "green" }}></i>
+                    <i className="fas fa-percent" style={{ color: "green" }}></i>
                   ) : (
-                    <i class="fas fa-percent" style={{ color: "red" }}></i>
+                    <i className="fas fa-percent" style={{ color: "red" }}></i>
                   )}
                 </span>
               </li>
@@ -204,14 +204,14 @@ export default class CoinsLoading extends Component {
             </div>
             <h3>
               <i
-                class="fas fa-coins"
+                className="fas fa-coins"
                 style={{ marginRight: "10px", color: "#f91a1a" }}
               ></i>
               Volumen total:
               {formatNumber(this.state.prices.VOLUME24HOUR)}
               {this.state.prices.FROMSYMBOL}
               <i
-                class="fas fa-dollar-sign"
+                className="fas fa-dollar-sign"
                 style={{
                   marginRight: "10px",
                   color: "#f91a1a",
@@ -229,7 +229,7 @@ export default class CoinsLoading extends Component {
             <ul>
               <li>
                 <h2 id="horas">
-                  <i class="far fa-clock" style={{ marginRight: "10px" }}></i>1
+                  <i className="far fa-clock" style={{ marginRight: "10px" }}></i>1
                   Hora
                 </h2>
               </li>
@@ -238,7 +238,7 @@ export default class CoinsLoading extends Component {
                   <span className="arrow">
                     Recomendación: <br />
                     Comprar
-                    <i class="fas fa-arrow-up" style={{ color: "green" }}></i>
+                    <i className="fas fa-arrow-up" style={{ color: "green" }}></i>
                   </span>
                 </li>
               ) : (
@@ -246,7 +246,7 @@ export default class CoinsLoading extends Component {
                   <span className="arrow">
                     Recomendación: <br />
                     Vender
-                    <i class="fas fa-arrow-down" style={{ color: "red" }}></i>
+                    <i className="fas fa-arrow-down" style={{ color: "red" }}></i>
                   </span>
                 </li>
               )}
@@ -255,9 +255,9 @@ export default class CoinsLoading extends Component {
                   Cambio: <br />
                   {formatNumber(this.state.prices.CHANGEPCTHOUR)}
                   {this.state.prices.CHANGEPCTHOUR > 0 ? (
-                    <i class="fas fa-percent" style={{ color: "green" }}></i>
+                    <i className="fas fa-percent" style={{ color: "green" }}></i>
                   ) : (
-                    <i class="fas fa-percent" style={{ color: "red" }}></i>
+                    <i className="fas fa-percent" style={{ color: "red" }}></i>
                   )}
                 </span>
               </li>
@@ -271,13 +271,13 @@ export default class CoinsLoading extends Component {
             </div>
             <h3>
               <i
-                class="fas fa-coins"
+                className="fas fa-coins"
                 style={{ marginRight: "10px", color: "#f91a1a" }}
               ></i>
               Volumen total:{formatNumber(this.state.prices.VOLUMEHOUR)}
               {this.state.prices.FROMSYMBOL}
               <i
-                class="fas fa-dollar-sign"
+                className="fas fa-dollar-sign"
                 style={{
                   marginRight: "10px",
                   color: "#f91a1a",

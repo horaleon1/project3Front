@@ -575,7 +575,7 @@ a {
 .loadingCoins ul:not(#display2),
 .coinsLoading2Portfolio ul:not(#display2) {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
   list-style: none;
 }
