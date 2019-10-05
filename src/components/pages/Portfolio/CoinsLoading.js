@@ -77,6 +77,10 @@ export default class CoinsLoading extends Component {
   _handlePrice = label => {
     let url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${label}&tsyms=USD`;
     axios.get(url).then(res => {
+      if (res.data.Response != null) {
+        console.log("No se puede mostrar la información en este momento");
+          return;
+      }
       if (Object.keys(res.data.RAW).length > 0) {
         const prices = res.data.RAW[label].USD;
         this.setState({ prices });
@@ -301,7 +305,7 @@ export default class CoinsLoading extends Component {
         <div className="loadingCoins">
           <ul>
             {Object.keys(this.state.coinListCopy)
-              .slice(0, 5000)
+              .slice(0, 50)
               .map(e => (
                 <li key={e.id} onClick={() => this.selectedCoin(e)}>
                   {/* <i class="fas fa-heart favoriteHeart"></i> */}
