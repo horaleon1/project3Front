@@ -236,7 +236,7 @@ a {
 /* Sidebar2*/
 .sidenav2 {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 220px; /* Set the width of the sidebar */
+  width: 240px; /* Set the width of the sidebar */
   left: 0;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   float: left;
@@ -244,13 +244,14 @@ a {
   z-index: 9999;
 }
 
+
 .sidenav2 a {
   text-decoration: none;
   font-size: 35px;
   color: #141747;
   display: block;
   text-align: center;
-  padding-top: 20px;
+  margin-top: 30px;
 }
 
 .sidenav2 a:hover {
@@ -598,6 +599,7 @@ a {
 }
 .loadingCoins{
   margin-bottom: 30px;
+  margin-left: 30px;
 }
 .loadingCoins ul li {
   display: grid;
@@ -638,7 +640,7 @@ a {
   text-align: center;
 }
 .infoSelectedCrypto {
-  padding-top: 70px;
+  padding-top: 100px;
 }
 .infoSelectedCrypto h3 {
   text-align: center;
@@ -657,6 +659,7 @@ a {
 }
 .firstDataCoin{
   padding-top: 30px;
+  margin-left: 50px;
 }
 .firstDataCoin ul{
   display: grid;
@@ -670,10 +673,14 @@ a {
 }
 .firstDataCoin ul li{
   border: 1px solid gray;
+  padding: 0px 15px;
+  padding-bottom: 15px;
+
 }
+
 #horas{
-  font-size: 40px;
-  margin: 10% 10% 10% 15%;
+  font-size: 38px;
+  margin: 10% 10% 10% 10%;
 }
 .arrow{
   font-size: 2em;
@@ -688,8 +695,8 @@ a {
   grid-template-columns: repeat(3,1fr);
 }
 .prices ul li{
-  padding: 15px;
-
+  padding: 7px 15px;
+  width: 290px; 
 }
 /* //Favorite Icon Loading Coins */
 .favoriteHeart{

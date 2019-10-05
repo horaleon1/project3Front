@@ -1,15 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import Search from "./Search";
-// import CoinsPortfolio from "./CoinsPortfolio";
-import Sidebar2 from "./Sidebar2";
 import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
-import fuzzy from "fuzzy";
-import Reacthighcharts from "react-highcharts";
-import Highcharts from "./Highcharts";
-import HighchartsTheme from "./HighchartsTheme";
-Reacthighcharts.Highcharts.setOptions(HighchartsTheme);
 
 const Grid = styled.div`
   display: grid;
@@ -36,16 +28,26 @@ const LogoCoins = styled.div`
   margin-top: 10px;
   letter-spacing: 2px;
   color: #141747;
+  margin-left: 20px;
 `;
-
+const LogoCoins2 = styled.div`
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  color: #141747;
+  margin-left: -40px;
+`;
 
 const formatNumber = n => {
   return new Intl.NumberFormat().format(n);
-}
+};
 
 const usdFormat = n => {
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n)
-}
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD"
+  }).format(n);
+};
 
 export default class CoinsLoading extends Component {
   constructor(props) {
@@ -129,10 +131,12 @@ export default class CoinsLoading extends Component {
                 <img
                   src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
                   className="coinsLoadingImg"
-                />
+                />{" "}
+                <br />
                 <h4>Precio: {usdFormat(this.state.prices.PRICE)} USD</h4>
                 <h4>
-                  Circulación total: <br /> {formatNumber(this.state.prices.SUPPLY)}
+                  Circulación total: <br /> <br />{" "}
+                  {formatNumber(this.state.prices.SUPPLY)}
                 </h4>
               </div>
             </div>
@@ -140,13 +144,14 @@ export default class CoinsLoading extends Component {
           </div>
 
           <div className="firstDataCoin">
+            <LogoCoins2>Información Financiera</LogoCoins2>
             <h2>
-              {" "}
               <i
                 class="fas fa-poll"
                 style={{ marginRight: "10px", color: "#f91a1a" }}
               ></i>
-              Mercado de Capitalización: {usdFormat(this.state.prices.MKTCAP)} USD
+              Mercado de Capitalización: {usdFormat(this.state.prices.MKTCAP)}{" "}
+              USD
             </h2>
             <ul>
               <li>
@@ -155,6 +160,7 @@ export default class CoinsLoading extends Component {
                   Horas
                 </h2>
               </li>
+
               {this.state.prices.HIGH24HOUR > this.state.prices.PRICE ? (
                 <li>
                   <span className="arrow">
@@ -175,7 +181,7 @@ export default class CoinsLoading extends Component {
               <li>
                 <span className="arrow">
                   Cambio: <br />
-                   {formatNumber(this.state.prices.CHANGEPCT24HOUR)}
+                  {formatNumber(this.state.prices.CHANGEPCT24HOUR)}
                   {this.state.prices.CHANGEPCT24HOUR > 0 ? (
                     <i class="fas fa-percent" style={{ color: "green" }}></i>
                   ) : (
@@ -188,7 +194,6 @@ export default class CoinsLoading extends Component {
             <div className="prices">
               <ul>
                 <li>Precio Máximo: ${this.state.prices.HIGH24HOUR} USD</li>
-
                 <li>Último Precio: ${this.state.prices.PRICE} USD</li>
                 <li>Precio Minimo: ${this.state.prices.LOW24HOUR} USD</li>
               </ul>
@@ -206,21 +211,48 @@ export default class CoinsLoading extends Component {
             <ul>
               <li>
                 <h2 id="horas">
-                  {" "}
                   <i class="far fa-clock" style={{ marginRight: "10px" }}></i>1
                   Hora
                 </h2>
               </li>
+              {this.state.prices.HIGHHOUR > this.state.prices.PRICE ? (
+                <li>
+                  <span className="arrow">
+                    Recomendación: <br />
+                    Comprar
+                    <i class="fas fa-arrow-up" style={{ color: "green" }}></i>
+                  </span>
+                </li>
+              ) : (
+                <li>
+                  <span className="arrow">
+                    Recomendación: <br />
+                    Vender
+                    <i class="fas fa-arrow-down" style={{ color: "red" }}></i>
+                  </span>
+                </li>
+              )}
               <li>
-                Precio Máximo: <br /> ${this.state.prices.HIGHHOUR} USD
-              </li>
-              <li>
-                Último Precio: <br /> ${this.state.prices.PRICE} USD
-              </li>
-              <li>
-                Precio Minimo: <br /> ${this.state.prices.LOWHOUR} USD
+                <span className="arrow">
+                  Cambio: <br />
+                  {formatNumber(this.state.prices.CHANGEPCTHOUR)}
+                  {this.state.prices.CHANGEPCTHOUR > 0 ? (
+                    <i class="fas fa-percent" style={{ color: "green" }}></i>
+                  ) : (
+                    <i class="fas fa-percent" style={{ color: "red" }}></i>
+                  )}
+                </span>
               </li>
             </ul>
+
+            <div className="prices">
+              <ul>
+                <li>Precio Máximo: ${this.state.prices.HIGHHOUR} USD</li>
+                <li>Último Precio: ${this.state.prices.PRICE} USD</li>
+                <li>Precio Minimo: ${this.state.prices.LOWHOUR} USD</li>
+              </ul>
+            </div>
+
             <h3>
               <i
                 class="fas fa-coins"
