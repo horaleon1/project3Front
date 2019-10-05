@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
+import TradingViewWidget from "react-tradingview-widget";
 
 const Grid = styled.div`
   display: grid;
@@ -32,11 +33,12 @@ const LogoCoins = styled.div`
 `;
 const LogoCoins2 = styled.div`
   font-size: 2.5em;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   letter-spacing: 2px;
   color: #141747;
   margin-left: -40px;
 `;
+const App = () => <TradingViewWidget symbol="BITSTAMP:BTCUSD" />;
 
 const formatNumber = n => {
   return new Intl.NumberFormat().format(n);
@@ -48,9 +50,9 @@ const usdFormat = n => {
     currency: "USD"
   }).format(n);
 };
-const volumeUsd = (volume,price) =>{
+const volumeUsd = (volume, price) => {
   return volume * price;
-}
+};
 
 export default class CoinsLoading extends Component {
   constructor(props) {
@@ -61,16 +63,19 @@ export default class CoinsLoading extends Component {
       coinListCopy: [],
       saveCoin: [],
       filterCoins: this.filterCoins,
-      prices: []
+      prices: [],
+      grafica: false
     };
   }
+  activateG = () => {
+    this.setState({ grafica: !this.state.grafica });
+  };
 
   componentDidMount = () => {
     axios
       .get("https://min-api.cryptocompare.com/data/all/coinlist")
       .then(res => {
         const coinList = res.data.Data;
-        // console.log(coinList);
         this.setState({ coinList, coinListCopy: coinList });
       });
 
@@ -97,7 +102,6 @@ export default class CoinsLoading extends Component {
 
   filterCoins = e => {
     let coins = this.state.coinList;
-    //let coinsCopy = this.state.coinListCopy;
 
     let inputValue = e.target.value;
 
@@ -105,7 +109,6 @@ export default class CoinsLoading extends Component {
 
     let filtrado = coinSymbols.filter((el, i) => {
       return el.Symbol.includes(inputValue.toUpperCase());
-      //return el.Symbol === inputValue.toUpperCase();
     });
 
     if (inputValue.length === 0) {
@@ -113,12 +116,8 @@ export default class CoinsLoading extends Component {
     } else {
       this.setState({ coinListCopy: filtrado });
       console.log("ingresa el simbolo completo");
-      //console.log(filtrado);
     }
-
   };
-
-  
 
   render() {
     return (
@@ -146,12 +145,18 @@ export default class CoinsLoading extends Component {
                 </h4>
               </div>
             </div>
-            <div>
-                
-            </div>
           </div>
 
           <div className="firstDataCoin">
+            {/* //////////////////////////////Grafica */}
+            {this.state.grafica ? <div className="graph">{App()}</div> : null}
+
+            <div className="buttonGraph">
+              <button onClick={() => this.activateG()}>
+                {!this.state.grafica ? "Gráfica" : "Desactivar Gráfica"}
+              </button>
+            </div>
+
             <LogoCoins2>Información Financiera</LogoCoins2>
             <h2>
               <i
@@ -198,7 +203,6 @@ export default class CoinsLoading extends Component {
                 </span>
               </li>
             </ul>
-
             <div className="prices">
               <ul>
                 <li>Precio Máximo: ${this.state.prices.HIGH24HOUR} USD</li>
@@ -206,7 +210,6 @@ export default class CoinsLoading extends Component {
                 <li>Precio Minimo: ${this.state.prices.LOW24HOUR} USD</li>
               </ul>
             </div>
-
             <h3>
               <i
                 class="fas fa-coins"
@@ -217,9 +220,19 @@ export default class CoinsLoading extends Component {
               {this.state.prices.FROMSYMBOL}
               <i
                 class="fas fa-dollar-sign"
-                style={{ marginRight: "10px", color: "#f91a1a", marginLeft: "10px" }}
+                style={{
+                  marginRight: "10px",
+                  color: "#f91a1a",
+                  marginLeft: "10px"
+                }}
               ></i>
-              Volumen total: {usdFormat(volumeUsd(this.state.prices.VOLUME24HOUR,this.state.prices.PRICE))}
+              Volumen total:{" "}
+              {usdFormat(
+                volumeUsd(
+                  this.state.prices.VOLUME24HOUR,
+                  this.state.prices.PRICE
+                )
+              )}
             </h3>
             <ul>
               <li>
@@ -257,7 +270,6 @@ export default class CoinsLoading extends Component {
                 </span>
               </li>
             </ul>
-
             <div className="prices">
               <ul>
                 <li>Precio Máximo: ${this.state.prices.HIGHHOUR} USD</li>
@@ -265,7 +277,6 @@ export default class CoinsLoading extends Component {
                 <li>Precio Minimo: ${this.state.prices.LOWHOUR} USD</li>
               </ul>
             </div>
-
             <h3>
               <i
                 class="fas fa-coins"
@@ -275,9 +286,16 @@ export default class CoinsLoading extends Component {
               {this.state.prices.FROMSYMBOL}
               <i
                 class="fas fa-dollar-sign"
-                style={{ marginRight: "10px", color: "#f91a1a", marginLeft: "10px"}}
+                style={{
+                  marginRight: "10px",
+                  color: "#f91a1a",
+                  marginLeft: "10px"
+                }}
               ></i>
-              Volumen total: {usdFormat(volumeUsd(this.state.prices.VOLUMEHOUR,this.state.prices.PRICE))}
+              Volumen total:{" "}
+              {usdFormat(
+                volumeUsd(this.state.prices.VOLUMEHOUR, this.state.prices.PRICE)
+              )}
             </h3>
           </div>
         </LayoutSidebar>
@@ -294,7 +312,7 @@ export default class CoinsLoading extends Component {
               .slice(0, 50)
               .map(e => (
                 <li key={e.id} onClick={() => this.selectedCoin(e)}>
-                  {/* <i class="fas fa-heart favoriteHeart"></i> */}        
+                  {/* <i class="fas fa-heart favoriteHeart"></i> */}
                   <img
                     src={`http://cryptocompare.com/${this.state.coinListCopy[e].ImageUrl}`}
                     className="coinsLoadingImg"

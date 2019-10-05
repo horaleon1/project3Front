@@ -241,7 +241,7 @@ a {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   float: left;
   position: fixed;
-  z-index: 9999;
+  z-index: 0;
 }
 
 
@@ -706,4 +706,19 @@ a {
 }
 .favoriteHeart:hover{
   color:#f91a1a;
+}
+.botonGrafica{
+  z-index: 9999;
+}
+.buttonGraph button{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #141747;
+  color:#ffffff;
+  font-size: 20px;
+  position: absolute;
+  left: 80%;
+}
+.graph{
+  margin-bottom: 20px;
 }
