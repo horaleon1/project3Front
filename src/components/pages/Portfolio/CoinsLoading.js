@@ -15,14 +15,6 @@ const Input = styled.input`
   font-size: 1.4rem;
   height: 2rem;
 `;
-const LogoInv = styled.div`
-  font-size: 3.5em;
-  margin-left: 220px;
-  margin-bottom: 30px;
-  letter-spacing: 3px;
-  color: #141747;
-  margin-top: 70px;
-`;
 const LogoCoins = styled.div`
   font-size: 2.5em;
   margin-bottom: 20px;
@@ -88,9 +80,9 @@ export default class CoinsLoading extends Component {
       if (Object.keys(res.data.RAW).length > 0) {
         const prices = res.data.RAW[label].USD;
         this.setState({ prices });
-        console.log(prices);
+        // console.log(prices);
         if (Object.keys(res.data.RAW).length === 0) {
-          console.log("nose puede mostrar");
+          console.log("No se puede mostrar la información en este momento");
         }
       }
     });
@@ -115,7 +107,7 @@ export default class CoinsLoading extends Component {
       this.setState({ coinListCopy: coins });
     } else {
       this.setState({ coinListCopy: filtrado });
-      console.log("ingresa el simbolo completo");
+      console.log("Ingresa el simbolo o ticker completo");
     }
   };
 
@@ -135,7 +127,7 @@ export default class CoinsLoading extends Component {
                 <h4> {this.state.prices.FROMSYMBOL}</h4>
                 <img
                   src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
-                  className="coinsLoadingImg"
+                  className="coinsLoadingImg" alt="Criptomoneda"
                 />{" "}
                 <br />
                 <h4>Precio: {usdFormat(this.state.prices.PRICE)} USD</h4>
@@ -315,7 +307,7 @@ export default class CoinsLoading extends Component {
                   {/* <i class="fas fa-heart favoriteHeart"></i> */}
                   <img
                     src={`http://cryptocompare.com/${this.state.coinListCopy[e].ImageUrl}`}
-                    className="coinsLoadingImg"
+                    className="coinsLoadingImg" alt="Criptomoneda"
                   />
                   <h1>{this.state.coinListCopy[e].Symbol}</h1>
                   <h3>{this.state.coinListCopy[e].CoinName}</h3>

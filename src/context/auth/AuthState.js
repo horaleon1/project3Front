@@ -27,7 +27,7 @@ const AuthState = props => {
 
   // Load User
   const loadUser = async () => {
-    console.log("auqi llego")
+    //console.log("aqui llego")
     if (localStorage.token) {
       setAuthToken(localStorage.token);
     }
@@ -35,14 +35,14 @@ const AuthState = props => {
     try {
       const res = await axios.get('https://blockchainp3b.herokuapp.com/auth/');
 
-      console.log(res)
+      //console.log(res)
 
       dispatch({
         type: USER_LOADED,
         payload: res.data
       });
     } catch (err) {
-      console.log("error:", err)
+      //console.log("error:", err)
       dispatch({ type: AUTH_ERROR });
     }
   };

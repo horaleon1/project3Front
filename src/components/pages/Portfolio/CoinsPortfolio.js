@@ -17,7 +17,7 @@ export default class CoinsPortfolio extends Component {
       .get("https://min-api.cryptocompare.com/data/all/coinlist")
       .then(res => {
         const coinList = res.data.Data;
-        console.log(coinList);
+        //console.log(coinList);
         this.setState({ coinList });
       });
   };
@@ -25,7 +25,7 @@ export default class CoinsPortfolio extends Component {
   render() {
     function eliminateCoin(key) {
       let favorites = [...this.state.coinList];
-      console.log(favorites);
+      //console.log(favorites);
       this.setState({ favorites: _.pull(favorites, key) });
     }
 
@@ -42,7 +42,7 @@ export default class CoinsPortfolio extends Component {
       //  .map(e => this.state.coinList[e].ImageUrl), 
     }
     ;
-    console.log(justFavorites);
+    //console.log(justFavorites);
 
     return (
       <div className="coinsLoading2Portfolio">

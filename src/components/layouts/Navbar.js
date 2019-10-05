@@ -66,7 +66,7 @@ const Navbar = () => {
       <ul className="leftSide">
         <li>
           <a href="/">
-          <img src={Logo} className="Logo"/>
+          <img src={Logo} className="Logo" alt="Mundo Blockchain"/>
           </a>
         </li>
       </ul>

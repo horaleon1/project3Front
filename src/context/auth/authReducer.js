@@ -39,7 +39,6 @@ export default (state, action) => {
         ...state,
         token: null,
         isAuthenticated: false,
-        isAuthenticated: true,
         loading: false,
         user: null,
         error: action.payload
