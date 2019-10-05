@@ -13,10 +13,9 @@ import setAuthToken from "./utilities/setAuthToken";
 import PrivateRoute from './components/Routing/PrivateRoute';
 import Portfolio from './components/pages/Portfolio/Portfolio';
 import News from './components/pages/News';
-import Provider from './components/pages/Portfolio/context/Provider';
-// import WalletState from "./context/wallet/WalletState";
 import User from './components/pages/User';
 import Price from './components/layouts/Prices';
+import Screener from './components/pages/Screener';
 import English from './components/pages/NewsEnglish';
 import "./App.css";
 
@@ -29,7 +28,6 @@ const App = () => {
   return (
     <AuthState>
       <AlertState>
-        {/* <WalletState> */}
           <Router>
             <Fragment>
               <Navbar />
@@ -41,9 +39,8 @@ const App = () => {
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/explorer" component={Explorer} />
-              
                   <Route exact path="/portfolio" component={Portfolio} />                   
-                  
+                  <Route exact path="/screener" component={Screener} />
                   <Route exact path="/news" component={News} />
                   <Route exact path="/newsEnglish" component={English} />
                   <PrivateRoute exact path="/user" component={User} />
@@ -52,7 +49,6 @@ const App = () => {
               <Footer />
             </Fragment>
           </Router>
-        {/* </WalletState> */}
       </AlertState>
     </AuthState>
   );
