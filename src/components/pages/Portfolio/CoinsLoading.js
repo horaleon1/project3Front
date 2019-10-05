@@ -48,6 +48,9 @@ const usdFormat = n => {
     currency: "USD"
   }).format(n);
 };
+const volumeUsd = (volume,price) =>{
+  return volume * price;
+}
 
 export default class CoinsLoading extends Component {
   constructor(props) {
@@ -207,6 +210,11 @@ export default class CoinsLoading extends Component {
               Volumen total:
               {formatNumber(this.state.prices.VOLUME24HOUR)}
               {this.state.prices.FROMSYMBOL}
+              <i
+                class="fas fa-dollar-sign"
+                style={{ marginRight: "10px", color: "#f91a1a", marginLeft: "10px" }}
+              ></i>
+              Volumen total: {usdFormat(volumeUsd(this.state.prices.VOLUME24HOUR,this.state.prices.PRICE))}
             </h3>
             <ul>
               <li>
@@ -260,6 +268,11 @@ export default class CoinsLoading extends Component {
               ></i>
               Volumen total:{formatNumber(this.state.prices.VOLUMEHOUR)}
               {this.state.prices.FROMSYMBOL}
+              <i
+                class="fas fa-dollar-sign"
+                style={{ marginRight: "10px", color: "#f91a1a", marginLeft: "10px"}}
+              ></i>
+              Volumen total: {usdFormat(volumeUsd(this.state.prices.VOLUMEHOUR,this.state.prices.PRICE))}
             </h3>
           </div>
         </LayoutSidebar>
