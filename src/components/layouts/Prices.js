@@ -25,7 +25,7 @@ export default class extends Component {
           //console.log(btc);
           this.setState({ btc });
         });
-    }, 1000);
+    }, 3000);
 
     setInterval(() => {
       axios
@@ -37,7 +37,7 @@ export default class extends Component {
           //console.log(eth);
           this.setState({ eth });
         });
-    }, 1000);
+    }, 3000);
 
     setInterval(() => {
       axios
@@ -49,7 +49,7 @@ export default class extends Component {
           //console.log(xrp);
           this.setState({ xrp });
         });
-    }, 1000);
+    }, 3000);
 
     setInterval(() => {
       axios
@@ -61,7 +61,7 @@ export default class extends Component {
           //console.log(ltc);
           this.setState({ ltc });
         });
-    }, 1000);
+    }, 3000);
 
     setInterval(() => {
       axios
@@ -73,7 +73,7 @@ export default class extends Component {
           //console.log(bch);
           this.setState({ bch });
         });
-    }, 1000);
+    }, 3000);
   }
   render() {
     return (

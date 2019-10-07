@@ -41,9 +41,9 @@ const Navbar = () => {
       <li>
         <Link to="/about">¿Qué son las Criptomonedas?</Link>
       </li>
-      {/* <li>
+      <li>
         <Link to="/screener">Mercado</Link>
-      </li> */}
+      </li>
       <li>
         <Link to="/news">Noticias</Link>
       </li>
