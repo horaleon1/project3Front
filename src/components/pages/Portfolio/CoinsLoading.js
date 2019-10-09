@@ -75,7 +75,7 @@ export default class CoinsLoading extends Component {
   };
 
   _handlePrice = label => {
-    let url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${label}&tsyms=USD`;
+    let url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${label}&tsyms=USD`;
     axios.get(url).then(res => {
       if (res.data.Response != null) {
         console.log("No se puede mostrar la información en este momento");
