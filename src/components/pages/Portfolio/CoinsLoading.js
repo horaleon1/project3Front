@@ -1,8 +1,12 @@
 import React, { Component } from "react";
-import axios from "axios";
 import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
 import TradingViewWidget from "react-tradingview-widget";
+
+require("dotenv");
+
+const cc = require("cryptocompare");
+cc.setApiKey(process.env.REACT_API);
 
 const Grid = styled.div`
   display: grid;
@@ -56,40 +60,59 @@ export default class CoinsLoading extends Component {
       saveCoin: [],
       filterCoins: this.filterCoins,
       prices: [],
-      grafica: false
+      grafica: false,
+      alert: false
     };
   }
   activateG = () => {
     this.setState({ grafica: !this.state.grafica });
   };
 
+  noInfoAlert = () => {
+    this.setState({ alert: !this.state.alert });
+    console.log("noInfoAlert");
+  };
+
   componentDidMount = () => {
-    axios
-      .get("https://min-api.cryptocompare.com/data/all/coinlist")
-      .then(res => {
-        const coinList = res.data.Data;
-        this.setState({ coinList, coinListCopy: coinList });
-      });
+    // axios
+    //   .get("https://min-api.cryptocompare.com/data/all/coinlist")
+    //   .then(res => {
+    //     const coinList = res.data.Data;
+    //     this.setState({ coinList, coinListCopy: coinList });
+    //   });
+    cc.coinList()
+      .then(coinList => {
+        const list = coinList.Data;
+        this.setState({ coinList, coinListCopy: list });
+      })
+      .catch(console.error);
 
     this._handlePrice("BTC");
   };
 
   _handlePrice = label => {
-    let url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${label}&tsyms=USD`;
-    axios.get(url).then(res => {
-      if (res.data.Response != null) {
-        console.log("No se puede mostrar la información en este momento");
-          return;
-      }
-      if (Object.keys(res.data.RAW).length > 0) {
-        const prices = res.data.RAW[label].USD;
-        this.setState({ prices });
-        // console.log(prices);
-        if (Object.keys(res.data.RAW).length === 0) {
-          console.log("No se puede mostrar la información en este momento");
+    // let url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${label}&tsyms=USD`;
+    // axios.get(url).then(res => {
+    //   if (res.data.Response != null) {
+    //     console.log("No se puede mostrar la información en este momento");
+    //       return;
+    //   }
+    //   if (Object.keys(res.data.RAW).length > 0) {
+    //     const prices = res.data.RAW[label].USD;
+    //     this.setState({ prices });
+    //   }
+    // });
+
+    //new implementation
+
+    cc.priceFull(`${label}`, "USD")
+      .then(priceFull => {
+        if (Object.keys(priceFull[label]).length >= 0) {
+          const prices = priceFull[label].USD;
+          this.setState({ prices });
         }
-      }
-    });
+      })
+      .catch(console.error);
   };
 
   selectedCoin = value => {
@@ -122,25 +145,34 @@ export default class CoinsLoading extends Component {
         <LayoutSidebar>
           <div className="sidenav2">
             <div className="sidenav2">
-              <a href="#">Inicio</a>
+              <a href="#">Arriba</a>
             </div>
-            <div className="infoSelectedCrypto">
-              <h3>Criptomoneda Seleccionada:</h3>
+            {alert ? (
+              <div className="infoSelectedCrypto">
+                <h3>Criptomoneda Seleccionada:</h3>
 
-              <div className="infoSelectedData">
-                <h4> {this.state.prices.FROMSYMBOL}</h4>
-                <img
-                  src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
-                  className="coinsLoadingImg" alt="Criptomoneda"
-                />{" "}
-                <br />
-                <h4>Precio: {usdFormat(this.state.prices.PRICE)} USD</h4>
-                <h4>
-                  Circulación total: <br /> <br />{" "}
-                  {formatNumber(this.state.prices.SUPPLY)}
-                </h4>
+                <div className="infoSelectedData">
+                  <h4> {this.state.prices.FROMSYMBOL}</h4>
+                  <img
+                    src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
+                    className="coinsLoadingImg"
+                    alt="Criptomoneda"
+                  />{" "}
+                  <br />
+                  <h4>Precio: {usdFormat(this.state.prices.PRICE)} USD</h4>
+                  <h4>
+                    Circulación total: <br /> <br />{" "}
+                    {formatNumber(this.state.prices.SUPPLY)}
+                  </h4>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div>
+                <h3>
+                  No hay información <br /> disponible en este momento.
+                </h3>
+              </div>
+            )}
           </div>
 
           <div className="firstDataCoin">
@@ -149,7 +181,7 @@ export default class CoinsLoading extends Component {
 
             <div className="buttonGraph">
               <button onClick={() => this.activateG()}>
-                {!this.state.grafica ? "Gráfica" : "Desactivar Gráfica"}
+                {!this.state.grafica ? "Gráfica" : "Cerrar Gráfica"}
               </button>
             </div>
 
@@ -165,8 +197,11 @@ export default class CoinsLoading extends Component {
             <ul>
               <li>
                 <h2 id="horas">
-                  <i className="far fa-clock" style={{ marginRight: "15px" }}></i>24
-                  Horas
+                  <i
+                    className="far fa-clock"
+                    style={{ marginRight: "15px" }}
+                  ></i>
+                  24 Horas
                 </h2>
               </li>
 
@@ -175,7 +210,10 @@ export default class CoinsLoading extends Component {
                   <span className="arrow">
                     Recomendación: <br />
                     Comprar
-                    <i className="fas fa-arrow-up" style={{ color: "green" }}></i>
+                    <i
+                      className="fas fa-arrow-up"
+                      style={{ color: "green" }}
+                    ></i>
                   </span>
                 </li>
               ) : (
@@ -183,7 +221,10 @@ export default class CoinsLoading extends Component {
                   <span className="arrow">
                     Recomendación: <br />
                     Vender
-                    <i className="fas fa-arrow-down" style={{ color: "red" }}></i>
+                    <i
+                      className="fas fa-arrow-down"
+                      style={{ color: "red" }}
+                    ></i>
                   </span>
                 </li>
               )}
@@ -192,7 +233,10 @@ export default class CoinsLoading extends Component {
                   Cambio: <br />
                   {formatNumber(this.state.prices.CHANGEPCT24HOUR)}
                   {this.state.prices.CHANGEPCT24HOUR > 0 ? (
-                    <i className="fas fa-percent" style={{ color: "green" }}></i>
+                    <i
+                      className="fas fa-percent"
+                      style={{ color: "green" }}
+                    ></i>
                   ) : (
                     <i className="fas fa-percent" style={{ color: "red" }}></i>
                   )}
@@ -233,8 +277,11 @@ export default class CoinsLoading extends Component {
             <ul>
               <li>
                 <h2 id="horas">
-                  <i className="far fa-clock" style={{ marginRight: "10px" }}></i>1
-                  Hora
+                  <i
+                    className="far fa-clock"
+                    style={{ marginRight: "10px" }}
+                  ></i>
+                  1 Hora
                 </h2>
               </li>
               {this.state.prices.HIGHHOUR > this.state.prices.PRICE ? (
@@ -242,7 +289,10 @@ export default class CoinsLoading extends Component {
                   <span className="arrow">
                     Recomendación: <br />
                     Comprar
-                    <i className="fas fa-arrow-up" style={{ color: "green" }}></i>
+                    <i
+                      className="fas fa-arrow-up"
+                      style={{ color: "green" }}
+                    ></i>
                   </span>
                 </li>
               ) : (
@@ -250,7 +300,10 @@ export default class CoinsLoading extends Component {
                   <span className="arrow">
                     Recomendación: <br />
                     Vender
-                    <i className="fas fa-arrow-down" style={{ color: "red" }}></i>
+                    <i
+                      className="fas fa-arrow-down"
+                      style={{ color: "red" }}
+                    ></i>
                   </span>
                 </li>
               )}
@@ -259,7 +312,10 @@ export default class CoinsLoading extends Component {
                   Cambio: <br />
                   {formatNumber(this.state.prices.CHANGEPCTHOUR)}
                   {this.state.prices.CHANGEPCTHOUR > 0 ? (
-                    <i className="fas fa-percent" style={{ color: "green" }}></i>
+                    <i
+                      className="fas fa-percent"
+                      style={{ color: "green" }}
+                    ></i>
                   ) : (
                     <i className="fas fa-percent" style={{ color: "red" }}></i>
                   )}
@@ -311,7 +367,8 @@ export default class CoinsLoading extends Component {
                   {/* <i class="fas fa-heart favoriteHeart"></i> */}
                   <img
                     src={`http://cryptocompare.com/${this.state.coinListCopy[e].ImageUrl}`}
-                    className="coinsLoadingImg" alt="Criptomoneda"
+                    className="coinsLoadingImg"
+                    alt="Criptomoneda"
                   />
                   <h1>{this.state.coinListCopy[e].Symbol}</h1>
                   <h3>{this.state.coinListCopy[e].CoinName}</h3>
