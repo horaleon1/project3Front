@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import axios from "axios";
+require('dotenv');
+
+const cc = require("cryptocompare");
+cc.setApiKey(
+  process.env.REACT_API
+);
 
 export default class News extends Component {
   constructor(props) {
@@ -11,17 +16,14 @@ export default class News extends Component {
   }
 
   componentDidMount = () => {
-    axios
-      .get("https://min-api.cryptocompare.com/data/v2/news/?lang=ES")
-      .then(res => {
-        const spanish = res.data.Data;
-
-        this.setState({ spanish });
-      });
+    cc.newsList('ES')
+    .then(newsList => {
+      const spanish = newsList
+      this.setState( { spanish });
+    })
   };
 
   render() {
-    // const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${this.state.spanish.guid}`;
 
     return (
       <div className="containerNews">

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import axios from "axios";
 require('dotenv');
 
 const cc = require("cryptocompare");

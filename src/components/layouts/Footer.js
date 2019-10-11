@@ -58,7 +58,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="copyRightLine">
-        Copyright &copy; Develop by: <a href={linkedin} target="_blank">Horacio León</a> in <a href={ironhack} target="_blank">Ironhack México</a> {new Date().getFullYear()} all
+        Copyright &copy; Develop by: <a href={linkedin} target="_blank" rel="noopener noreferrer">Horacio León</a> in <a href={ironhack} target="_blank" rel="noopener noreferrer">Ironhack México</a> {new Date().getFullYear()} all
         rights reserved
       </div>
     </div>
