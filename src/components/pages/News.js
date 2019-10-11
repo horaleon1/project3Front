@@ -34,41 +34,39 @@ export default class News extends Component {
                 <div className="news1" key={e.id}>
                   <div className="seccion1News1">
                     <h1> {e.title}.</h1>
-                    <h3>
-                      <i>Fuente: </i>
-                      {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
-                    </h3>
                     <a href={e.guid} target="_blank" rel="noopener noreferrer">
                       Leer Noticia
                     </a>
-
+                    <h4>
+                      <i>Fuente: </i>
+                      {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
+                    </h4>
                     <img src={e.imageurl} alt="News" />
                   </div>
                   <div
-                    class="fb-share-button"
+                    className="fb-share-button"
                     data-href={e.guid}
                     data-layout="button"
                   ></div>
                 </div>
               ))}
             </li>
-            <li>
+             <li>
               {this.state.spanish.slice(47, 48).map(e => (
                 <div className="news1" key={e.id}>
                   <div className="seccion1News1">
                     <h1> {e.title}.</h1>
-                    <h3>
-                      <i>Fuente: </i>
-                      {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
-                    </h3>
                     <a href={e.guid} target="_blank" rel="noopener noreferrer">
                       Leer Noticia
                     </a>
-
+                    <h4>
+                      <i>Fuente: </i>
+                      {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
+                    </h4>
                     <img src={e.imageurl} alt="News" />
                   </div>
                   <div
-                    class="fb-share-button"
+                    className="fb-share-button"
                     data-href={e.guid}
                     data-layout="button"
                   ></div>
@@ -79,25 +77,24 @@ export default class News extends Component {
               {this.state.spanish.slice(46, 47).map(e => (
                 <div className="news1" key={e.id}>
                   <div className="seccion1News1">
-                    <h1> {e.title}.</h1>
-                    <h3>
-                      <i>Fuente: </i>
-                      {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
-                    </h3>
+                    <h1> {e.title}.</h1> 
                     <a href={e.guid} target="_blank" rel="noopener noreferrer">
                       Leer Noticia
                     </a>
-
+                    <h4>
+                      <i>Fuente: </i>
+                      {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
+                    </h4>
                     <img src={e.imageurl} alt="News" />
                   </div>
                   <div
-                    class="fb-share-button"
+                    className="fb-share-button"
                     data-href={e.guid}
                     data-layout="button"
                   ></div>
                 </div>
               ))}
-            </li>
+            </li> 
           </ul>
         </div>
 
@@ -124,7 +121,7 @@ export default class News extends Component {
                     Leer Noticia{" "}
                   </a>
                   <div
-                    class="fb-share-button"
+                    className="fb-share-button"
                     data-href={e.guid}
                     data-layout="button"
                   ></div>

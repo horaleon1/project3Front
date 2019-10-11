@@ -437,14 +437,13 @@ a {
 
 .newsSpanish {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  width: 90%;
-  margin-left: auto;
+  grid-template-columns: repeat(3,1fr);
+  width: 70%;
+  margin-left: 16%;
+  margin-top: 20px;
 }
 .containerNew {
   margin-bottom: 20px;
-  margin-left: 0%;
 }
 
 .containerNew ul {
@@ -465,6 +464,7 @@ a {
 }
 .containerNew ul li h3 {
   margin: 10px 0px 25px 0px;
+  font-size: 14px;;
 }
 .containerNew ul li a {
   margin-top: 30px;
@@ -480,78 +480,88 @@ a {
   font-weight: 700;
 }
 .textNews {
-  margin-top: 40px;
-  font-size: 30px;
-  padding-top: 20px;
+  margin-top: 50px;
+  font-size: 26px;
+  margin-left: 70px;
 }
 .textNews h3 {
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 }
 .textNews a {
   color: #141747;
   border: 1px solid #141747;
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
 }
 .textNews a:hover {
   color: #ffffff;
-  border: 1px solid #141747;
   background-color: #141747;
 }
 
 /* ///News tops */
-
+.news{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .news ul li {
   display: inline-block;
 }
 .news1 {
-  margin-left: 5%;
   margin-top: 10%;
+  margin-bottom: 10%;
 }
 .news1 img {
-  height: 450px;
-  width: 450px;
+  height: 400px;
+  width: 400px;
   border-radius: 20px;
-  margin: 0px 5px;
+  margin: 0px 10px;
 }
 .news1 h1 {
   position: absolute;
   color: #ffffff;
   width: 20%;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 250px;
   font-size: 20px;
   font-weight: 600;
   text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
 }
-.news1 h3 {
-  position: absolute;
-  color: white;
-  margin-left: 20px;
-  margin-top: 360px;
-  font-weight: 600;
-  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
-}
+
 .news1 a {
   position: absolute;
   color: white;
-  margin-left: 20px;
-  margin-top: 410px;
-  font-weight: 600;
-  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
+  margin-left: 50px;
+  margin-top: 415px;
+  margin-bottom: 20px;
+  border: 2px solid #141747;
+  padding: 10px 10px 10px 10px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #141747;
 }
 .news1 a:hover {
-  color: #e73546;
+  color: #141747;
+  background-color: #ffffff;
+}
+.news1 h4 {
+  position: absolute;
+  color: white;
+  margin-left: 20px;
+  margin-top: 370px;
+  font-weight: 600;
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
+  font-size: 15px;
 }
 .fb-share-button{
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 45%;
+  margin-left: 70%;
 }
 .fb-share-button:not(:nth-child(2)) {
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 5%;
+  margin-left: 20%;
 }
 
 /* Portolio Carpet */

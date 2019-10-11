@@ -35,14 +35,13 @@ export default class NewsEnglish extends Component {
                 <div className="news1" key={e.id}>
                   <div className="seccion1News1">
                     <h1> {e.title}.</h1>
-                    <h3>
+                    <a href={e.guid} target="_blank" rel="noopener noreferrer">
+                      Read More
+                    </a>
+                    <h4>
                       <i>Fuente: </i>
                       {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
-                    </h3>
-                    <a href={e.guid} target="_blank" rel="noopener noreferrer">
-                      Leer Noticia
-                    </a>
-
+                    </h4>
                     <img src={e.imageurl} alt="News" />
                   </div>
                   <div
@@ -58,14 +57,13 @@ export default class NewsEnglish extends Component {
                 <div className="news1" key={e.id}>
                   <div className="seccion1News1">
                     <h1> {e.title}.</h1>
-                    <h3>
+                    <a href={e.guid} target="_blank" rel="noopener noreferrer">
+                    Read More
+                    </a>
+                    <h4>
                       <i>Fuente: </i>
                       {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
-                    </h3>
-                    <a href={e.guid} target="_blank" rel="noopener noreferrer">
-                      Leer Noticia
-                    </a>
-
+                    </h4>
                     <img src={e.imageurl} alt="News" />
                   </div>
                   <div
@@ -81,14 +79,13 @@ export default class NewsEnglish extends Component {
                 <div className="news1" key={e.id}>
                   <div className="seccion1News1">
                     <h1> {e.title}.</h1>
-                    <h3>
+                    <a href={e.guid} target="_blank" rel="noopener noreferrer">
+                    Read More
+                    </a>
+                    <h4>
                       <i>Fuente: </i>
                       {e.source.charAt(0).toUpperCase() + e.source.substr(1)}
-                    </h3>
-                    <a href={e.guid} target="_blank" rel="noopener noreferrer">
-                      Leer Noticia
-                    </a>
-
+                    </h4>
                     <img src={e.imageurl} alt="News" />
                   </div>
                   <div
