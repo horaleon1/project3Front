@@ -129,7 +129,7 @@ body {
 .listFooter li a {
   color: white;
 }
-.footerContainer div:hover,
+
 .listFooter li a:hover {
   color: #e73546;
 }
@@ -149,6 +149,18 @@ a {
 .listSocialFooter a:hover {
   color: #e73546;
 }
+.copyRightLine a{
+  color: #ffffff;
+}
+.copyRightLine a:hover{
+  color: #e73546;  
+}
+
+.copyRightLine a:nth-child(1):hover{
+  font-size: 22px;
+}
+
+
 /* Register // Login  */
 
 .containerRegister {

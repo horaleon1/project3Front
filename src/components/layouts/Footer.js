@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import bitso from '../../assets/bitso.png';
-// import video from "../../assets/video.mp4";
 
+//Links of anchors
 const facebook = "https://www.facebook.com";
 
 const twitter = "https://www.twitter.com";
 
 const bitsoLink = "https://bitso.com/?ref=avfk";
+
+const linkedin = "https://www.linkedin.com/in/horacio-leon-85470a149/"
+
+const ironhack = "http://www.ironhack.com/en/locations/mexico-city"
 
 const Footer = () => {
   return (
@@ -19,11 +22,6 @@ const Footer = () => {
               Facebook
             </a>
           </li>
-          {/* <li>
-            <video loop autoPlay style={{ height: "100px", width: "100px" }}>
-              <source src={video} type="video/mp4" />
-            </video>
-          </li> */}
           <li>
             <a href={twitter} target="_blank" rel="noopener noreferrer">
               Twitter
@@ -59,8 +57,8 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div>
-        Copyright &copy; Blockchain Technologies {new Date().getFullYear()} all
+      <div className="copyRightLine">
+        Copyright &copy; Develop by: <a href={linkedin} target="_blank">Horacio León</a> in <a href={ironhack} target="_blank">Ironhack México</a> {new Date().getFullYear()} all
         rights reserved
       </div>
     </div>
