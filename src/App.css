@@ -191,6 +191,7 @@ a {
   width: 200px;
   border: 1px solid #141747;
   z-index: 9999;
+  font-size: 17px;
 }
 .formContainer {
   font-size: 1em;
@@ -202,9 +203,10 @@ a {
   color: white;
   background-color: #141747;
   border-radius: 10px;
-  padding: 7px;
+  padding: 10px;
   z-index: 0;
   border: 1px solid white;
+  letter-spacing: 0.8px;
 }
 .submit:hover {
   border: 2px solid #e73546;

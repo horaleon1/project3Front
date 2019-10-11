@@ -5,7 +5,6 @@ import AlertContext from "../../context/alert/alertContext";
 import Alerts from "../layouts/Alerts";
 
 
-
 const particleOpt = {
   particles: {
     number: {
