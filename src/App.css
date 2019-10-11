@@ -645,7 +645,7 @@ a {
 }
 .infoSelectedCrypto h3 {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 25px;
 }
 .infoSelectedData {
   margin-top: 20px;
@@ -653,13 +653,13 @@ a {
 }
 .infoSelectedData h4 {
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 .infoSelectedData img {
   margin-left: 0px;
 }
 .firstDataCoin{
-  padding-top: 30px;
+  padding-top: 20px;
   margin-left: 50px;
 }
 .firstDataCoin ul{
@@ -684,12 +684,21 @@ a {
   margin: 10% 10% 10% 10%;
 }
 .arrow{
-  font-size: 2em;
+  font-size: 2.3em;
   text-align: left;
-  margin-left: 5%;
-  margin-top: 4%;
+  margin-left: 10%;
+  margin-top: -25px;
 }
 .arrow i{
+  padding-left: 20%;
+}
+.arrow2{
+  font-size: 2.3em;
+  text-align: left;
+  margin-left: 20%;
+  margin-top: -25px;
+}
+.arrow2 i{
   padding-left: 20%;
 }
 .prices ul{
@@ -698,6 +707,9 @@ a {
 .prices ul li{
   padding: 7px 15px;
   width: 290px; 
+}
+.prices ul li:nth-child(2){
+  border: 1.5px solid #141747;
 }
 /* //Favorite Icon Loading Coins */
 .favoriteHeart{
@@ -717,7 +729,7 @@ a {
   color:#ffffff;
   font-size: 20px;
   position: absolute;
-  left: 74%;
+  right: 8%;
   z-index: 9;
 }
 .graph{
@@ -726,5 +738,5 @@ a {
 
 .financialInformation{
   position: relative;
-  left: 5%;
+  left: 2%;
 }

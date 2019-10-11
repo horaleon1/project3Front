@@ -32,8 +32,18 @@ const LogoCoins2 = styled.div`
   margin-bottom: 30px;
   letter-spacing: 2px;
   color: #141747;
-  margin-left: -80px;
+  margin-left: -50px;
 `;
+const Recomendation = styled.div`
+  font-size:1.8em;
+  margin-top:20px;
+  padding-left: 30px;
+`
+const Recomendation2 = styled.div`
+  font-size:1.8em;
+  margin-top:20px;
+  padding-left: 60px;
+`
 const App = () => <TradingViewWidget symbol="BITSTAMP:BTCUSD" />;
 
 const formatNumber = n => {
@@ -109,6 +119,7 @@ export default class CoinsLoading extends Component {
         if (Object.keys(priceFull[label]).length >= 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
+          console.log(prices)
         }
       })
       .catch(console.error);
@@ -118,6 +129,7 @@ export default class CoinsLoading extends Component {
     this._handlePrice(value);
 
     window.scrollTo(0,0);
+
     console.log(value);
   };
 
@@ -209,14 +221,15 @@ export default class CoinsLoading extends Component {
                     className="far fa-clock"
                     style={{ marginRight: "15px" }}
                   ></i>
-                  24 Horas
+                  1 Día
                 </h2>
               </li>
 
               {this.state.prices.HIGH24HOUR > this.state.prices.PRICE ? (
                 <li>
+                  <Recomendation>Recomendación:</Recomendation>
                   <span className="arrow">
-                    Recomendación: <br />
+                   <br />
                     Comprar
                     <i
                       className="fas fa-arrow-up"
@@ -226,8 +239,9 @@ export default class CoinsLoading extends Component {
                 </li>
               ) : (
                 <li>
+                  <Recomendation>Recomendación:</Recomendation>
                   <span className="arrow">
-                    Recomendación: <br />
+                     <br />
                     Vender
                     <i
                       className="fas fa-arrow-down"
@@ -237,8 +251,9 @@ export default class CoinsLoading extends Component {
                 </li>
               )}
               <li>
-                <span className="arrow">
-                  Cambio: <br />
+              <Recomendation2>Cambio:</Recomendation2>
+                <span className="arrow2">
+                   <br />
                   {formatNumber(this.state.prices.CHANGEPCT24HOUR)}
                   {this.state.prices.CHANGEPCT24HOUR > 0 ? (
                     <i
@@ -294,8 +309,9 @@ export default class CoinsLoading extends Component {
               </li>
               {this.state.prices.HIGHHOUR > this.state.prices.PRICE ? (
                 <li>
+                  <Recomendation>Recomendación:</Recomendation>
                   <span className="arrow">
-                    Recomendación: <br />
+                     <br />
                     Comprar
                     <i
                       className="fas fa-arrow-up"
@@ -305,8 +321,9 @@ export default class CoinsLoading extends Component {
                 </li>
               ) : (
                 <li>
+                  <Recomendation2>Recomendación:</Recomendation2>
                   <span className="arrow">
-                    Recomendación: <br />
+                    <br />
                     Vender
                     <i
                       className="fas fa-arrow-down"
@@ -316,8 +333,9 @@ export default class CoinsLoading extends Component {
                 </li>
               )}
               <li>
-                <span className="arrow">
-                  Cambio: <br />
+              <Recomendation2>Cambio:</Recomendation2>
+                <span className="arrow2">
+                   <br />
                   {formatNumber(this.state.prices.CHANGEPCTHOUR)}
                   {this.state.prices.CHANGEPCTHOUR > 0 ? (
                     <i
