@@ -2,6 +2,18 @@ import React, { Component } from "react";
 import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
 import TradingViewWidget from "react-tradingview-widget";
+import {
+  TwitterTimelineEmbed
+  // TwitterShareButton,
+  // TwitterFollowButton,
+  // TwitterHashtagButton,
+  // TwitterMentionButton,
+  // TwitterTweetEmbed,
+  // TwitterMomentShare,
+  // TwitterDMButton,
+  // TwitterVideoEmbed,
+  // TwitterOnAirButton
+} from "react-twitter-embed";
 
 require("dotenv");
 
@@ -25,14 +37,14 @@ const LogoCoins = styled.div`
   margin-top: 30px;
   letter-spacing: 2px;
   color: #141747;
-  margin-left: 25px;
+  margin-left: 30px;
 `;
 const LogoCoins2 = styled.div`
   font-size: 2.5em;
   margin-bottom: 30px;
   letter-spacing: 2px;
   color: #141747;
-  margin-left: -50px;
+  margin-left: -40px;
 `;
 const Recomendation = styled.div`
   font-size: 1.8em;
@@ -59,6 +71,7 @@ const usdFormat = n => {
 const volumeUsd = (volume, price) => {
   return volume * price;
 };
+const twitterUser = "horaleon1";
 
 export default class CoinsLoading extends Component {
   constructor(props) {
@@ -71,7 +84,8 @@ export default class CoinsLoading extends Component {
       filterCoins: this.filterCoins,
       prices: [],
       grafica: false,
-      alert: false
+      alert: false,
+      twitter: false
     };
   }
   activateG = () => {
@@ -84,6 +98,11 @@ export default class CoinsLoading extends Component {
 
   toTop = () => {
     window.scrollTo(0, 0);
+  };
+
+  twitterUser = () => {
+    this.setState({ twitter: !this.state.twitter });
+    console.log(this.state.twitter);
   };
 
   componentDidMount = () => {
@@ -191,11 +210,31 @@ export default class CoinsLoading extends Component {
                 </h3>
               </div>
             )}
+            <div style={{ paddingTop: "30px" }} className="twitter">
+              <button
+                onClick={() => this.twitterUser()}
+                className="twitterButton"
+              >
+               { !this.state.twitter ? "Twitter" : "Cerrar Twitter"} 
+              </button>
+            </div>
           </div>
         </LayoutSidebar>
         <div className="firstDataCoin">
           {/* //////////////////Graph ////////////////*/}
           {this.state.grafica ? <div className="graph">{App()}</div> : null}
+          {/* /////////////Twitter Timeline /////////// */}
+          {this.state.twitter ? (
+
+              <div className="timelineTwitter">
+                <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName={twitterUser}
+              options={{ height: 500, width: 700 }}
+            />
+            </div>
+            
+          ) : null}
 
           {/* //Financial Data // */}
           <div className="financialInformation">

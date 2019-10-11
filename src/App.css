@@ -731,8 +731,8 @@ a {
   grid-template-columns: repeat(3,1fr);
 }
 .prices ul li{
-  padding: 7px 15px;
-  width: 290px; 
+  padding: 7px 14px;
+  width: 292px; 
 }
 .prices ul li:nth-child(2){
   border: 1.5px solid #141747;
@@ -748,7 +748,7 @@ a {
 }
 .buttonGraph{
   text-align: center;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .buttonGraph button{
@@ -785,4 +785,19 @@ a {
   padding: 12px;
   color: #e73546;
   cursor: pointer;
+}
+.twitter{
+  text-align: center;
+}
+.twitterButton{
+  background-color: #00acee;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  color:#ffffff;
+  margin-bottom: 10px;
+}
+.timelineTwitter{
+  text-align: center;
 }
