@@ -83,12 +83,6 @@ export default class CoinsLoading extends Component {
   };
 
   componentDidMount = () => {
-    // axios
-    //   .get("https://min-api.cryptocompare.com/data/all/coinlist")
-    //   .then(res => {
-    //     const coinList = res.data.Data;
-    //     this.setState({ coinList, coinListCopy: coinList });
-    //   });
     cc.coinList()
       .then(coinList => {
         const list = coinList.Data;
@@ -119,7 +113,7 @@ export default class CoinsLoading extends Component {
         if (Object.keys(priceFull[label]).length >= 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
-          console.log(prices)
+          //console.log(prices)
         }
       })
       .catch(console.error);
@@ -130,7 +124,7 @@ export default class CoinsLoading extends Component {
 
     window.scrollTo(0,0);
 
-    console.log(value);
+    //console.log(value);
   };
 
   filterCoins = e => {
@@ -149,8 +143,8 @@ export default class CoinsLoading extends Component {
       this.setState({ coinListCopy: coins.Data });
     } else {
       this.setState({ coinListCopy: filtrado });
-      console.log(filtrado,"filtrado");
-      console.log(this.coinListCopy, "copy");
+      //console.log(filtrado,"filtrado");
+      //console.log(this.coinListCopy, "copy");
       // console.log("Ingresa el simbolo o ticker completo");
     }
   };

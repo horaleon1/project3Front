@@ -21,18 +21,8 @@ export default class extends Component {
   }
   componentDidMount() {
     setInterval(() => {
-      // axios
-      //   .get(
-      //     "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,MXN"
-      //   )
-      //   .then(res => {
-      //     const btc = res.data;
-      //     //console.log(btc);
-      //     this.setState({ btc });
-      //   });
       cc.price("BTC", ["USD", "MXN"])
         .then(prices => {
-          //console.log(prices)
           const btc = Object.values(prices);
           this.setState({ btc });
         })
@@ -40,18 +30,8 @@ export default class extends Component {
     }, 3000);
 
      setInterval(() => {
-    //   axios
-    //     .get(
-    //       "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,MXN"
-    //     )
-    //     .then(res => {
-    //       const eth = res.data;
-    //       //console.log(eth);
-    //       this.setState({ eth });
-    //     });
     cc.price("ETH", ["USD", "MXN"])
       .then(prices => {
-        //console.log(prices)
         const eth = Object.values(prices);
         this.setState({ eth });
       })
@@ -59,18 +39,8 @@ export default class extends Component {
     }, 3000);
 
     setInterval(() => {
-    //   axios
-    //     .get(
-    //       "https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD,MXN"
-    //     )
-    //     .then(res => {
-    //       const xrp = res.data;
-    //       //console.log(xrp);
-    //       this.setState({ xrp });
-    //     });
     cc.price("XRP", ["USD", "MXN"])
       .then(prices => {
-        //console.log(prices)
         const xrp = Object.values(prices);
         this.setState({ xrp });
       })
@@ -78,18 +48,8 @@ export default class extends Component {
      }, 3000);
 
     setInterval(() => {
-    //   axios
-    //     .get(
-    //       "https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD,MXN"
-    //     )
-    //     .then(res => {
-    //       const ltc = res.data;
-    //       //console.log(ltc);
-    //       this.setState({ ltc });
-    //     });
     cc.price("LTC", ["USD", "MXN"])
     .then(prices => {
-    //console.log(prices)
     const ltc = Object.values(prices);
     this.setState({ ltc });
   })
@@ -97,18 +57,8 @@ export default class extends Component {
      }, 3000);
 
      setInterval(() => {
-    //   axios
-    //     .get(
-    //       "https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD,MXN"
-    //     )
-    //     .then(res => {
-    //       const bch = res.data;
-    //       //console.log(bch);
-    //       this.setState({ bch });
-    //     });
     cc.price("BCH", ["USD", "MXN"])
     .then(prices => {
-    //console.log(prices)
     const bch = Object.values(prices);
     this.setState({ bch });
   })
@@ -125,11 +75,9 @@ export default class extends Component {
           </span>
           <span>₿</span>
           <span>
-            {/* BTC/USD {this.state.btc.USD}  */}
             BTC/USD {this.state.btc[0]}
           </span>
           <span>
-            {/* BTC/MXN {this.state.btc.MXN} */}
             BTC/MXN {this.state.btc[1]}
           </span>
           <span>Ξ</span>
