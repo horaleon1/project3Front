@@ -1,10 +1,21 @@
 import React, { Component } from "react";
-require('dotenv');
+import {
+  // TwitterTimelineEmbed
+  TwitterShareButton,
+  // TwitterFollowButton,
+  // TwitterHashtagButton,
+  // TwitterMentionButton,
+  // TwitterTweetEmbed,
+  // TwitterMomentShare,
+  // TwitterDMButton,
+  // TwitterVideoEmbed,
+  // TwitterOnAirButton
+} from "react-twitter-embed";
+
+require("dotenv");
 
 const cc = require("cryptocompare");
-cc.setApiKey(
-  process.env.REACT_API
-);
+cc.setApiKey(process.env.REACT_API);
 
 export default class News extends Component {
   constructor(props) {
@@ -16,15 +27,13 @@ export default class News extends Component {
   }
 
   componentDidMount = () => {
-    cc.newsList('ES')
-    .then(newsList => {
-      const spanish = newsList
-      this.setState( { spanish });
-    })
+    cc.newsList("ES").then(newsList => {
+      const spanish = newsList;
+      this.setState({ spanish });
+    });
   };
 
   render() {
-
     return (
       <div className="containerNews">
         <div className="news">
@@ -48,10 +57,19 @@ export default class News extends Component {
                     data-href={e.guid}
                     data-layout="button"
                   ></div>
+                  {/* <div className="twitterShareButton">
+                    <TwitterShareButton
+                      url={e.guid}
+                      options={{
+                        text: e.title,
+                        via: e.source
+                      }}
+                    />
+                  </div> */}
                 </div>
               ))}
             </li>
-             <li>
+            <li>
               {this.state.spanish.slice(47, 48).map(e => (
                 <div className="news1" key={e.id}>
                   <div className="seccion1News1">
@@ -70,6 +88,15 @@ export default class News extends Component {
                     data-href={e.guid}
                     data-layout="button"
                   ></div>
+                  {/* <div className="twitterShareButton">
+                    <TwitterShareButton
+                      url={e.guid}
+                      options={{
+                        text: e.title,
+                        via: e.source
+                      }}
+                    />
+                  </div> */}
                 </div>
               ))}
             </li>
@@ -77,7 +104,7 @@ export default class News extends Component {
               {this.state.spanish.slice(46, 47).map(e => (
                 <div className="news1" key={e.id}>
                   <div className="seccion1News1">
-                    <h1> {e.title}.</h1> 
+                    <h1> {e.title}.</h1>
                     <a href={e.guid} target="_blank" rel="noopener noreferrer">
                       Leer Noticia
                     </a>
@@ -92,9 +119,18 @@ export default class News extends Component {
                     data-href={e.guid}
                     data-layout="button"
                   ></div>
+                  {/* <div className="twitterShareButton">
+                    <TwitterShareButton
+                      url={e.guid}
+                      options={{
+                        text: e.title,
+                        via: e.source
+                      }}
+                    />
+                  </div> */}
                 </div>
               ))}
-            </li> 
+            </li>
           </ul>
         </div>
 
@@ -125,6 +161,7 @@ export default class News extends Component {
                     data-href={e.guid}
                     data-layout="button"
                   ></div>
+                  
                 </li>
               </ul>
             </div>

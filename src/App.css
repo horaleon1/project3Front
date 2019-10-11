@@ -801,3 +801,7 @@ a {
 .timelineTwitter{
   text-align: center;
 }
+.twitterShareButton{
+  position: absolute;
+  left: 28.5%;
+}
