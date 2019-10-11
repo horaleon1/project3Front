@@ -70,7 +70,6 @@ export default class CoinsLoading extends Component {
 
   noInfoAlert = () => {
     this.setState({ alert: !this.state.alert });
-    console.log("noInfoAlert");
   };
 
   componentDidMount = () => {
@@ -110,7 +109,6 @@ export default class CoinsLoading extends Component {
         if (Object.keys(priceFull[label]).length >= 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
-          console.log(prices);
         }
       })
       .catch(console.error);
@@ -118,6 +116,9 @@ export default class CoinsLoading extends Component {
 
   selectedCoin = value => {
     this._handlePrice(value);
+
+    window.scrollTo(0,0);
+    console.log(value);
   };
 
   filterCoins = e => {
@@ -136,7 +137,9 @@ export default class CoinsLoading extends Component {
       this.setState({ coinListCopy: coins.Data });
     } else {
       this.setState({ coinListCopy: filtrado });
-      console.log("Ingresa el simbolo o ticker completo");
+      console.log(filtrado,"filtrado");
+      console.log(this.coinListCopy, "copy");
+      // console.log("Ingresa el simbolo o ticker completo");
     }
   };
 
@@ -369,7 +372,7 @@ export default class CoinsLoading extends Component {
             {Object.keys(this.state.coinListCopy)
               .slice(0, 50)
               .map(e => (
-                <li key={e.id} onClick={() => this.selectedCoin(e)}>
+                <li key={e.id} onClick={ () => this.selectedCoin(e) }>
                   {/* <i class="fas fa-heart favoriteHeart"></i> */}
                   <img
                     src={`http://cryptocompare.com/${this.state.coinListCopy[e].ImageUrl}`}
