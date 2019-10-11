@@ -124,7 +124,6 @@ export default class CoinsLoading extends Component {
 
     window.scrollTo(0,0);
 
-    //console.log(value);
   };
 
   filterCoins = e => {
