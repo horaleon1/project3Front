@@ -13,7 +13,7 @@ const Grid = styled.div`
   grid-template-columns: 200px 1fr;
 `;
 const Input = styled.input`
-  width: 80%;
+  width: 92%;
   border-radius: 20px;
   border: 1px solid #141747;
   font-size: 1.4rem;
@@ -32,7 +32,7 @@ const LogoCoins2 = styled.div`
   margin-bottom: 30px;
   letter-spacing: 2px;
   color: #141747;
-  margin-left: -40px;
+  margin-left: -80px;
 `;
 const App = () => <TradingViewWidget symbol="BITSTAMP:BTCUSD" />;
 
@@ -110,6 +110,7 @@ export default class CoinsLoading extends Component {
         if (Object.keys(priceFull[label]).length >= 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
+          console.log(prices);
         }
       })
       .catch(console.error);
@@ -124,14 +125,15 @@ export default class CoinsLoading extends Component {
 
     let inputValue = e.target.value;
 
-    let coinSymbols = Object.values(coins);
+    let coinSymbols = Object.values(coins.Data);
 
     let filtrado = coinSymbols.filter((el, i) => {
       return el.Symbol.includes(inputValue.toUpperCase());
     });
-
+  
+   
     if (inputValue.length === 0) {
-      this.setState({ coinListCopy: coins });
+      this.setState({ coinListCopy: coins.Data });
     } else {
       this.setState({ coinListCopy: filtrado });
       console.log("Ingresa el simbolo o ticker completo");
@@ -142,11 +144,9 @@ export default class CoinsLoading extends Component {
     return (
       <div className="coinsLoading">
         <div className="dataCrypto"></div>
+        {/* //Sidebar */}
         <LayoutSidebar>
           <div className="sidenav2">
-            <div className="sidenav2">
-              <a href="#">Arriba</a>
-            </div>
             {alert ? (
               <div className="infoSelectedCrypto">
                 <h3>Criptomoneda Seleccionada:</h3>
@@ -173,18 +173,23 @@ export default class CoinsLoading extends Component {
                 </h3>
               </div>
             )}
+            
+              <a href="#" className="arriba">Arriba</a>
+          
           </div>
-
+          </LayoutSidebar>
           <div className="firstDataCoin">
-            {/* //////////////////////////////Grafica */}
+            {/* //////////////////Graph ////////////////*/}
             {this.state.grafica ? <div className="graph">{App()}</div> : null}
-
+            {/* // Activate/deactive Button /// */}
             <div className="buttonGraph">
               <button onClick={() => this.activateG()}>
                 {!this.state.grafica ? "Gráfica" : "Cerrar Gráfica"}
               </button>
             </div>
-
+            {/* //Financial Data // */}
+            <div className="financialInformation">
+                 
             <LogoCoins2>Información Financiera</LogoCoins2>
             <h2>
               <i
@@ -350,7 +355,8 @@ export default class CoinsLoading extends Component {
               )}
             </h3>
           </div>
-        </LayoutSidebar>
+        
+        </div>
         <LogoCoins>Encuentra mas de 5,000 criptomonedas.</LogoCoins>
         <div className="searchContainer">
           <Grid>

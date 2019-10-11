@@ -241,22 +241,23 @@ a {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   float: left;
   position: fixed;
-  z-index: 0;
+  z-index: 1;
 }
-
-
 .sidenav2 a {
   text-decoration: none;
+  text-align: center;
   font-size: 35px;
   color: #141747;
-  display: block;
-  text-align: center;
-  margin-top: 30px;
+  position: absolute;
+  bottom: 25%;
+  margin-left: 30%;
+  z-index: 0;
 }
 
 .sidenav2 a:hover {
   color: #e73546;
 }
+
 .sidenav ul {
   margin-left: 20px;
   list-style: none;
@@ -610,10 +611,10 @@ a {
 .coinsLoading2Portfolio ul li h3,
 .coinsLoading2Portfolio ul li h1 {
   padding-left: 10%;
-  padding-bottom: 10px;
+  margin-top: 22%;
 }
 .loadingCoins ul li h3{
-  margin-top: 10px;
+  padding-top: 30px;
   margin-left: 25px;
   margin-bottom: 10px;
 }
@@ -640,7 +641,7 @@ a {
   text-align: center;
 }
 .infoSelectedCrypto {
-  padding-top: 100px;
+  padding-top: 20px;
 }
 .infoSelectedCrypto h3 {
   text-align: center;
@@ -708,7 +709,6 @@ a {
   color:#f91a1a;
 }
 .botonGrafica{
-  z-index: 9999;
 }
 .buttonGraph button{
   padding: 10px;
@@ -717,8 +717,14 @@ a {
   color:#ffffff;
   font-size: 20px;
   position: absolute;
-  left: 80%;
+  left: 74%;
+  z-index: 9;
 }
 .graph{
   margin-bottom: 20px;
+}
+
+.financialInformation{
+  position: relative;
+  left: 5%;
 }
