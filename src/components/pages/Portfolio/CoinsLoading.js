@@ -3,6 +3,7 @@ import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
 import TradingViewWidget from "react-tradingview-widget";
 
+
 require("dotenv");
 
 const cc = require("cryptocompare");
@@ -82,6 +83,10 @@ export default class CoinsLoading extends Component {
     this.setState({ alert: !this.state.alert });
   };
 
+  toTop = () => {
+    window.scrollTo(0,0);
+  }
+
   componentDidMount = () => {
     cc.coinList()
       .then(coinList => {
@@ -123,6 +128,8 @@ export default class CoinsLoading extends Component {
     this._handlePrice(value);
 
     window.scrollTo(0,0);
+
+    //console.log(value);
 
   };
 
@@ -182,8 +189,10 @@ export default class CoinsLoading extends Component {
               </div>
             )}
             
-              <a href="#" className="arriba">Arriba</a>
-          
+                 <h2 onClick={ () => this.toTop() }className="arriba">
+                 <i class="fas fa-arrow-up"></i>
+                 </h2>
+                 
           </div>
           </LayoutSidebar>
           <div className="firstDataCoin">

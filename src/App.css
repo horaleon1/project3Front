@@ -249,7 +249,7 @@ a {
 
 /* Sidebar2*/
 .sidenav2 {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
+  height: 91%; /* Full-height: remove this if you want "auto" height */
   width: 240px; /* Set the width of the sidebar */
   left: 0;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
@@ -744,8 +744,7 @@ a {
 .favoriteHeart:hover{
   color:#f91a1a;
 }
-.botonGrafica{
-}
+
 .buttonGraph button{
   padding: 10px;
   border-radius: 10px;
@@ -763,4 +762,23 @@ a {
 .financialInformation{
   position: relative;
   left: 2%;
+}
+
+.arriba {
+  font-size: 35px;
+  text-align: center;
+  width: 20%;
+  border-radius: 10px;
+  padding: 10px;
+  color: #141747;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 35%;
+  position: absolute;
+  bottom: 25%;
+}
+.arriba:hover{
+  font-size: 40px;
+  padding: 12px;
+  color: #e73546;
+  cursor: pointer;
 }
