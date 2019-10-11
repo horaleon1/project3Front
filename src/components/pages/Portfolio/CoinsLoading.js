@@ -3,7 +3,6 @@ import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
 import TradingViewWidget from "react-tradingview-widget";
 
-
 require("dotenv");
 
 const cc = require("cryptocompare");
@@ -36,15 +35,15 @@ const LogoCoins2 = styled.div`
   margin-left: -50px;
 `;
 const Recomendation = styled.div`
-  font-size:1.8em;
-  margin-top:20px;
+  font-size: 1.8em;
+  margin-top: 20px;
   padding-left: 30px;
-`
+`;
 const Recomendation2 = styled.div`
-  font-size:1.8em;
-  margin-top:20px;
+  font-size: 1.8em;
+  margin-top: 20px;
   padding-left: 60px;
-`
+`;
 const App = () => <TradingViewWidget symbol="BITSTAMP:BTCUSD" />;
 
 const formatNumber = n => {
@@ -84,8 +83,8 @@ export default class CoinsLoading extends Component {
   };
 
   toTop = () => {
-    window.scrollTo(0,0);
-  }
+    window.scrollTo(0, 0);
+  };
 
   componentDidMount = () => {
     cc.coinList()
@@ -127,10 +126,9 @@ export default class CoinsLoading extends Component {
   selectedCoin = value => {
     this._handlePrice(value);
 
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 
     //console.log(value);
-
   };
 
   filterCoins = e => {
@@ -143,8 +141,7 @@ export default class CoinsLoading extends Component {
     let filtrado = coinSymbols.filter((el, i) => {
       return el.Symbol.includes(inputValue.toUpperCase());
     });
-  
-   
+
     if (inputValue.length === 0) {
       this.setState({ coinListCopy: coins.Data });
     } else {
@@ -180,6 +177,12 @@ export default class CoinsLoading extends Component {
                     {formatNumber(this.state.prices.SUPPLY)}
                   </h4>
                 </div>
+                {/* // Activate/deactive Button /// */}
+                <div className="buttonGraph">
+                  <button onClick={() => this.activateG()}>
+                    {!this.state.grafica ? "Gráfica" : "Cerrar Gráfica"}
+                  </button>
+                </div>
               </div>
             ) : (
               <div>
@@ -188,25 +191,14 @@ export default class CoinsLoading extends Component {
                 </h3>
               </div>
             )}
-            
-                 <h2 onClick={ () => this.toTop() }className="arriba">
-                 <i class="fas fa-arrow-up"></i>
-                 </h2>
-                 
           </div>
-          </LayoutSidebar>
-          <div className="firstDataCoin">
-            {/* //////////////////Graph ////////////////*/}
-            {this.state.grafica ? <div className="graph">{App()}</div> : null}
-            {/* // Activate/deactive Button /// */}
-            <div className="buttonGraph">
-              <button onClick={() => this.activateG()}>
-                {!this.state.grafica ? "Gráfica" : "Cerrar Gráfica"}
-              </button>
-            </div>
-            {/* //Financial Data // */}
-            <div className="financialInformation">
-                 
+        </LayoutSidebar>
+        <div className="firstDataCoin">
+          {/* //////////////////Graph ////////////////*/}
+          {this.state.grafica ? <div className="graph">{App()}</div> : null}
+
+          {/* //Financial Data // */}
+          <div className="financialInformation">
             <LogoCoins2>Información Financiera</LogoCoins2>
             <h2>
               <i
@@ -231,7 +223,7 @@ export default class CoinsLoading extends Component {
                 <li>
                   <Recomendation>Recomendación:</Recomendation>
                   <span className="arrow">
-                   <br />
+                    <br />
                     Comprar
                     <i
                       className="fas fa-arrow-up"
@@ -243,7 +235,7 @@ export default class CoinsLoading extends Component {
                 <li>
                   <Recomendation>Recomendación:</Recomendation>
                   <span className="arrow">
-                     <br />
+                    <br />
                     Vender
                     <i
                       className="fas fa-arrow-down"
@@ -253,9 +245,9 @@ export default class CoinsLoading extends Component {
                 </li>
               )}
               <li>
-              <Recomendation2>Cambio:</Recomendation2>
+                <Recomendation2>Cambio:</Recomendation2>
                 <span className="arrow2">
-                   <br />
+                  <br />
                   {formatNumber(this.state.prices.CHANGEPCT24HOUR)}
                   {this.state.prices.CHANGEPCT24HOUR > 0 ? (
                     <i
@@ -313,7 +305,7 @@ export default class CoinsLoading extends Component {
                 <li>
                   <Recomendation>Recomendación:</Recomendation>
                   <span className="arrow">
-                     <br />
+                    <br />
                     Comprar
                     <i
                       className="fas fa-arrow-up"
@@ -335,9 +327,9 @@ export default class CoinsLoading extends Component {
                 </li>
               )}
               <li>
-              <Recomendation2>Cambio:</Recomendation2>
+                <Recomendation2>Cambio:</Recomendation2>
                 <span className="arrow2">
-                   <br />
+                  <br />
                   {formatNumber(this.state.prices.CHANGEPCTHOUR)}
                   {this.state.prices.CHANGEPCTHOUR > 0 ? (
                     <i
@@ -378,7 +370,6 @@ export default class CoinsLoading extends Component {
               )}
             </h3>
           </div>
-        
         </div>
         <LogoCoins>Encuentra mas de 5,000 criptomonedas.</LogoCoins>
         <div className="searchContainer">
@@ -392,7 +383,7 @@ export default class CoinsLoading extends Component {
             {Object.keys(this.state.coinListCopy)
               .slice(0, 50)
               .map(e => (
-                <li key={e.id} onClick={ () => this.selectedCoin(e) }>
+                <li key={e.id} onClick={() => this.selectedCoin(e)}>
                   {/* <i class="fas fa-heart favoriteHeart"></i> */}
                   <img
                     src={`http://cryptocompare.com/${this.state.coinListCopy[e].ImageUrl}`}
@@ -404,6 +395,9 @@ export default class CoinsLoading extends Component {
                 </li>
               ))}
           </ul>
+          <h2 onClick={() => this.toTop()} className="arriba">
+            <i className="fas fa-arrow-up"></i>
+          </h2>
         </div>
       </div>
     );
