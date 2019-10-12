@@ -34,7 +34,7 @@ const Input = styled.input`
 const LogoCoins = styled.div`
   font-size: 2.5em;
   margin-bottom: 20px;
-  padding-top:30px;
+  padding-top: 30px;
   letter-spacing: 2px;
   color: #141747;
   margin-left: 30px;
@@ -60,8 +60,6 @@ const LayoutInformation = styled.div`
   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); */
   /* background-color: lightgray; */
 `;
-
-const App = () => <TradingViewWidget symbol="BITSTAMP:BTCUSD" />;
 
 const formatNumber = n => {
   return new Intl.NumberFormat().format(n);
@@ -94,6 +92,7 @@ export default class CoinsLoading extends Component {
       information: false
     };
   }
+
   activateG = () => {
     this.setState({ grafica: !this.state.grafica });
   };
@@ -145,15 +144,14 @@ export default class CoinsLoading extends Component {
         if (Object.keys(priceFull[label]).length >= 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
-          console.log(prices)
-          console.log(this.state.prices.FROMSYMBOL)
+          console.log(prices);
+          console.log(this.state.prices.FROMSYMBOL);
         }
       })
       .catch(console.error);
   };
 
   selectedCoin = value => {
-
     this._handlePrice(value);
 
     window.scrollTo(0, 0);
@@ -188,66 +186,71 @@ export default class CoinsLoading extends Component {
         <LayoutInformation>
           <div className="dataCrypto"></div>
           {/* //Sidebar */}
-          
-            {
-              this.state.prices.FROMSYMBOL != null ? 
-              <LayoutSidebar>
-            <div className="sidenav2">
-              <div className="infoSelectedCrypto">
-                <h3>Criptomoneda:</h3>
 
-                <div className="infoSelectedData">
-                  <h4> {this.state.prices.FROMSYMBOL}</h4>
-                  <img
-                    src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
-                    className="coinsLoadingImg"
-                    alt="Criptomoneda"
-                  />
-                  <br />
-                  <h4>Precio: {usdFormat(this.state.prices.PRICE)} USD</h4>
-                  <h4>
-                    Circulación total: <br /> <br />{" "}
-                    {formatNumber(this.state.prices.SUPPLY)}
-                  </h4>
-                </div>
+          {this.state.prices.FROMSYMBOL != null ? (
+            <LayoutSidebar>
+              <div className="sidenav2">
+                <div className="infoSelectedCrypto">
+                  <h3>Criptomoneda:</h3>
+
+                  <div className="infoSelectedData">
+                    <h4> {this.state.prices.FROMSYMBOL}</h4>
+                    <img
+                      src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
+                      className="coinsLoadingImg"
+                      alt="Criptomoneda"
+                    />
+                    <br />
+                    <h4>Precio: {usdFormat(this.state.prices.PRICE)} USD</h4>
+                    <h4>
+                      Circulación total: <br /> <br />{" "}
+                      {formatNumber(this.state.prices.SUPPLY)}
+                    </h4>
+                  </div>
                 </div>
                 {/* // Activate/deactive Button  Graph/// */}
 
-                {
-                  this.state.information ? <div className="buttonGraph">
-                  <button onClick={() => this.activateG()}>
-                    {!this.state.grafica ? "Gráfica" : "Cerrar Gráfica"}
-                  </button>
-                </div> : null
-                }
-                
-              
-              {/* // Activate/deactive Button  Information/// */}
-              
-              <div className="informationButton">
-                <button onClick={() => this.activateInformaction()}>
-                  { !this.state.information ? "Información" : "Cerrar Información" }
-                </button>
-              </div>
+                {this.state.information ? (
+                  <div className="buttonGraph">
+                    <button onClick={() => this.activateG()}>
+                      {!this.state.grafica ? "Gráfica" : "Cerrar Gráfica"}
+                    </button>
+                  </div>
+                ) : null}
 
-              {/* // Activate/deactive Button  Twitter/// */}
-              <div className="twitter">
-                <button
-                  onClick={() => this.twitterUser()}
-                  className="twitterButton"
-                >
-                  {!this.state.twitter ? "Twitter" : "Cerrar Twitter"}
-                </button>
+                {/* // Activate/deactive Button  Information/// */}
+
+                <div className="informationButton">
+                  <button onClick={() => this.activateInformaction()}>
+                    {!this.state.information
+                      ? "Información"
+                      : "Cerrar Información"}
+                  </button>
+                </div>
+
+                {/* // Activate/deactive Button  Twitter/// */}
+                <div className="twitter">
+                  <button
+                    onClick={() => this.twitterUser()}
+                    className="twitterButton"
+                  >
+                    {!this.state.twitter ? "Twitter" : "Cerrar Twitter"}
+                  </button>
+                </div>
               </div>
-            </div>
-          </LayoutSidebar> : null
-            } 
-            
+            </LayoutSidebar>
+          ) : null}
 
           {this.state.information ? (
             <div className="firstDataCoin">
               {/* //////////////////Graph ////////////////*/}
-              {this.state.grafica ? <div className="graph">{App()}</div> : null}
+              {this.state.grafica ? (
+                <div className="graph">
+                  <TradingViewWidget
+                    symbol={`BINANCE:${this.state.prices.FROMSYMBOL}USD`}
+                  />
+                </div>
+              ) : null}
               {/* /////////////Twitter Timeline /////////// */}
               {this.state.twitter ? (
                 <div className="timelineTwitter">
@@ -444,7 +447,7 @@ export default class CoinsLoading extends Component {
               </div>
             </div>
           ) : (
-          <LogoCoins>Selecciona una Criptomoneda para comenzar.</LogoCoins>  
+            <LogoCoins>Selecciona una Criptomoneda para comenzar.</LogoCoins>
           )}
 
           <div className="searchContainer">
