@@ -106,14 +106,16 @@ export default class CoinsLoading extends Component {
   };
 
   twitterUser = () => {
+
     this.setState({ twitter: !this.state.twitter });
-    console.log(this.state.twitter);
+
   };
 
   componentDidMount = () => {
     cc.coinList()
       .then(coinList => {
         const list = coinList.Data;
+
         this.setState({ coinList, coinListCopy: list });
       })
       .catch(console.error);
@@ -141,8 +143,8 @@ export default class CoinsLoading extends Component {
         if (Object.keys(priceFull[label]).length >= 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
-          console.log(prices);
-          console.log(this.state.prices.FROMSYMBOL);
+          // console.log(prices);
+          // console.log(this.state.prices.FROMSYMBOL);
         }
       })
       .catch(console.error);
@@ -463,16 +465,16 @@ export default class CoinsLoading extends Component {
             <ul>
               {Object.keys(this.state.coinListCopy)
                 .slice(0, 50)
-                .map(e => (
-                  <li key={e.id} onClick={() => this.selectedCoin(e)}>
+                .map( (object, i )=> (
+                  <li key={i} onClick={() => this.selectedCoin(object)}>
                     {/* <i class="fas fa-heart favoriteHeart"></i> */}
                     <img
-                      src={`http://cryptocompare.com/${this.state.coinListCopy[e].ImageUrl}`}
+                      src={`http://cryptocompare.com/${this.state.coinListCopy[object].ImageUrl}`}
                       className="coinsLoadingImg"
                       alt="Criptomoneda"
                     />
-                    <h1>{this.state.coinListCopy[e].Symbol}</h1>
-                    <h3>{this.state.coinListCopy[e].CoinName}</h3>
+                    <h1>{this.state.coinListCopy[object].Symbol}</h1>
+                    <h3>{this.state.coinListCopy[object].CoinName}</h3>
                   </li>
                 ))}
             </ul>
