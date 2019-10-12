@@ -22,7 +22,7 @@ cc.setApiKey(process.env.REACT_API);
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 300px 1fr;
 `;
 const Input = styled.input`
   width: 92%;
@@ -38,6 +38,7 @@ const LogoCoins = styled.div`
   letter-spacing: 2px;
   color: #141747;
   margin-left: 30px;
+  text-align:center;
 `;
 const LogoCoins2 = styled.div`
   font-size: 2.5em;
@@ -55,10 +56,6 @@ const Recomendation2 = styled.div`
   font-size: 1.8em;
   margin-top: 20px;
   padding-left: 60px;
-`;
-const LayoutInformation = styled.div`
-  /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); */
-  /* background-color: lightgray; */
 `;
 
 const formatNumber = n => {
@@ -183,8 +180,8 @@ export default class CoinsLoading extends Component {
   render() {
     return (
       <div className="coinsLoading">
-        <LayoutInformation>
-          <div className="dataCrypto"></div>
+
+          
           {/* //Sidebar */}
 
           {this.state.prices.FROMSYMBOL != null ? (
@@ -241,6 +238,17 @@ export default class CoinsLoading extends Component {
             </LayoutSidebar>
           ) : null}
 
+          {/* /////////////Twitter Timeline /////////// */}
+          {this.state.twitter ? (
+                <div className="timelineTwitter">
+                  <TwitterTimelineEmbed
+                    sourceType="profile"
+                    screenName={twitterUser}
+                    options={{ height: 500, width: 700 }}
+                  />
+                </div>
+              ) : null}
+
           {this.state.information ? (
             <div className="firstDataCoin">
               {/* //////////////////Graph ////////////////*/}
@@ -248,16 +256,6 @@ export default class CoinsLoading extends Component {
                 <div className="graph">
                   <TradingViewWidget
                     symbol={`BINANCE:${this.state.prices.FROMSYMBOL}USD`}
-                  />
-                </div>
-              ) : null}
-              {/* /////////////Twitter Timeline /////////// */}
-              {this.state.twitter ? (
-                <div className="timelineTwitter">
-                  <TwitterTimelineEmbed
-                    sourceType="profile"
-                    screenName={twitterUser}
-                    options={{ height: 500, width: 700 }}
                   />
                 </div>
               ) : null}
@@ -449,13 +447,18 @@ export default class CoinsLoading extends Component {
           ) : (
             <LogoCoins>Selecciona una Criptomoneda para comenzar.</LogoCoins>
           )}
+          <div className="containerSearch">
 
+          
+           {/* //Search Input// */}
           <div className="searchContainer">
             <Grid>
               <h3>Buscar</h3>
               <Input onKeyUp={this.filterCoins} />
             </Grid>
           </div>
+
+           {/* //Grid loaded Coins // */}
           <div className="loadingCoins">
             <ul>
               {Object.keys(this.state.coinListCopy)
@@ -477,7 +480,9 @@ export default class CoinsLoading extends Component {
               <i className="fas fa-arrow-up"></i>
             </h2>
           </div>
-        </LayoutInformation>
+      </div>
+
+
       </div>
     );
   }

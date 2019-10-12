@@ -249,31 +249,16 @@ a {
 
 /* Sidebar2*/
 .sidenav2 {
- height: 90vh;/* Full-height: remove this if you want "auto" height */
+  height: 90vh;/* Full-height: remove this if you want "auto" height */
   width: 240px; /* Set the width of the sidebar */
-  left: 0;
+  left: -2%;
   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);  */
   float: left;
-  position: absolute;
+  position: relative;
   z-index: 1;
   /* border-right: 1px solid lightgrey;
   border-bottom: 1px solid; */
-  margin-left: 20px;
-  margin-top: 20px;
-}
-.sidenav2 a {
-  text-decoration: none;
-  text-align: center;
-  font-size: 35px;
-  color: #141747;
-  position: absolute;
-  bottom: 25%;
-  margin-left: 40%;
-  z-index: 0;
-}
-
-.sidenav2 a:hover {
-  color: #e73546;
+  margin-top: 10px;
 }
 
 .sidenav ul {
@@ -597,7 +582,7 @@ a {
 .coinsLoading,
 .coinsLoading2Portfolio {
   margin-top: 50px;
-  margin-left: 210px;
+  /* margin-left: 210px; */
   background-color: #ffffff;
 }
 .loadingCoins ul:not(#display2),
@@ -624,7 +609,6 @@ a {
 
 .firstDataCoin ul li{
   display: grid;
-  
   border-radius: 10px;
 }
 .loadingCoins{
@@ -691,6 +675,8 @@ a {
 .firstDataCoin{
   padding-top: 20px;
   margin-left: 50px;
+  display: grid;
+  justify-content: center;
 }
 .firstDataCoin ul{
   display: grid;
@@ -787,7 +773,7 @@ a {
   color: #141747;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   margin-left: -210px;
-  position: fixed;
+  position: relative;
 }
 .arriba:hover{
   color: #e73546;
@@ -827,4 +813,8 @@ a {
   margin-bottom: 5px;
   margin-top: 5px;
   width: 150px;
+}
+.containerSearch{
+  display: grid;
+  justify-content: center;
 }
