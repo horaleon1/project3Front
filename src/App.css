@@ -69,7 +69,7 @@ body {
   height: 65px;
   border-bottom: 0.1px solid white;
   background-color: #e73546;
-  font-size: 1.1em;
+  font-size: 1em;
   position: fixed;
   width: 100%;
   z-index: 9999;
@@ -85,9 +85,9 @@ body {
 }
 .rightSide {
   float: right;
-  margin-right: 3%;
+  margin-right: 2%;
   position: relative;
-  top: 35%;
+  top: 40%;
 }
 .leftSide li a {
   color: white;
@@ -100,11 +100,11 @@ body {
   font-weight: 550;
 }
 .rightSide li {
-  margin-left: 30px;
+  margin-left: 18px;
 }
 
 .rightSide li:nth-child(6) {
-  margin-left: 70px;
+  margin-left: 50px;
 }
 .Logo{
   width: 150px;
@@ -249,17 +249,17 @@ a {
 
 /* Sidebar2*/
 .sidenav2 {
- height: 85%;/* Full-height: remove this if you want "auto" height */
+ height: 90vh;/* Full-height: remove this if you want "auto" height */
   width: 240px; /* Set the width of the sidebar */
   left: 0;
-  /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);  */
   float: left;
   position: absolute;
   z-index: 1;
-  margin-left: 5px;
-  border-right: 1px solid lightgrey;
-  margin-top: 1%;
-
+  /* border-right: 1px solid lightgrey;
+  border-bottom: 1px solid; */
+  margin-left: 20px;
+  margin-top: 20px;
 }
 .sidenav2 a {
   text-decoration: none;
@@ -580,7 +580,7 @@ a {
   top: 0; /* Stay at the top */
   left: 0;
   background-color: #ffffff; /* Black */
-  padding-top: 10px;
+  padding-top: 8px;
   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); */
   float: left;
   position: fixed;
@@ -598,6 +598,7 @@ a {
 .coinsLoading2Portfolio {
   margin-top: 50px;
   margin-left: 210px;
+  background-color: #ffffff;
 }
 .loadingCoins ul:not(#display2),
 .coinsLoading2Portfolio ul:not(#display2) {
@@ -605,11 +606,13 @@ a {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
   list-style: none;
+  background-color: #ffffff;
 }
 .coinsLoading ul li,
 .coinsLoading2Portfolio ul li {
   width: 95%;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); 
+  border: 1px solid lightgrey;
 }
 .coinsLoading ul li:hover {
   cursor: pointer;
@@ -638,6 +641,7 @@ a {
 .coinsLoading2Portfolio ul li h1 {
   padding-left: 10%;
   margin-top: 22%;
+  background-color: #ffffff;
 }
 .loadingCoins ul li h3{
   padding-top: 30px;
@@ -693,6 +697,7 @@ a {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
   width: 1000px;
+  background-color: #ffffff;
 }
 .firstDataCoin ul{
   margin-top: 20px;
@@ -728,6 +733,7 @@ a {
   padding-left: 20%;
 }
 .prices ul{
+  display: grid;
   grid-template-columns: repeat(3,1fr);
 }
 .prices ul li{
@@ -759,30 +765,31 @@ a {
   font-size: 20px;
   z-index: 9;
   text-align: center;
+  width: 150px;
+  margin-bottom: 5px;
 }
 .graph{
   margin-bottom: 20px;
 }
 
 .financialInformation{
-  position: relative;
-  left: 2%;
+ width: 90%;
+ margin-left: 2%;
+ margin-right: 5%;
 }
 
 .arriba {
   font-size: 35px;
   text-align: center;
-  width: 5%;
+  width: 60px;
   border-radius: 10px;
   padding: 10px;
   color: #141747;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-  margin-left: -17%;
-  position: relative;
+  margin-left: -210px;
+  position: fixed;
 }
 .arriba:hover{
-  font-size: 40px;
-  padding: 12px;
   color: #e73546;
   cursor: pointer;
 }
@@ -796,7 +803,9 @@ a {
   padding: 10px;
   font-size: 20px;
   color:#ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 150px;
 }
 .timelineTwitter{
   text-align: center;
@@ -804,4 +813,18 @@ a {
 .twitterShareButton{
   position: absolute;
   left: 28.5%;
+}
+.informationButton{
+  text-align: center;
+}
+.informationButton button{
+  background-color: #141747;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  color:#ffffff;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 150px;
 }
