@@ -5,6 +5,12 @@ const cc = require("cryptocompare");
 cc.setApiKey(
   process.env.REACT_API
 );
+const usdFormat = n => {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD"
+  }).format(n);
+}
 
 export default class extends Component {
   constructor(props) {
@@ -15,8 +21,7 @@ export default class extends Component {
       eth: [],
       xrp: [],
       ltc: [],
-      bch: [],
-      eos: []
+      bch: []
     };
   }
   componentDidMount() {
@@ -27,7 +32,7 @@ export default class extends Component {
           this.setState({ btc });
         })
         .catch(console.error);
-    }, 3000);
+    }, 1000);
 
      setInterval(() => {
     cc.price("ETH", ["USD", "MXN"])
@@ -36,7 +41,7 @@ export default class extends Component {
         this.setState({ eth });
       })
       .catch(console.error);
-    }, 3000);
+    }, 1000);
 
     setInterval(() => {
     cc.price("XRP", ["USD", "MXN"])
@@ -45,7 +50,7 @@ export default class extends Component {
         this.setState({ xrp });
       })
       .catch(console.error);
-     }, 3000);
+     }, 1000);
 
     setInterval(() => {
     cc.price("LTC", ["USD", "MXN"])
@@ -54,7 +59,7 @@ export default class extends Component {
     this.setState({ ltc });
   })
     .catch(console.error);
-     }, 3000);
+     }, 1000);
 
      setInterval(() => {
     cc.price("BCH", ["USD", "MXN"])
@@ -63,7 +68,7 @@ export default class extends Component {
     this.setState({ bch });
   })
     .catch(console.error);
-     }, 3000);
+     }, 1000);
   }
   render() {
     return (
@@ -75,31 +80,31 @@ export default class extends Component {
           </span>
           <span>₿</span>
           <span>
-            BTC/USD {this.state.btc[0]}
+            BTC/USD {usdFormat(this.state.btc[0])}
           </span>
           <span>
-            BTC/MXN {this.state.btc[1]}
+            BTC/MXN {usdFormat(this.state.btc[1])}
           </span>
           <span>Ξ</span>
           <span>
-            ETH/USD {this.state.eth[0]}
+            ETH/USD {usdFormat(this.state.eth[0])}
           </span>
-          <span>ETH/MXN {this.state.eth[1]}</span>
+          <span>ETH/MXN {usdFormat(this.state.eth[1])}</span>
           <span>Ʀ</span>
           <span>
-            XRP/USD {this.state.xrp[0]}
+            XRP/USD {usdFormat(this.state.xrp[0])}
           </span>
-          <span>XRP/MXN {this.state.xrp[1]}</span>
+          <span>XRP/MXN {usdFormat(this.state.xrp[1])}</span>
           <span>Ł</span>
           <span>
-            LTC/USD {this.state.ltc[0]}
+            LTC/USD {usdFormat(this.state.ltc[0])}
           </span>
-          <span>LTC/MXN {this.state.ltc[1]}</span>
+          <span>LTC/MXN {usdFormat(this.state.ltc[1])}</span>
           <span>฿</span>
           <span>
-            BCH/USD {this.state.bch[0]}
+            BCH/USD {usdFormat(this.state.bch[0])}
           </span>
-          <span>BCH/MXN {this.state.bch[1]}</span>
+          <span>BCH/MXN {usdFormat(this.state.bch[1])}</span>
         </div>
       </div>
     );

@@ -122,8 +122,6 @@ export default class CoinsLoading extends Component {
     this.setState({ loading: !this.state.loading });
   };
   
-
-
   componentDidMount = () => {
     this.showLoader();
     cc.coinList()
@@ -152,9 +150,8 @@ export default class CoinsLoading extends Component {
 
     //new implementation
     cc.priceFull(`${label}`, "USD")
-      .then(priceFull => {
-      
-        if (Object.keys(priceFull[label]).length >= 0) {
+      .then(priceFull => {   
+        if (Object.keys(priceFull[label]).length > 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
         }

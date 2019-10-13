@@ -5,6 +5,12 @@ const cc = require("cryptocompare");
 cc.setApiKey(
   process.env.REACT_API
 );
+const usdFormat = n => {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD"
+  }).format(n);
+}
 
 export default class extends Component {
   constructor(props) {
@@ -71,25 +77,25 @@ export default class extends Component {
           <ul>
             <li>
               ₿ BTC/USD {this.state.btc[0]} <br />
-              <br />₿ BTC/MXN {this.state.btc[1]}
+              <br />₿ BTC/MXN {usdFormat(this.state.btc[1])}
             </li>
             <li>
-              Ξ ETH/USD {this.state.eth[0]}
+              Ξ ETH/USD {usdFormat(this.state.eth[0])}
               <br />
-              <br />Ξ ETH/MXN {this.state.eth[1]}
+              <br />Ξ ETH/MXN {usdFormat(this.state.eth[1])}
             </li>
             <li>
-              Ʀ XRP/USD {this.state.xrp[0]}
+              Ʀ XRP/USD {usdFormat(this.state.xrp[0])}
               <br />
-              <br />Ʀ XRP/MXN {this.state.xrp[1]}
+              <br />Ʀ XRP/MXN {usdFormat(this.state.xrp[1])}
             </li>
             <li>
-              Ł LTC/USD {this.state.ltc[0]} <br />
-              <br />Ł LTC/MXN {this.state.ltc[1]}
+              Ł LTC/USD {usdFormat(this.state.ltc[0])} <br />
+              <br />Ł LTC/MXN {usdFormat(this.state.ltc[1])}
             </li>
             <li>
-              ฿ BCH/USD {this.state.bch[0]} <br />
-              <br />฿ BCH/MXN {this.state.bch[1]}
+              ฿ BCH/USD {usdFormat(this.state.bch[0])} <br />
+              <br />฿ BCH/MXN {usdFormat(this.state.bch[1])}
             </li>
           </ul>
         </div>
