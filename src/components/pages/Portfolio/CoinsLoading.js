@@ -55,8 +55,12 @@ const Recomendation2 = styled.div`
   margin-top: 20px;
   padding-left: 60px;
 `;
-const Loader = () => <h1 className="loader"> <i class="fas fa-spinner fa-spin"></i></h1>  
-
+const Loader = () => (
+  <h1 className="loader">
+    {" "}
+    <i className="fas fa-spinner fa-spin"></i>
+  </h1>
+);
 
 const formatNumber = n => {
   return new Intl.NumberFormat().format(n);
@@ -72,7 +76,6 @@ const volumeUsd = (volume, price) => {
   return volume * price;
 };
 const twitterUser = "horaleon1";
-
 
 export default class CoinsLoading extends Component {
   constructor(props) {
@@ -112,19 +115,20 @@ export default class CoinsLoading extends Component {
   };
 
   hideLoader = () => {
-    this.setState({ loading: false });
+    this.setState({ loading: !this.state.loading });
   };
-
+  
   showLoader = () => {
-    this.setState({ loading: true });
+    this.setState({ loading: !this.state.loading });
   };
+  
+
 
   componentDidMount = () => {
     this.showLoader();
     cc.coinList()
       .then(coinList => {
         const list = coinList.Data;
-        console.log(list);
         this.setState({ coinList, coinListCopy: list });
         this.hideLoader();
       })
@@ -147,14 +151,12 @@ export default class CoinsLoading extends Component {
     // });
 
     //new implementation
-
     cc.priceFull(`${label}`, "USD")
       .then(priceFull => {
+      
         if (Object.keys(priceFull[label]).length >= 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
-          console.log(prices);
-          // console.log(this.state.prices.FROMSYMBOL);
         }
       })
       .catch(console.error);
@@ -193,9 +195,11 @@ export default class CoinsLoading extends Component {
     return (
       <div className="coinsLoading">
         {/* //Sidebar */}
-
+       
         {this.state.prices.FROMSYMBOL != null ? (
           <LayoutSidebar>
+            
+            
             <div className="sidenav2">
               <div className="infoSelectedCrypto">
                 <h3>Criptomoneda:</h3>
@@ -217,13 +221,11 @@ export default class CoinsLoading extends Component {
               </div>
               {/* // Activate/deactive Button  Graph/// */}
 
-              
-                <div className="buttonGraph">
-                  <button onClick={() => this.activateG()}>
-                    {!this.state.grafica ? "Gráfica" : "Cerrar Gráfica"}
-                  </button>
-                </div>
-           
+              <div className="buttonGraph">
+                <button onClick={() => this.activateG()}>
+                  {!this.state.grafica ? "Gráfica" : "Cerrar Gráfica"}
+                </button>
+              </div>
 
               {/* // Activate/deactive Button  Information/// */}
 
@@ -245,8 +247,11 @@ export default class CoinsLoading extends Component {
                 </button>
               </div>
             </div>
+           
           </LayoutSidebar>
-        ) : null}
+        ) : null} 
+
+         
 
         {/* /////////////Twitter Timeline /////////// */}
         {this.state.twitter ? (
@@ -261,17 +266,15 @@ export default class CoinsLoading extends Component {
 
         {/* //////////////////Graph ////////////////*/}
         {this.state.grafica ? (
-              <div className="graph">
-                <TradingViewWidget
-                  symbol={`BINANCE:${this.state.prices.FROMSYMBOL}BTC`}
-                />
-              </div>
-            ) : null}
+          <div className="graph">
+            <TradingViewWidget
+              symbol={`BINANCE:${this.state.prices.FROMSYMBOL}BTC`}
+            />
+          </div>
+        ) : null}
 
         {this.state.information ? (
           <div className="firstDataCoin">
-            
-
             {/* //Financial Data // */}
 
             <div className="financialInformation">
@@ -469,7 +472,7 @@ export default class CoinsLoading extends Component {
           </div>
 
           {/* //Grid loaded Coins // */}
-          { !this.state.loading ? (
+          {!this.state.loading ? (
             <div className="loadingCoins">
               <ul>
                 {Object.keys(this.state.coinListCopy)
