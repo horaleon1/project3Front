@@ -25,7 +25,7 @@ const Grid = styled.div`
   grid-template-columns: 300px 1fr;
 `;
 const Input = styled.input`
-  width: 92%;
+  width: 90%;
   border-radius: 20px;
   border: 1px solid #141747;
   font-size: 1.4rem;
@@ -37,15 +37,13 @@ const LogoCoins = styled.div`
   padding-top: 30px;
   letter-spacing: 2px;
   color: #141747;
-  margin-left: 30px;
-  text-align:center;
+  text-align: center;
 `;
 const LogoCoins2 = styled.div`
   font-size: 2.5em;
   margin-bottom: 20px;
   letter-spacing: 2px;
   color: #141747;
-  margin-left: -40px;
 `;
 const Recomendation = styled.div`
   font-size: 1.8em;
@@ -57,6 +55,8 @@ const Recomendation2 = styled.div`
   margin-top: 20px;
   padding-left: 60px;
 `;
+const Loader = () => <h1 className="loader"> <i class="fas fa-spinner fa-spin"></i></h1>  
+
 
 const formatNumber = n => {
   return new Intl.NumberFormat().format(n);
@@ -73,6 +73,7 @@ const volumeUsd = (volume, price) => {
 };
 const twitterUser = "horaleon1";
 
+
 export default class CoinsLoading extends Component {
   constructor(props) {
     super(props);
@@ -86,7 +87,8 @@ export default class CoinsLoading extends Component {
       grafica: false,
       alert: false,
       twitter: false,
-      information: false
+      information: false,
+      loading: false
     };
   }
 
@@ -106,20 +108,28 @@ export default class CoinsLoading extends Component {
   };
 
   twitterUser = () => {
-
     this.setState({ twitter: !this.state.twitter });
+  };
 
+  hideLoader = () => {
+    this.setState({ loading: false });
+  };
+
+  showLoader = () => {
+    this.setState({ loading: true });
   };
 
   componentDidMount = () => {
+    this.showLoader();
     cc.coinList()
       .then(coinList => {
         const list = coinList.Data;
-
+        console.log(list);
         this.setState({ coinList, coinListCopy: list });
+        this.hideLoader();
       })
       .catch(console.error);
-
+    this.hideLoader();
     this._handlePrice("");
   };
 
@@ -143,7 +153,7 @@ export default class CoinsLoading extends Component {
         if (Object.keys(priceFull[label]).length >= 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
-          // console.log(prices);
+          console.log(prices);
           // console.log(this.state.prices.FROMSYMBOL);
         }
       })
@@ -182,277 +192,275 @@ export default class CoinsLoading extends Component {
   render() {
     return (
       <div className="coinsLoading">
+        {/* //Sidebar */}
 
-          
-          {/* //Sidebar */}
+        {this.state.prices.FROMSYMBOL != null ? (
+          <LayoutSidebar>
+            <div className="sidenav2">
+              <div className="infoSelectedCrypto">
+                <h3>Criptomoneda:</h3>
 
-          {this.state.prices.FROMSYMBOL != null ? (
-            <LayoutSidebar>
-              <div className="sidenav2">
-                <div className="infoSelectedCrypto">
-                  <h3>Criptomoneda:</h3>
-
-                  <div className="infoSelectedData">
-                    <h4> {this.state.prices.FROMSYMBOL}</h4>
-                    <img
-                      src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
-                      className="coinsLoadingImg"
-                      alt="Criptomoneda"
-                    />
-                    <br />
-                    <h4>Precio: {usdFormat(this.state.prices.PRICE)} USD</h4>
-                    <h4>
-                      Circulación total: <br /> <br />{" "}
-                      {formatNumber(this.state.prices.SUPPLY)}
-                    </h4>
-                  </div>
-                </div>
-                {/* // Activate/deactive Button  Graph/// */}
-
-                {this.state.information ? (
-                  <div className="buttonGraph">
-                    <button onClick={() => this.activateG()}>
-                      {!this.state.grafica ? "Gráfica" : "Cerrar Gráfica"}
-                    </button>
-                  </div>
-                ) : null}
-
-                {/* // Activate/deactive Button  Information/// */}
-
-                <div className="informationButton">
-                  <button onClick={() => this.activateInformaction()}>
-                    {!this.state.information
-                      ? "Información"
-                      : "Cerrar Información"}
-                  </button>
-                </div>
-
-                {/* // Activate/deactive Button  Twitter/// */}
-                <div className="twitter">
-                  <button
-                    onClick={() => this.twitterUser()}
-                    className="twitterButton"
-                  >
-                    {!this.state.twitter ? "Twitter" : "Cerrar Twitter"}
-                  </button>
+                <div className="infoSelectedData">
+                  <h4> {this.state.prices.FROMSYMBOL}</h4>
+                  <img
+                    src={`http://cryptocompare.com/${this.state.prices.IMAGEURL}`}
+                    className="coinsLoadingImg"
+                    alt="Criptomoneda"
+                  />
+                  <br />
+                  <h4>Precio: {usdFormat(this.state.prices.PRICE)} USD</h4>
+                  <h4>
+                    Circulación total: <br /> <br />{" "}
+                    {formatNumber(this.state.prices.SUPPLY)}
+                  </h4>
                 </div>
               </div>
-            </LayoutSidebar>
-          ) : null}
+              {/* // Activate/deactive Button  Graph/// */}
 
-          {/* /////////////Twitter Timeline /////////// */}
-          {this.state.twitter ? (
-                <div className="timelineTwitter">
-                  <TwitterTimelineEmbed
-                    sourceType="profile"
-                    screenName={twitterUser}
-                    options={{ height: 500, width: 700 }}
-                  />
+              
+                <div className="buttonGraph">
+                  <button onClick={() => this.activateG()}>
+                    {!this.state.grafica ? "Gráfica" : "Cerrar Gráfica"}
+                  </button>
                 </div>
-              ) : null}
+           
 
-          {this.state.information ? (
-            <div className="firstDataCoin">
-              {/* //////////////////Graph ////////////////*/}
-              {this.state.grafica ? (
-                <div className="graph">
-                  <TradingViewWidget
-                    symbol={`BINANCE:${this.state.prices.FROMSYMBOL}USD`}
-                  />
-                </div>
-              ) : null}
+              {/* // Activate/deactive Button  Information/// */}
 
-              {/* //Financial Data // */}
+              <div className="informationButton">
+                <button onClick={() => this.activateInformaction()}>
+                  {!this.state.information
+                    ? "Información"
+                    : "Cerrar Información"}
+                </button>
+              </div>
 
-              <div className="financialInformation">
-                <LogoCoins2>Información Financiera</LogoCoins2>
-                <h2>
-                  <i
-                    className="fas fa-poll"
-                    style={{ marginRight: "10px", color: "#f91a1a" }}
-                  ></i>
-                  Mercado de Capitalización:{" "}
-                  {usdFormat(this.state.prices.MKTCAP)} USD
-                </h2>
-                <ul>
-                  <li>
-                    <h2 id="horas">
-                      <i
-                        className="far fa-clock"
-                        style={{ marginRight: "15px" }}
-                      ></i>
-                      1 Día
-                    </h2>
-                  </li>
-
-                  {this.state.prices.HIGH24HOUR > this.state.prices.PRICE ? (
-                    <li>
-                      <Recomendation>Recomendación:</Recomendation>
-                      <span className="arrow">
-                        <br />
-                        Comprar
-                        <i
-                          className="fas fa-arrow-up"
-                          style={{ color: "green" }}
-                        ></i>
-                      </span>
-                    </li>
-                  ) : (
-                    <li>
-                      <Recomendation>Recomendación:</Recomendation>
-                      <span className="arrow">
-                        <br />
-                        Vender
-                        <i
-                          className="fas fa-arrow-down"
-                          style={{ color: "red" }}
-                        ></i>
-                      </span>
-                    </li>
-                  )}
-                  <li>
-                    <Recomendation2>Cambio:</Recomendation2>
-                    <span className="arrow2">
-                      <br />
-                      {formatNumber(this.state.prices.CHANGEPCT24HOUR)}
-                      {this.state.prices.CHANGEPCT24HOUR > 0 ? (
-                        <i
-                          className="fas fa-percent"
-                          style={{ color: "green" }}
-                        ></i>
-                      ) : (
-                        <i
-                          className="fas fa-percent"
-                          style={{ color: "red" }}
-                        ></i>
-                      )}
-                    </span>
-                  </li>
-                </ul>
-                <div className="prices">
-                  <ul>
-                    <li>Precio Máximo: ${this.state.prices.HIGH24HOUR} USD</li>
-                    <li>Último Precio: ${this.state.prices.PRICE} USD</li>
-                    <li>Precio Minimo: ${this.state.prices.LOW24HOUR} USD</li>
-                  </ul>
-                </div>
-                <h3>
-                  <i
-                    className="fas fa-coins"
-                    style={{ marginRight: "10px", color: "#f91a1a" }}
-                  ></i>
-                  Volumen total:
-                  {formatNumber(this.state.prices.VOLUME24HOUR)}
-                  {this.state.prices.FROMSYMBOL}
-                  <i
-                    className="fas fa-dollar-sign"
-                    style={{
-                      marginRight: "10px",
-                      color: "#f91a1a",
-                      marginLeft: "10px"
-                    }}
-                  ></i>
-                  Volumen total:{" "}
-                  {usdFormat(
-                    volumeUsd(
-                      this.state.prices.VOLUME24HOUR,
-                      this.state.prices.PRICE
-                    )
-                  )}
-                </h3>
-                <ul>
-                  <li>
-                    <h2 id="horas">
-                      <i
-                        className="far fa-clock"
-                        style={{ marginRight: "10px" }}
-                      ></i>
-                      1 Hora
-                    </h2>
-                  </li>
-                  {this.state.prices.HIGHHOUR > this.state.prices.PRICE ? (
-                    <li>
-                      <Recomendation>Recomendación:</Recomendation>
-                      <span className="arrow">
-                        <br />
-                        Comprar
-                        <i
-                          className="fas fa-arrow-up"
-                          style={{ color: "green" }}
-                        ></i>
-                      </span>
-                    </li>
-                  ) : (
-                    <li>
-                      <Recomendation2>Recomendación:</Recomendation2>
-                      <span className="arrow">
-                        <br />
-                        Vender
-                        <i
-                          className="fas fa-arrow-down"
-                          style={{ color: "red" }}
-                        ></i>
-                      </span>
-                    </li>
-                  )}
-                  <li>
-                    <Recomendation2>Cambio:</Recomendation2>
-                    <span className="arrow2">
-                      <br />
-                      {formatNumber(this.state.prices.CHANGEPCTHOUR)}
-                      {this.state.prices.CHANGEPCTHOUR > 0 ? (
-                        <i
-                          className="fas fa-percent"
-                          style={{ color: "green" }}
-                        ></i>
-                      ) : (
-                        <i
-                          className="fas fa-percent"
-                          style={{ color: "red" }}
-                        ></i>
-                      )}
-                    </span>
-                  </li>
-                </ul>
-                <div className="prices">
-                  <ul>
-                    <li>Precio Máximo: ${this.state.prices.HIGHHOUR} USD</li>
-                    <li>Último Precio: ${this.state.prices.PRICE} USD</li>
-                    <li>Precio Minimo: ${this.state.prices.LOWHOUR} USD</li>
-                  </ul>
-                </div>
-                <h3>
-                  <i
-                    className="fas fa-coins"
-                    style={{ marginRight: "10px", color: "#f91a1a" }}
-                  ></i>
-                  Volumen total:{formatNumber(this.state.prices.VOLUMEHOUR)}
-                  {this.state.prices.FROMSYMBOL}
-                  <i
-                    className="fas fa-dollar-sign"
-                    style={{
-                      marginRight: "10px",
-                      color: "#f91a1a",
-                      marginLeft: "10px"
-                    }}
-                  ></i>
-                  Volumen total:{" "}
-                  {usdFormat(
-                    volumeUsd(
-                      this.state.prices.VOLUMEHOUR,
-                      this.state.prices.PRICE
-                    )
-                  )}
-                </h3>
+              {/* // Activate/deactive Button  Twitter/// */}
+              <div className="twitter">
+                <button
+                  onClick={() => this.twitterUser()}
+                  className="twitterButton"
+                >
+                  {!this.state.twitter ? "Twitter" : "Cerrar Twitter"}
+                </button>
               </div>
             </div>
-          ) : (
-            <LogoCoins>Selecciona una Criptomoneda para comenzar.</LogoCoins>
-          )}
-          <div className="containerSearch">
+          </LayoutSidebar>
+        ) : null}
 
-          
-           {/* //Search Input// */}
+        {/* /////////////Twitter Timeline /////////// */}
+        {this.state.twitter ? (
+          <div className="timelineTwitter">
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName={twitterUser}
+              options={{ height: 500, width: 700 }}
+            />
+          </div>
+        ) : null}
+
+        {/* //////////////////Graph ////////////////*/}
+        {this.state.grafica ? (
+              <div className="graph">
+                <TradingViewWidget
+                  symbol={`BINANCE:${this.state.prices.FROMSYMBOL}BTC`}
+                />
+              </div>
+            ) : null}
+
+        {this.state.information ? (
+          <div className="firstDataCoin">
+            
+
+            {/* //Financial Data // */}
+
+            <div className="financialInformation">
+              <LogoCoins2>Información Financiera</LogoCoins2>
+              <h2>
+                <i
+                  className="fas fa-poll"
+                  style={{ marginRight: "10px", color: "#f91a1a" }}
+                ></i>
+                Mercado de Capitalización: {usdFormat(this.state.prices.MKTCAP)}{" "}
+                USD
+              </h2>
+              <ul>
+                <li>
+                  <h2 id="horas">
+                    <i
+                      className="far fa-clock"
+                      style={{ marginRight: "15px" }}
+                    ></i>
+                    1 Día
+                  </h2>
+                </li>
+
+                {this.state.prices.HIGH24HOUR > this.state.prices.PRICE ? (
+                  <li>
+                    <Recomendation>Recomendación:</Recomendation>
+                    <span className="arrow">
+                      <br />
+                      Comprar
+                      <i
+                        className="fas fa-arrow-up"
+                        style={{ color: "green" }}
+                      ></i>
+                    </span>
+                  </li>
+                ) : (
+                  <li>
+                    <Recomendation>Recomendación:</Recomendation>
+                    <span className="arrow">
+                      <br />
+                      Vender
+                      <i
+                        className="fas fa-arrow-down"
+                        style={{ color: "red" }}
+                      ></i>
+                    </span>
+                  </li>
+                )}
+                <li>
+                  <Recomendation2>Cambio:</Recomendation2>
+                  <span className="arrow2">
+                    <br />
+                    {formatNumber(this.state.prices.CHANGEPCT24HOUR)}
+                    {this.state.prices.CHANGEPCT24HOUR > 0 ? (
+                      <i
+                        className="fas fa-percent"
+                        style={{ color: "green" }}
+                      ></i>
+                    ) : (
+                      <i
+                        className="fas fa-percent"
+                        style={{ color: "red" }}
+                      ></i>
+                    )}
+                  </span>
+                </li>
+              </ul>
+              <div className="prices">
+                <ul>
+                  <li>Precio Máximo: ${this.state.prices.HIGH24HOUR} USD</li>
+                  <li>Último Precio: ${this.state.prices.PRICE} USD</li>
+                  <li>Precio Minimo: ${this.state.prices.LOW24HOUR} USD</li>
+                </ul>
+              </div>
+              <h3>
+                <i
+                  className="fas fa-coins"
+                  style={{ marginRight: "10px", color: "#f91a1a" }}
+                ></i>
+                Volumen total:
+                {formatNumber(this.state.prices.VOLUME24HOUR)}
+                {this.state.prices.FROMSYMBOL}
+                <i
+                  className="fas fa-dollar-sign"
+                  style={{
+                    marginRight: "10px",
+                    color: "#f91a1a",
+                    marginLeft: "10px"
+                  }}
+                ></i>
+                Volumen total:{" "}
+                {usdFormat(
+                  volumeUsd(
+                    this.state.prices.VOLUME24HOUR,
+                    this.state.prices.PRICE
+                  )
+                )}
+              </h3>
+              <ul>
+                <li>
+                  <h2 id="horas">
+                    <i
+                      className="far fa-clock"
+                      style={{ marginRight: "10px" }}
+                    ></i>
+                    1 Hora
+                  </h2>
+                </li>
+                {this.state.prices.HIGHHOUR > this.state.prices.PRICE ? (
+                  <li>
+                    <Recomendation>Recomendación:</Recomendation>
+                    <span className="arrow">
+                      <br />
+                      Comprar
+                      <i
+                        className="fas fa-arrow-up"
+                        style={{ color: "green" }}
+                      ></i>
+                    </span>
+                  </li>
+                ) : (
+                  <li>
+                    <Recomendation2>Recomendación:</Recomendation2>
+                    <span className="arrow">
+                      <br />
+                      Vender
+                      <i
+                        className="fas fa-arrow-down"
+                        style={{ color: "red" }}
+                      ></i>
+                    </span>
+                  </li>
+                )}
+                <li>
+                  <Recomendation2>Cambio:</Recomendation2>
+                  <span className="arrow2">
+                    <br />
+                    {formatNumber(this.state.prices.CHANGEPCTHOUR)}
+                    {this.state.prices.CHANGEPCTHOUR > 0 ? (
+                      <i
+                        className="fas fa-percent"
+                        style={{ color: "green" }}
+                      ></i>
+                    ) : (
+                      <i
+                        className="fas fa-percent"
+                        style={{ color: "red" }}
+                      ></i>
+                    )}
+                  </span>
+                </li>
+              </ul>
+              <div className="prices">
+                <ul>
+                  <li>Precio Máximo: ${this.state.prices.HIGHHOUR} USD</li>
+                  <li>Último Precio: ${this.state.prices.PRICE} USD</li>
+                  <li>Precio Minimo: ${this.state.prices.LOWHOUR} USD</li>
+                </ul>
+              </div>
+              <h3>
+                <i
+                  className="fas fa-coins"
+                  style={{ marginRight: "10px", color: "#f91a1a" }}
+                ></i>
+                Volumen total:{formatNumber(this.state.prices.VOLUMEHOUR)}
+                {this.state.prices.FROMSYMBOL}
+                <i
+                  className="fas fa-dollar-sign"
+                  style={{
+                    marginRight: "10px",
+                    color: "#f91a1a",
+                    marginLeft: "10px"
+                  }}
+                ></i>
+                Volumen total:{" "}
+                {usdFormat(
+                  volumeUsd(
+                    this.state.prices.VOLUMEHOUR,
+                    this.state.prices.PRICE
+                  )
+                )}
+              </h3>
+            </div>
+          </div>
+        ) : (
+          <LogoCoins>Selecciona una Criptomoneda para comenzar.</LogoCoins>
+        )}
+        <div className="containerSearch">
+          {/* //Search Input// */}
           <div className="searchContainer">
             <Grid>
               <h3>Buscar</h3>
@@ -460,31 +468,33 @@ export default class CoinsLoading extends Component {
             </Grid>
           </div>
 
-           {/* //Grid loaded Coins // */}
-          <div className="loadingCoins">
-            <ul>
-              {Object.keys(this.state.coinListCopy)
-                .slice(0, 50)
-                .map( (object, i )=> (
-                  <li key={i} onClick={() => this.selectedCoin(object)}>
-                    {/* <i class="fas fa-heart favoriteHeart"></i> */}
-                    <img
-                      src={`http://cryptocompare.com/${this.state.coinListCopy[object].ImageUrl}`}
-                      className="coinsLoadingImg"
-                      alt="Criptomoneda"
-                    />
-                    <h1>{this.state.coinListCopy[object].Symbol}</h1>
-                    <h3>{this.state.coinListCopy[object].CoinName}</h3>
-                  </li>
-                ))}
-            </ul>
-            <h2 onClick={() => this.toTop()} className="arriba">
-              <i className="fas fa-arrow-up"></i>
-            </h2>
-          </div>
-      </div>
-
-
+          {/* //Grid loaded Coins // */}
+          { !this.state.loading ? (
+            <div className="loadingCoins">
+              <ul>
+                {Object.keys(this.state.coinListCopy)
+                  .slice(0, 50)
+                  .map((object, i) => (
+                    <li key={i} onClick={() => this.selectedCoin(object)}>
+                      {/* <i class="fas fa-heart favoriteHeart"></i> */}
+                      <img
+                        src={`http://cryptocompare.com/${this.state.coinListCopy[object].ImageUrl}`}
+                        className="coinsLoadingImg"
+                        alt="Criptomoneda"
+                      />
+                      <h1>{this.state.coinListCopy[object].Symbol}</h1>
+                      <h3>{this.state.coinListCopy[object].CoinName}</h3>
+                    </li>
+                  ))}
+              </ul>
+              <h2 onClick={() => this.toTop()} className="arriba">
+                <i className="fas fa-arrow-up"></i>
+              </h2>
+            </div>
+          ) : (
+            <Loader />
+          )}
+        </div>
       </div>
     );
   }

@@ -818,3 +818,10 @@ a {
   display: grid;
   justify-content: center;
 }
+.loader{
+  color: #141747;
+  font-size: 100px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
