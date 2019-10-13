@@ -795,6 +795,7 @@ a {
 }
 .timelineTwitter{
   text-align: center;
+  padding-top: 20px;
 }
 .twitterShareButton{
   position: absolute;

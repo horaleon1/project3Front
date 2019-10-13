@@ -2,18 +2,7 @@ import React, { Component } from "react";
 import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
 import TradingViewWidget from "react-tradingview-widget";
-import {
-  TwitterTimelineEmbed
-  // TwitterShareButton,
-  // TwitterFollowButton,
-  // TwitterHashtagButton,
-  // TwitterMentionButton,
-  // TwitterTweetEmbed,
-  // TwitterMomentShare,
-  // TwitterDMButton,
-  // TwitterVideoEmbed,
-  // TwitterOnAirButton
-} from "react-twitter-embed";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 require("dotenv");
 
@@ -75,7 +64,6 @@ const usdFormat = n => {
 const volumeUsd = (volume, price) => {
   return volume * price;
 };
-const twitterUser = "horaleon1";
 
 export default class CoinsLoading extends Component {
   constructor(props) {
@@ -91,7 +79,8 @@ export default class CoinsLoading extends Component {
       alert: false,
       twitter: false,
       information: false,
-      loading: false
+      loading: false,
+      twitterUser: "horaleon1"
     };
   }
 
@@ -117,11 +106,11 @@ export default class CoinsLoading extends Component {
   hideLoader = () => {
     this.setState({ loading: !this.state.loading });
   };
-  
+
   showLoader = () => {
     this.setState({ loading: !this.state.loading });
   };
-  
+
   componentDidMount = () => {
     this.showLoader();
     cc.coinList()
@@ -150,7 +139,7 @@ export default class CoinsLoading extends Component {
 
     //new implementation
     cc.priceFull(`${label}`, "USD")
-      .then(priceFull => {   
+      .then(priceFull => {
         if (Object.keys(priceFull[label]).length > 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
@@ -192,11 +181,9 @@ export default class CoinsLoading extends Component {
     return (
       <div className="coinsLoading">
         {/* //Sidebar */}
-       
+
         {this.state.prices.FROMSYMBOL != null ? (
           <LayoutSidebar>
-            
-            
             <div className="sidenav2">
               <div className="infoSelectedCrypto">
                 <h3>Criptomoneda:</h3>
@@ -244,18 +231,15 @@ export default class CoinsLoading extends Component {
                 </button>
               </div>
             </div>
-           
           </LayoutSidebar>
-        ) : null} 
-
-         
+        ) : null}
 
         {/* /////////////Twitter Timeline /////////// */}
         {this.state.twitter ? (
           <div className="timelineTwitter">
             <TwitterTimelineEmbed
               sourceType="profile"
-              screenName={twitterUser}
+              screenName={this.state.twitterUser}
               options={{ height: 500, width: 700 }}
             />
           </div>
