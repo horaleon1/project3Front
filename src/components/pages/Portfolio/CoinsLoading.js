@@ -3,8 +3,7 @@ import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
 import TradingViewWidget from "react-tradingview-widget";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
-
-
+import './portfolio.css';
 
 require("dotenv");
 
@@ -258,8 +257,8 @@ export default class CoinsLoading extends Component {
 
         {this.state.information ? (
           <div className="firstDataCoin">
-            {/* //Financial Data // */}
 
+            {/* //Financial Data // */}
             <div className="financialInformation">
               <LogoCoins2>Información Financiera</LogoCoins2>
               <h2>
@@ -446,6 +445,7 @@ export default class CoinsLoading extends Component {
           <LogoCoins>Selecciona una Criptomoneda para comenzar.</LogoCoins>
         )}
         <div className="containerSearch">
+
           {/* //Search Input// */}
           <div className="searchContainer">
             <Grid>
@@ -454,7 +454,7 @@ export default class CoinsLoading extends Component {
             </Grid>
           </div>
 
-          {/* //Grid loaded Coins // */}
+          {/* //Grid loaded  5000 Coins // */}
           {!this.state.loading ? (
             <div className="loadingCoins">
               <ul>
