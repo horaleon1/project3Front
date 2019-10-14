@@ -24,7 +24,7 @@ const Input = styled.input`
 const LogoCoins = styled.div`
   font-size: 2.5em;
   margin-bottom: 20px;
-  padding-top: 30px;
+  padding-top: 50px;
   letter-spacing: 2px;
   color: #141747;
   text-align: center;
