@@ -1,0 +1,51 @@
+/* Navbar  */
+.container {
+  height: 60px;
+  border-bottom: 0.1px solid white;
+  background-color: #e73546;
+  font-size: 1em;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  overflow: auto;
+}
+.leftSide li,
+.rightSide li {
+  display: inline;
+}
+.leftSide {
+  float: left;
+  position: relative;
+}
+.rightSide {
+  float: right;
+  margin-right: 2%;
+  position: relative;
+  top: 40%;
+}
+.leftSide li a {
+  color: white;
+}
+.rightSide li a {
+  color: white;
+}
+.rightSide li a:hover {
+  color: #141747;
+  font-weight: 550;
+}
+.rightSide li {
+  margin-left: 18px;
+}
+
+.rightSide li:nth-child(5) {
+  margin-left: 60px;
+}
+.Logo{
+  width: 150px;
+  height: 100px;
+  margin-top: -18px;
+  transform: translateX(0px);
+}
+.Logo:hover{
+ transform: translateX(5px);
+}

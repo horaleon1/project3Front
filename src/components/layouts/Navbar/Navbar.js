@@ -1,7 +1,8 @@
 import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
-import AuthContext from "../../context/auth/authContext";
-import Logo from '../../assets/MundoBlockchain.png';
+import AuthContext from "../../../context/auth/authContext";
+import Logo from '../../../assets/MundoBlockchain.png';
+import './navbar.css';
 
 const Navbar = () => {
   const authContext = useContext(AuthContext);
@@ -16,9 +17,6 @@ const Navbar = () => {
 
   const authLinks = (
     <Fragment>
-      <li>
-        <Link to="/">Inicio</Link>
-      </li>
       <li>
         <Link to="/about">¿Qué son las Criptomonedas?</Link>
       </li>
@@ -35,9 +33,6 @@ const Navbar = () => {
   );
   const guestLinks = (
     <Fragment>
-      <li>
-        <Link to="/">Inicio</Link>
-      </li>
       <li>
         <Link to="/about">¿Qué son las Criptomonedas?</Link>
       </li>

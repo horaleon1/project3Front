@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './footer.css';
 
 //Links of anchors
 const facebook = "https://www.facebook.com";
@@ -32,9 +33,6 @@ const Footer = () => {
 
       <div>
         <ul className="listFooter">
-          <li>
-            <Link to="/">Inicio</Link>
-          </li>
           <li>
             <Link to="/about">¿Qué son las Criptomonedas?</Link>
           </li>

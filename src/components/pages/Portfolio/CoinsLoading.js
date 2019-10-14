@@ -471,9 +471,11 @@ export default class CoinsLoading extends Component {
                     </li>
                   ))}
               </ul>
-              <h2 onClick={() => this.toTop()} className="arriba">
-                <i className="fas fa-arrow-up"></i>
-              </h2>
+              <div className="arriba">
+                <h2 onClick={() => this.toTop()}>
+                  <i className="fas fa-arrow-up"></i>
+                </h2>
+              </div>
             </div>
           ) : (
             <Loader />

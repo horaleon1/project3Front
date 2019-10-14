@@ -3,6 +3,7 @@ import Particles from "react-particles-js";
 import AuthContext from "../../context/auth/authContext";
 import AlertContext from "../../context/alert/alertContext";
 import Alerts from "../layouts/Alerts";
+import './auth.css';
 
 
 const particleOpt = {

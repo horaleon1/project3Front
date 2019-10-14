@@ -3,7 +3,7 @@ import AlertContext from "../../context/alert/alertContext";
 import Particles from "react-particles-js";
 import Alerts from "../layouts/Alerts";
 import AuthContext from "../../context/auth/authContext";
-
+import './auth.css';
 
 const particleOpt = {
   particles: {
@@ -45,7 +45,7 @@ const Register = props  => {
   const { register, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
-    if(!isAuthenticated){
+    if(isAuthenticated){
       props.history.push('/login');
     }
 

@@ -3,197 +3,10 @@
   padding: 0;
   font-family: "Be Vietnam", sans-serif;
 }
-body {
-  /* height: calc(100vh - 60px); */
-}
-
-
-/* Navbar  */
-.container {
-  height: 60px;
-  border-bottom: 0.1px solid white;
-  background-color: #e73546;
-  font-size: 1em;
-  position: fixed;
-  width: 100%;
-  z-index: 9999;
-  overflow: auto;
-}
-.leftSide li,
-.rightSide li {
-  display: inline;
-}
-.leftSide {
-  float: left;
-  position: relative;
-}
-.rightSide {
-  float: right;
-  margin-right: 2%;
-  position: relative;
-  top: 40%;
-}
-.leftSide li a {
-  color: white;
-}
-.rightSide li a {
-  color: white;
-}
-.rightSide li a:hover {
-  color: #141747;
-  font-weight: 550;
-}
-.rightSide li {
-  margin-left: 18px;
-}
-
-.rightSide li:nth-child(6) {
-  margin-left: 50px;
-}
-.Logo{
-  width: 150px;
-  height: 100px;
-  margin-top: -18px;
-  transform: translateX(0px);
-}
-.Logo:hover{
- transform: translateX(5px);
-}
-
-/* footer */
-.footerContainer {
-  height: 170px;
-  background-color: #01000f;
-  text-align: center;
-  line-height: 50px;
-  padding-top: 25px;
-  color: white;
-  border-top: 1px solid #ffffff;
-}
-.listFooter li a {
-  color: white;
-}
-
-.listFooter li a:hover {
-  color: #e73546;
-}
-.listFooter,
-a {
-  text-decoration: none;
-}
-.listFooter li,
-.listSocialFooter li {
-  display: inline;
-  margin-right: 25px;
-  margin-left: 25px;
-}
-.listSocialFooter a {
-  color: #ffffff;
-}
-.listSocialFooter a:hover {
-  color: #e73546;
-}
-.copyRightLine a{
-  color: #ffffff;
-}
-.copyRightLine a:hover{
-  color: #e73546;  
-}
-
-.copyRightLine a:nth-child(1):hover{
-  font-size: 22px;
-}
-
-
-/* Register // Login  */
-
-.containerRegister {
-  height: 100vh;
-  background-color: #141747;
-}
-.containerResgiterForm {
-  position: relative;
-  left: 35%;
-  font-size: 1.5em;
-  color: #ffffff;
-  width: 55%;
-}
-.containerResgiterForm h1 {
-  padding-top: 160px;
-}
-.formContainer:nth-child(1),
-.containerRegister .submit {
-  margin-top: 50px;
-}
-.formContainer:not(:nth-child(1)) {
-  margin-top: 45px;
-}
-.formContainer input {
-  margin-left: 15px;
-  border-radius: 6px;
-  padding: 3px;
-  width: 200px;
-  border: 1px solid #141747;
-  z-index: 9999;
-  font-size: 17px;
-}
-.formContainer {
-  font-size: 1em;
-}
-.submit {
-  margin-left: 130px;
-  width: 140px;
-  font-size: 20px;
-  color: white;
-  background-color: #141747;
-  border-radius: 10px;
-  padding: 10px;
-  z-index: 0;
-  border: 1px solid white;
-  letter-spacing: 0.8px;
-}
-.submit:hover {
-  border: 2px solid #e73546;
-}
-.particlesRegister {
-  position: absolute;
-  width: 100%;
-  z-index: auto;
-}
-/* Alert  Register  */
-.alerts {
-  margin-top: 40px;
-  color: #e73546;
-  font-size: 20px;
-}
-/* User */
-.containerUser {
-  width: 100%;
-  overflow: hidden;
-}
-.sidebarUser {
-  width: 100%;
-  margin-right: 20px;
-}
-.sidebarUser ul {
-  list-style: none;
-}
-.userMenu {
-  width: 15%;
-  height: 650px;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-}
-.userMenuList {
-  margin: -1px 10px;
-}
-.userMenuList li {
-  padding-top: 25px;
-}
 
 /* Sidebar2*/
 .sidenav2 {
-  height: 90vh;/* Full-height: remove this if you want "auto" height */
+height:100%;/* Full-height: remove this if you want "auto" height */
   width: 240px; /* Set the width of the sidebar */
   left: -2%;
   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);  */
@@ -203,8 +16,8 @@ a {
   /* border-right: 1px solid lightgrey;
   border-bottom: 1px solid; */
   margin-top: 5px;
+  overflow: hidden;
 }
-
 .sidenav ul {
   margin-left: 20px;
   list-style: none;
@@ -289,51 +102,6 @@ a {
   }
 }
 
-/* About */
-.aboutContainer {
-  width: 100%;
-  height: 100%;
-  padding-top: 95px;
-}
-.aboutContainer p:nth-child(1) {
-  left: 5%;
-  top: 20%;
-  position: absolute;
-  color: #ffffff;
-  line-height: 30px;
-  text-align: justify;
-  text-justify: inter-word;
-  font-size: 20px;
-}
-.aboutContainer p:nth-child(2) {
-  left: 5%;
-  top: 40%;
-  position: absolute;
-  color: #ffffff;
-  line-height: 30px;
-  text-align: justify;
-  text-justify: inter-word;
-  font-size: 20px;
-}
-.aboutContainer h3 {
-  left: 5%;
-  top: 50%;
-  position: absolute;
-  color: #ffffff;
-  line-height: 40px;
-  text-align: justify;
-  text-justify: inter-word;
-  font-size: 30px;
-}
-.containerVideoAbout {
-  height: 100%;
-}
-.containerVideoAbout video {
-  width: 100%;
-}
-.barAbout {
-  height: 50px;
-}
 /* Second price Component */
 .barUserB {
   height: 130px;
@@ -708,7 +476,7 @@ a {
  margin-right: 5%;
 }
 
-.arriba {
+.arriba h2 {
   font-size: 35px;
   text-align: center;
   width: 60px;
@@ -716,10 +484,11 @@ a {
   padding: 10px;
   color: #141747;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-  margin-left: -210px;
-  position: relative;
+  float: right;
+  margin-right: 30px;
+  margin-top: 20px;
 }
-.arriba:hover{
+.arriba h2:hover{
   color: #e73546;
   cursor: pointer;
 }
