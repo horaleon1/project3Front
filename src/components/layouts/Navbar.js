@@ -6,7 +6,7 @@ import Logo from '../../assets/MundoBlockchain.png';
 const Navbar = () => {
   const authContext = useContext(AuthContext);
 
-  const { isAutheticated, user, logout } = authContext;
+  const { isAutheticated,logout, user } = authContext;
 
   const bitsoLink = "https://bitso.com/?ref=avfk";
 
@@ -70,7 +70,7 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
-      <ul className="rightSide"> {isAutheticated ? authLinks : guestLinks} </ul>
+      <ul className="rightSide"> { isAutheticated ? authLinks : guestLinks} </ul>
     </div>
   );
 };

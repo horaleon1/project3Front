@@ -7,66 +7,10 @@ body {
   /* height: calc(100vh - 60px); */
 }
 
-/* home */
-.homeContainer {
-  background-color: #141747;
-  height: 100%;
-  position: relative;
-  width: 100%;
-  z-index: 0;
-}
-.typingTextStatic {
-  position: absolute;
-  z-index: 9999;
-  margin: 0 auto;
-  top: 42%;
-  color: white;
-  left: 39%;
-  font-size: 170%;
-  letter-spacing: 2px;
-}
-/* home Animation Text  */
-.typingText {
-  position: absolute;
-  z-index: 9999;
-  top: 50%;
-  width: 16em;
-  margin: 0 auto;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
-  font-size: 300%;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);
-  color: white;
-  left: 39%;
-}
-.animationText {
-  animation: writing 7s steps(40) 1s infinite normal both,
-    blink 500ms steps(40) infinite normal;
-}
-@keyframes writing {
-  0% {
-    width: 0;
-  }
-  50% {
-    width: 5.5em;
-  }
-  100% {
-    width: 0;
-  }
-}
-@keyframes blink {
-  from {
-    border-right-color: rgba(255, 255, 255, 0.75);
-  }
-  to {
-    border-right-color: transparent;
-  }
-}
+
 /* Navbar  */
 .container {
-  height: 65px;
+  height: 60px;
   border-bottom: 0.1px solid white;
   background-color: #e73546;
   font-size: 1em;
@@ -258,7 +202,7 @@ a {
   z-index: 1;
   /* border-right: 1px solid lightgrey;
   border-bottom: 1px solid; */
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .sidenav ul {
@@ -293,7 +237,7 @@ a {
   background-color: #141747;
   color: white;
   width: 100%;
-  margin-top: 65px;
+  margin-top: 60px;
   position: fixed;
   z-index: 9999;
   overflow: hidden;
@@ -302,7 +246,7 @@ a {
   padding-top: 7px;
   padding-left: 5px;
   color: white;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .dataBarUser span {
@@ -321,13 +265,12 @@ a {
     transform: translate(-190vh, 0);
   }
 }
-.live {
+.live{
   height: 10px;
   width: 10px;
   border-radius: 50%;
   background-color: red;
   display: inline-block;
-  margin-right: 5px;
   animation: pulse 1.5s infinite;
   opacity: 1;
 }
@@ -756,6 +699,7 @@ a {
 }
 .graph{
   margin-bottom: 20px;
+  padding-top: 40px;
 }
 
 .financialInformation{

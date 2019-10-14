@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/layouts/Navbar";
-import Home from "./components/pages/Home";
+import Home from "./components/pages/Home/Home";
 import About from "./components/pages/About";
 import Footer from "./components/layouts/Footer";
 import Login from "./components/auth/Login";
@@ -13,7 +13,7 @@ import setAuthToken from "./utilities/setAuthToken";
 import PrivateRoute from './components/Routing/PrivateRoute';
 import Portfolio from './components/pages/Portfolio/Portfolio';
 import News from './components/pages/News';
-import User from './components/pages/User';
+// import User from './components/pages/User';
 import Price from './components/layouts/Prices';
 import Screener from './components/pages/Screener';
 import English from './components/pages/NewsEnglish';
@@ -39,11 +39,11 @@ const App = () => {
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/explorer" component={Explorer} />
-                  <Route exact path="/portfolio" component={Portfolio} />                   
+                  <PrivateRoute exact path="/portfolio" component={Portfolio} />                   
                   <Route exact path="/screener" component={Screener} />
                   <Route exact path="/news" component={News} />
                   <Route exact path="/newsEnglish" component={English} />
-                  <PrivateRoute exact path="/user" component={User} />
+                  {/* <PrivateRoute exact path="/user" component={User} /> */}
                 </Switch>
               </div>
               <Footer />

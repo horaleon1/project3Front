@@ -1,5 +1,6 @@
 import React from 'react'
 import Particles from "react-particles-js";
+import './home.css';
 
 const particleOpt = {
   particles: {

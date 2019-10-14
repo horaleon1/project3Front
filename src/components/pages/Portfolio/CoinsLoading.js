@@ -42,7 +42,7 @@ const Recomendation = styled.div`
 const Recomendation2 = styled.div`
   font-size: 1.8em;
   margin-top: 20px;
-  padding-left: 60px;
+  padding-left: 30px;
 `;
 const Loader = () => (
   <h1 className="loader">
