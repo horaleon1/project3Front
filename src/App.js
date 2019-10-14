@@ -6,16 +6,15 @@ import About from "./components/pages/About/About";
 import Footer from "./components/layouts/Footer/Footer";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
-import Explorer from "./components/layouts/Explorer";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utilities/setAuthToken";
 import PrivateRoute from './components/Routing/PrivateRoute';
 import Portfolio from './components/pages/Portfolio/Portfolio';
-import News from './components/pages/News';
-import Price from './components/layouts/Prices';
+import NewsSpanish from './components/pages/News/News';
+import Price from './components/layouts/BarPrices/BarPrices';
 import Screener from './components/pages/Screener';
-import English from './components/pages/NewsEnglish';
+import NewsEnglish from './components/pages/News/NewsEnglish';
 import "./App.css";
 
 
@@ -37,11 +36,10 @@ const App = () => {
                   <Route exact path="/about" component={About} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
-                  <Route exact path="/explorer" component={Explorer} />
                   <PrivateRoute exact path="/portfolio" component={Portfolio} />                   
                   <Route exact path="/screener" component={Screener} />
-                  <Route exact path="/news" component={News} />
-                  <Route exact path="/newsEnglish" component={English} />
+                  <Route exact path="/news" component={NewsSpanish} />
+                  <Route exact path="/newsEnglish" component={NewsEnglish} />
                 </Switch>
               </div>
               <Footer />

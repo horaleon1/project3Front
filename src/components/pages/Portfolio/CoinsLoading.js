@@ -4,6 +4,8 @@ import styled from "styled-components";
 import TradingViewWidget from "react-tradingview-widget";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 
+
+
 require("dotenv");
 
 const cc = require("cryptocompare");

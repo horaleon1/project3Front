@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import './barPrices.css';
+
 require('dotenv');
 
 const cc = require("cryptocompare");

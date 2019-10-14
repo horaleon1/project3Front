@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Video from "../../../assets/bitgo.mp4";
-import PricesB from "../../layouts/PricesB";
+import PricesB from "../../layouts/BarPricesAbout/BarPricesAbout";
 import "./about.css";
 
 export default class About extends Component {

@@ -1,0 +1,22 @@
+.barUserB {
+  height: 130px;
+  color: #ffffff;
+  background-color: #141747;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.dataBarUserB ul {
+  list-style: none;
+  margin-left: 35px;
+  padding-top: 20px;
+}
+.dataBarUserB ul li {
+  display: inline-block;
+  margin-right: 30px;
+  padding-right: 30px;
+  font-size: 20px;
+}
+.dataBarUserB ul li:not(:nth-child(5)) {
+  border-right: 1px solid lightgrey;
+}

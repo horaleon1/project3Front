@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './news.css';
 // import {
 //   // TwitterTimelineEmbed
 //   TwitterShareButton,
@@ -17,26 +18,45 @@ require("dotenv");
 const cc = require("cryptocompare");
 cc.setApiKey(process.env.REACT_API);
 
+const Loader = () => (
+  <h1 className="loader">
+    <i className="fas fa-spinner fa-spin"></i>
+  </h1>
+);
+
 export default class News extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      spanish: []
+      spanish: [],
+      loading: false
     };
   }
 
   componentDidMount = () => {
+    this.showLoader();
     cc.newsList("ES").then(newsList => {
       const spanish = newsList;
       this.setState({ spanish });
-    });
+      this.hideLoader();
+    }).catch(console.error)
+    this.hideLoader();
+  };
+  hideLoader = () => {
+    this.setState({ loading: !this.state.loading });
+  };
+
+  showLoader = () => {
+    this.setState({ loading: !this.state.loading });
   };
 
   render() {
     return (
       <div className="containerNews">
-        <div className="news">
+        {
+       !this.state.loading ? 
+       <div className="news">
           <ul>
             <li>
               {this.state.spanish.slice(48, 49).map(e => (
@@ -132,14 +152,15 @@ export default class News extends Component {
               ))}
             </li>
           </ul>
-        </div>
-
+        </div> : <Loader />
+      }
+        
         <div className="newsSpanish">
           <div className="textNews">
             <h3>
-              Descrube todo <br />
-              lo que pasa en <br />
-              el mundo de las <br /> criptomonedas.
+              Descrube todo 
+              lo que pasa en 
+              el mundo de las criptomonedas.
             </h3>
             <a href="/newsEnglish">Noticias en Inglés</a>
           </div>
