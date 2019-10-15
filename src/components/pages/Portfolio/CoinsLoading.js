@@ -3,7 +3,7 @@ import LayoutSidebar from "./LayoutSidebar";
 import styled from "styled-components";
 import TradingViewWidget from "react-tradingview-widget";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
-import './portfolio.css';
+import "./portfolio.css";
 
 require("dotenv");
 
@@ -66,6 +66,12 @@ const volumeUsd = (volume, price) => {
   return volume * price;
 };
 
+const ShowAlert = () => (
+  <div className="showAlert" >
+    <h3>La información no esta disponible en este momento, selecciona otra criptomoneda o intenta mas tarde.</h3>
+  </div>
+);
+
 export default class CoinsLoading extends Component {
   constructor(props) {
     super(props);
@@ -81,7 +87,9 @@ export default class CoinsLoading extends Component {
       twitter: false,
       information: false,
       loading: false,
-      twitterUser: "horaleon1"
+      twitterUser: "horaleon1",
+      errorAlert: true,
+      count: 3
     };
   }
 
@@ -112,8 +120,22 @@ export default class CoinsLoading extends Component {
     this.setState({ loading: !this.state.loading });
   };
   errorAlert = () => {
-    console.log("La moneda no esta disponible")
-  }
+    this.setState({ errorAlert: !this.state.errorAlert });
+
+    let countInt = 3;
+    let interval = setInterval(() => {
+      
+      if (countInt > 0) countInt --;
+    
+      if (countInt <= 0) {
+        clearInterval(interval);
+        this.setState({ errorAlert: !this.state.errorAlert });
+        countInt = 3;
+      }
+    }, 1000);
+
+    return;
+  };
 
   componentDidMount = () => {
     this.showLoader();
@@ -144,21 +166,25 @@ export default class CoinsLoading extends Component {
     //new implementation
     cc.priceFull(`${label}`, "USD")
       .then(priceFull => {
-        if (Object.keys(priceFull[label]).length > 0) {
+        // if (Object.keys(priceFull[label]).length > 0) {
+         if (Object.keys(priceFull[label]).length != 0) {
+
           const prices = priceFull[label].USD;
           this.setState({ prices });
         }
       })
-      .catch(console.error);
-   
+      .catch(error => {
+        Promise.reject();
+        console.log(error);
+        this.errorAlert();
+        return;
+      });
   };
 
   selectedCoin = value => {
     this._handlePrice(value);
 
     window.scrollTo(0, 0);
-
-    //console.log(value);
   };
 
   filterCoins = e => {
@@ -176,9 +202,9 @@ export default class CoinsLoading extends Component {
       this.setState({ coinListCopy: coins.Data });
     } else {
       this.setState({ coinListCopy: filtrado });
-      //console.log(filtrado,"filtrado");
-      //console.log(this.coinListCopy, "copy");
-      // console.log("Ingresa el simbolo o ticker completo");
+      console.log(filtrado, "filtrado");
+      console.log(this.coinListCopy, "copy");
+      console.log("Ingresa el simbolo o ticker completo");
     }
   };
 
@@ -261,7 +287,6 @@ export default class CoinsLoading extends Component {
 
         {this.state.information ? (
           <div className="firstDataCoin">
-
             {/* //Financial Data // */}
             <div className="financialInformation">
               <LogoCoins2>Información Financiera</LogoCoins2>
@@ -449,7 +474,6 @@ export default class CoinsLoading extends Component {
           <LogoCoins>Selecciona una Criptomoneda para comenzar.</LogoCoins>
         )}
         <div className="containerSearch">
-
           {/* //Search Input// */}
           <div className="searchContainer">
             <Grid>
@@ -457,6 +481,8 @@ export default class CoinsLoading extends Component {
               <Input onKeyUp={this.filterCoins} />
             </Grid>
           </div>
+
+          {!this.state.errorAlert ? <ShowAlert /> : null}
 
           {/* //Grid loaded  5000 Coins // */}
           {!this.state.loading ? (

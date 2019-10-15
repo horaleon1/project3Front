@@ -25,14 +25,14 @@ export default class NewsEnglish extends Component {
   }
 
   componentDidMount = () => {
-    this.showLoader();
+      this.showLoader();
     cc.newsList('EN')
     .then(newsList => {
-      const english = newsList
-      this.setState( { english });
-    this.hideLoader();
+      const english = newsList;
+       this.setState( { english });
+       this.hideLoader();
     }).catch(console.error)
-    this.hideLoader();
+       this.hideLoader();
   };
 
   hideLoader = () => {

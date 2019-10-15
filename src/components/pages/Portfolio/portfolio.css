@@ -269,3 +269,15 @@
     justify-content: center;
   }
   
+  .showAlert{
+    display: grid;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .showAlert h3{
+    color:#e73546;
+    font-size: 20px;
+  }
+  .showAlert2{
+    color: #ffffff;
+  }
