@@ -16,16 +16,14 @@ export default class About extends Component {
             transferencia de activos. Las criptomonedas son un tipo de divisa
             alternativa y de moneda digital.
           </p>
-        </div>
-        <div className="paragraph2">
+           <br/>
           <p>
             El control de cada moneda funciona a través de una base de datos
             descentralizada, usualmente una cadena de bloques (en inglés
             blockchain), que sirve como una base de datos de transacciones
             financieras pública.
           </p>
-        </div>
-        <div className="paragraph3">
+           <br/>
           <p>
             La primera criptomoneda que empezó a operar fue el bitcoin en 2009
             y, desde entonces, han aparecido muchas otras con diferentes

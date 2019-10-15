@@ -111,6 +111,9 @@ export default class CoinsLoading extends Component {
   showLoader = () => {
     this.setState({ loading: !this.state.loading });
   };
+  errorAlert = () => {
+    console.log("La moneda no esta disponible")
+  }
 
   componentDidMount = () => {
     this.showLoader();
@@ -147,6 +150,7 @@ export default class CoinsLoading extends Component {
         }
       })
       .catch(console.error);
+   
   };
 
   selectedCoin = value => {

@@ -13,6 +13,7 @@
 }
 .containerResgiterForm h1 {
   padding-top: 160px;
+  text-align: center;
 }
 .formContainer:nth-child(1),
 .containerRegister .submit {
@@ -33,8 +34,11 @@
 .formContainer {
   font-size: 1em;
 }
+.submitContainer{
+  display: grid;
+  justify-content: center;
+}
 .submit {
-  margin-left: 130px;
   width: 140px;
   font-size: 20px;
   color: white;
@@ -58,4 +62,15 @@
   margin-top: 40px;
   color: #e73546;
   font-size: 20px;
+}
+.loginRegister{
+ margin-top: 40px;
+ display: grid;
+  justify-content: center;
+}
+.loginRegister a{
+  color: #ffffff;
+}
+.loginRegister a:hover{
+  color: #e73546;
 }

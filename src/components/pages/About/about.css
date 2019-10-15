@@ -15,15 +15,7 @@ p{
 }
 .paragraph1{
   position: absolute;
-  top: 18%;
-}
-.paragraph2{
-  position: absolute;
-  top: 45%;
-}
-.paragraph3{
-  position: absolute;
-  top: 64%;
+  margin-top: 35px;
 }
 
 .containerVideoAbout {

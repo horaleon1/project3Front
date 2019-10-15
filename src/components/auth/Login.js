@@ -102,8 +102,12 @@ const Login = (props) => {
               autoComplete="on"
             />
           </div>
-
-          <input type="submit" value="Inicio" className="submit" />
+          {/* <div className="loginRegister">
+             <h5>Registrate <a href="/register">aquí</a> </h5>
+          </div> */}
+          <div className="submitContainer">
+          <input type="submit" value="Inicio" className="submit" />           
+          </div>
         </form>
       </div>
     </div>

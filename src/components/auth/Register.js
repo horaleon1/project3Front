@@ -88,7 +88,7 @@ const Register = props  => {
     <div className="containerRegister">
       <Particles params={particleOpt} className="particlesRegister" />
       <div className="containerResgiterForm">
-        <h1>Regístrate</h1>
+        <h1>Registrate</h1>
         <Alerts />
         <form onSubmit={onSubmit}>
           <div className="formContainer">
@@ -131,7 +131,9 @@ const Register = props  => {
               autoComplete="on"
             />
           </div>
-          <input type="submit" value="Regístrarse" className="submit" />
+          <div className="submitContainer">
+          <input type="submit" value="Registrarse" className="submit" />
+          </div>
         </form>
       </div>
       <div className="containerParticlesRegister"></div>

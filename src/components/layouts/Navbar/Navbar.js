@@ -21,7 +21,15 @@ const Navbar = () => {
         <Link to="/about">¿Qué son las Criptomonedas?</Link>
       </li>
       <li>
-        <Link to="/explorer">Explorador</Link>
+        <Link to="/screener">Mercado</Link>
+      </li>
+      <li>
+        <Link to="/news">Noticias</Link>
+      </li>
+      <li>
+        <a href={bitsoLink} target="_blank" rel="noopener noreferrer">
+          Comprar Bitcoin
+        </a>
       </li>
       <li>Hola, {user && user.name}</li>
       <li>
@@ -51,10 +59,20 @@ const Navbar = () => {
         <Link to="/login">Iniciar Sesión</Link>
       </li>
       <li>
-        <Link to="/register">Regístrarse</Link>
+        <Link to="/register">Registrarse</Link>
       </li>
     </Fragment>
   );
+
+  let getLinksMenu=()=>{
+    console.log('isAuthenticated',isAutheticated);
+    if (isAutheticated){
+    
+      return authLinks;
+    }else{
+      return guestLinks;
+    }
+  }
 
   return (
     <div className="container">
@@ -65,7 +83,7 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
-      <ul className="rightSide"> { isAutheticated ? authLinks : guestLinks} </ul>
+      <ul className="rightSide"> {getLinksMenu()} </ul>
     </div>
   );
 };
