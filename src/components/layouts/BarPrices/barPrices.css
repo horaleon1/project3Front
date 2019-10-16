@@ -1,57 +1,119 @@
-/* Price Component  */
-.barUser {
-  height: 30px;
-  background-color: #141747;
-  color: white;
-  width: 100%;
-  margin-top: 60px;
-  position: fixed;
-  z-index: 9999;
-  overflow: hidden;
-}
-.dataBarUser {
-  padding-top: 7px;
-  padding-left: 5px;
-  color: white;
-  font-size: 12px;
+@media only screen and (min-width: 992px) {
+  /* Price Component  */
+  .barUser {
+    height: 30px;
+    background-color: #141747;
+    color: white;
+    width: 100%;
+    margin-top: 60px;
+    position: fixed;
+    z-index: 9999;
+    overflow: hidden;
+  }
+  .dataBarUser {
+    padding-top: 7px;
+    padding-left: 5px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .dataBarUser span {
+    display: inline-block;
+    margin-right: 15px;
+    animation: line 50s linear infinite;
+  }
+  @keyframes line {
+    0% {
+      transform: translate(210vh, 0);
+    }
+    50% {
+      transform: translate(0vh, 0);
+    }
+    100% {
+      transform: translate(-190vh, 0);
+    }
+  }
+  .live {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: red;
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+    opacity: 1;
+  }
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 #f91a1a;
+      opacity: 0.9;
+    }
+    70% {
+      box-shadow: 0 0 0 3px #f91a1a;
+      opacity: 0.6;
+    }
+    100% {
+      box-shadow: 0 0 0 0 #f91a1a;
+      opacity: 0.2;
+    }
+  }
 }
 
-.dataBarUser span {
-  display: inline-block;
-  margin-right: 15px;
-  animation: line 50s linear infinite;
-}
-@keyframes line {
-  0% {
-    transform: translate(210vh, 0);
+@media only screen and (max-width: 990px) {
+  /* Price Component  */
+  .barUser {
+    height: 34px;
+    background-color: #141747;
+    color: white;
+    width: 100%;
+    margin-top: 60px;
+    position: fixed;
+    z-index: 9999;
+    overflow: hidden;
   }
-  50% {
-    transform: translate(0vh, 0);
+  .dataBarUser {
+    padding-top: 7px;
+    padding-left: 5px;
+    color: white;
+    font-size: 20px;
   }
-  100% {
-    transform: translate(-190vh, 0);
+
+  .dataBarUser span {
+    display: inline-block;
+    margin-right: 15px;
+    animation: line 20s linear infinite;
   }
-}
-.live{
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: red;
-  display: inline-block;
-  animation: pulse 1.5s infinite;
-  opacity: 1;
-}
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 #f91a1a;
-    opacity: 0.9;
+  @keyframes line {
+    0% {
+      transform: translate(50vh, 0);
+    }
+    50% {
+      transform: translate(0vh, 0);
+    }
+    100% {
+      transform: translate(-50vh, 0);
+    }
   }
-  70% {
-    box-shadow: 0 0 0 3px #f91a1a;
-    opacity: 0.6;
+  .live {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: red;
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+    opacity: 1;
   }
-  100% {
-    box-shadow: 0 0 0 0 #f91a1a;
-    opacity: 0.2;
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 #f91a1a;
+      opacity: 0.9;
+    }
+    70% {
+      box-shadow: 0 0 0 3px #f91a1a;
+      opacity: 0.6;
+    }
+    100% {
+      box-shadow: 0 0 0 0 #f91a1a;
+      opacity: 0.2;
+    }
   }
 }
