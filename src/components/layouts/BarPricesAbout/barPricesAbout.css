@@ -1,22 +1,57 @@
-.barUserB {
-  height: 130px;
-  color: #ffffff;
-  background-color: #141747;
-  width: 100%;
-  position: relative;
-  text-align: center;
+@media only screen and (min-width: 992px) {
+  .barUserB {
+    height: 100%;
+    color: #ffffff;
+    background-color: #141747;
+    width: 100%;
+    position: relative;
+    text-align: center;
+  }
+  .dataBarUserB ul {
+    list-style: none;
+    margin-left: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .dataBarUserB ul li {
+    display: inline-block;
+    margin-right: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .dataBarUserB ul li:not(:nth-child(5)) {
+    border-right: 1px solid lightgrey;
+  }
 }
-.dataBarUserB ul {
-  list-style: none;
-  margin-left: 35px;
-  padding-top: 20px;
-}
-.dataBarUserB ul li {
-  display: inline-block;
-  margin-right: 30px;
-  padding-right: 30px;
-  font-size: 20px;
-}
-.dataBarUserB ul li:not(:nth-child(5)) {
-  border-right: 1px solid lightgrey;
+@media only screen and (max-width: 990px) {
+  .barUserB {
+    height: 100%;
+    color: #ffffff;
+    background-color: #141747;
+    width: 100%;
+    position: relative;
+    text-align: center;
+  }
+  .dataBarUserB ul {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-bottom: 1px solid lightgrey; 
+    border-top: 1px solid lightgrey; 
+    list-style: none;
+    margin-left: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 90%;
+  }
+  .dataBarUserB ul li {
+    display: inline-block;
+   margin: 5px 20px;
+    font-size: 20px;
+  }
+  .dataBarUserB ul li {
+    
+    padding:5px 0px;
+  }
 }
