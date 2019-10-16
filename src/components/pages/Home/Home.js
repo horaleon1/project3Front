@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 import Particles from "react-particles-js";
-import './home.css';
+import "./home.css";
 
 const particleOpt = {
   particles: {
@@ -12,38 +12,36 @@ const particleOpt = {
       },
       color: {
         value: "#FE280A"
-      },
-    },
-    
-    "move": {
-      "enable": true,
-      "speed": 1.5,
-      "direction": "right",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
       }
-  }
+    },
+
+    move: {
+      enable: true,
+      speed: 1.5,
+      direction: "right",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: {
+        enable: false,
+        rotateX: 600,
+        rotateY: 1200
+      }
+    }
   }
 };
-
 
 const Home = () => {
   return (
     <div className="homeContainer">
-      <Particles params={particleOpt} id="particles"/>
-      <div>
-         <h1 className="typingTextStatic"> Mundo</h1>
+      <Particles params={particleOpt} id="particles" />
+      <div className="textsContainer">
+        <h1 className="typingTextStatic"> Mundo</h1>
         <h1 className="typingText animationText">Blockchain</h1>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
-
+export default Home;

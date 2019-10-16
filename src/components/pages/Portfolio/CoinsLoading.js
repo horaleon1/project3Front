@@ -87,10 +87,10 @@ export default class CoinsLoading extends Component {
       twitter: false,
       information: false,
       loading: false,
-      twitterUser: "horaleon1",
+      twitterUser: "bitso",
       errorAlert: true,
       count: 3
-    };
+    }; 
   }
 
   activateG = () => {
@@ -489,7 +489,7 @@ export default class CoinsLoading extends Component {
             <div className="loadingCoins">
               <ul>
                 {Object.keys(this.state.coinListCopy)
-                  .slice(0, 50)
+                  .slice(0, 100)
                   .map((object, i) => (
                     <li key={i} onClick={() => this.selectedCoin(object)}>
                       {/* <i class="fas fa-heart favoriteHeart"></i> */}

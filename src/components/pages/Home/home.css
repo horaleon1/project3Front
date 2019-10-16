@@ -1,3 +1,4 @@
+@media only screen and (min-width: 992px) {
 /* home */
 .homeContainer {
   background-color: #141747;
@@ -55,3 +56,127 @@
     border-right-color: transparent;
   }
 }
+
+}
+
+@media only screen and (max-width:767px){
+/* home */
+.homeContainer {
+  background-color: #141747;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+.typingTextStatic {
+  position: absolute;
+  z-index: 9999;
+  margin: 0 auto;
+  top: 45%;
+  color: white;
+  font-size: 150%;
+  letter-spacing: 2px;
+  left: 20%;
+}
+/* home Animation Text  */
+.typingText {
+  position: absolute;
+  z-index: 9999;
+  top: 52%;
+  width: 16em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 250%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  color: white;
+  left: 20%;
+}
+.animationText {
+  animation: writing 7s steps(40) 1s infinite normal both,
+    blink 500ms steps(40) infinite normal;
+}
+@keyframes writing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 5.5em;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes blink {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+/* home */
+.homeContainer {
+  background-color: #141747;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+.typingTextStatic {
+  position: absolute;
+  z-index: 9999;
+  margin: 0 auto;
+  top: 45%;
+  color: white;
+  font-size: 150%;
+  letter-spacing: 2px;
+  left: 35%;
+}
+/* home Animation Text  */
+.typingText {
+  position: absolute;
+  z-index: 9999;
+  top: 52%;
+  width: 16em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 250%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  color: white;
+  left: 35%;
+}
+.animationText {
+  animation: writing 7s steps(40) 1s infinite normal both,
+    blink 500ms steps(40) infinite normal;
+}
+@keyframes writing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 5.5em;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes blink {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+  
+ }
