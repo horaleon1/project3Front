@@ -8,7 +8,6 @@ const Navbar = () => {
   const authContext = useContext(AuthContext);
 
   const { token,logout, user } = authContext;
-  // const { isAutheticated,logout, user } = authContext;
 
   const bitsoLink = "https://bitso.com/?ref=avfk";
 
@@ -25,7 +24,7 @@ const Navbar = () => {
         <Link to="/screener">Mercado</Link>
       </li>
       <li>
-        
+      <Link to="/newsSpanish">Noticias</Link>
       </li>
       <li>
         <a href={bitsoLink} target="_blank" rel="noopener noreferrer">
@@ -51,7 +50,7 @@ const Navbar = () => {
         <Link to="/screener">Mercado</Link>
       </li>
       <li>
-        <Link to="/news">Noticias</Link>
+        <Link to="/newsSpanish">Noticias</Link>
       </li>
       <li>
         <a href={bitsoLink} target="_blank" rel="noopener noreferrer">
@@ -66,16 +65,6 @@ const Navbar = () => {
       </li>
     </Fragment>
   );
-
-  // let getLinksMenu=()=>{
-  //   console.log('isAuthenticated',isAutheticated);
-  //   if (isAutheticated){
-    
-  //     return authLinks;
-  //   }else{
-  //     return guestLinks;
-  //   }
-  // }
 
   return (
     <div className="container">

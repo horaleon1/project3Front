@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import "./news.css";
 // import {
 //   // TwitterTimelineEmbed
@@ -173,7 +174,7 @@ export default class News extends Component {
         <div className="newsSpanish">
           <div className="textNews">
             <h3>Descrube todo lo que pasa en el mundo de las criptomonedas.</h3>
-            <a href="/newsEnglish">Noticias en Inglés</a>
+            <Link to="/newsEnglish">Noticias en Inglés</Link>
           </div>
           {this.state.spanish.map(e => (
             <div className="containerNew" key={e.id}>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import './news.css';
 
 require('dotenv');
@@ -130,7 +131,7 @@ export default class NewsEnglish extends Component {
             news from the world of cryptocurrencies 
             in English.
             </h3>
-            <a href="/news">News in Spanish </a>
+            <Link to="/newsSpanish">News in Spanish</Link>
           </div>
           {this.state.english.map(e => (
             <div className="containerNew" key={e.id}>

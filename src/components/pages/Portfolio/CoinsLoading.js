@@ -132,7 +132,7 @@ export default class CoinsLoading extends Component {
         this.setState({ errorAlert: !this.state.errorAlert });
         countInt = 3;
       }
-    }, 1000);
+    }, 600);
 
     return;
   };
@@ -482,7 +482,7 @@ export default class CoinsLoading extends Component {
             </Grid>
           </div>
 
-          {!this.state.errorAlert ? <ShowAlert /> : null}
+          {!this.state.errorAlert ? <ShowAlert /> : null }
 
           {/* //Grid loaded  5000 Coins // */}
           {!this.state.loading ? (
