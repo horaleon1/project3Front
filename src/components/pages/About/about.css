@@ -49,8 +49,8 @@
     display: none;
   }
   .paragraph2{
-    margin-top: -1%;
-    background-color: #08BBF0;
+    margin-top: -2%;
+    background-image: linear-gradient(to top, #141747,#061161);
   }
   .paragraph2 p{
     padding: 40px 0px;

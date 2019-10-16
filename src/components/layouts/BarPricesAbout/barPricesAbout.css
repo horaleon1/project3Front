@@ -40,10 +40,10 @@
     border-bottom: 1px solid lightgrey; 
     border-top: 1px solid lightgrey; 
     list-style: none;
-    margin-left: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 90%;
+    margin-left: 5%;
   }
   .dataBarUserB ul li {
     display: inline-block;
@@ -51,7 +51,6 @@
     font-size: 20px;
   }
   .dataBarUserB ul li {
-    
     padding:5px 0px;
   }
 }

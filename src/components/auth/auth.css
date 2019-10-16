@@ -82,6 +82,9 @@
   .containerRegister {
     height: 100vh;
     background-color: #141747;
+    padding-bottom: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
   .containerResgiterForm {
     position: relative;
@@ -92,12 +95,12 @@
     justify-content: center;
   }
   .containerResgiterForm h1 {
-    padding-top: 160px;
+    padding-top: 120px;
     text-align: center;
   }
   .formContainer:nth-child(1),
   .containerRegister .submit {
-    margin-top: 50px;
+    margin-top: 30px;
   }
   .formContainer:not(:nth-child(1)) {
     margin-top: 45px;
@@ -112,7 +115,7 @@
     display: inline;
   }
   .formContainer {
-    font-size: 1em;
+    font-size: 0.8em;
   }
   .submitContainer {
     display: grid;
@@ -139,9 +142,10 @@
   }
   /* Alert  Register  */
   .alerts {
-    margin-top: 40px;
+    margin-top: 20px;
     color: #e73546;
-    font-size: 20px;
+    font-size: 14px;
+    text-align: center;
   }
   .loginRegister {
     margin-top: 40px;

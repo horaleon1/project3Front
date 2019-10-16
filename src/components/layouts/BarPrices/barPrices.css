@@ -61,7 +61,7 @@
 @media only screen and (max-width: 990px) {
   /* Price Component  */
   .barUser {
-    height: 33px;
+    height: 41px;
     background-color: #141747;
     color: white;
     width: 100%;
@@ -80,6 +80,7 @@
   .dataBarUser span {
     display: inline-block;
     margin-right: 15px;
+    padding-bottom: 10px;
     animation: line 20s linear infinite;
   }
   @keyframes line {
