@@ -1,54 +1,106 @@
-/* Navbar  */
-.container {
-  height: 60px;
-  border-bottom: 0.1px solid white;
-  background-color: #e73546;
-  font-size: 1em;
-  position: fixed;
-  width: 100%;
-  z-index: 9999;
-  overflow: auto;
-}
-.leftSide li,
-.rightSide li {
-  display: inline;
-}
-.leftSide {
-  float: left;
-  position: relative;
-}
-.rightSide {
-  float: right;
-  margin-right: 2%;
-  position: relative;
-  top: 40%;
-}
-.leftSide li a {
-  color: white;
-}
-.rightSide li a {
-  color: white;
-}
-.rightSide li a:hover {
-  color: #141747;
-  font-weight: 550;
-}
-.rightSide li {
-  margin-left: 18px;
+@media only screen and (min-width: 992px) {
+  /* Navbar  */
+  .container {
+    height: 60px;
+    border-bottom: 0.1px solid white;
+    background-color: #e73546;
+    font-size: 1em;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    overflow: auto;
+  }
+  .leftSide li,
+  .rightSide li {
+    display: inline;
+  }
+  .leftSide {
+    float: left;
+    position: relative;
+  }
+  .rightSide {
+    float: right;
+    margin-right: 2%;
+    position: relative;
+    top: 40%;
+  }
+  .leftSide li a {
+    color: white;
+  }
+  .rightSide li a {
+    color: white;
+  }
+  .rightSide li a:hover {
+    color: #141747;
+    font-weight: 550;
+  }
+  .rightSide li {
+    margin-left: 18px;
+  }
+
+  .rightSide li:nth-child(5) {
+    margin-left: 60px;
+  }
+  .Logo {
+    width: 150px;
+    height: 100px;
+    margin-top: -18px;
+    transform: translateX(0px);
+  }
+  .Logo:hover {
+    transform: translateX(5px);
+  }
+  .authLinks li {
+    color: #ffffff;
+  }
+  .responsiveMenuIcon{
+    display: none;
+    visibility: hidden;
+  }
+  .responsiveMenu{
+    display: none;
+  }
 }
 
-.rightSide li:nth-child(5) {
-  margin-left: 60px;
-}
-.Logo{
-  width: 150px;
-  height: 100px;
-  margin-top: -18px;
-  transform: translateX(0px);
-}
-.Logo:hover{
- transform: translateX(5px);
-}
-.authLinks li{
-  color: #ffffff;
+@media only screen and (max-width: 990px) {
+  /* Navbar  */
+  .container {
+    height: 60px;
+    border-bottom: 0.1px solid white;
+    background-color: #e73546;
+    font-size: 1em;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    overflow: auto;
+  }
+  ul {
+    list-style: none;
+  }
+  .Logo {
+    width: 150px;
+    height: 100px;
+    margin-top: -20px;
+    margin-left: -20px;
+    transform: translateX(0px);
+  }
+  .Logo:hover {
+    transform: translateX(5px);
+  }
+  .responsiveMenuIcon{
+    position: absolute;
+    right: 6%;
+    top: 20%;
+    font-size: 30px;
+    color: #ffffff;
+  }
+  .responsiveMenu{
+    margin-top: 80px;
+    height: 100px;
+    color: white;
+    position: absolute;
+  }
+  .authLinks li {
+    color: #ffffff;
+  }
 }

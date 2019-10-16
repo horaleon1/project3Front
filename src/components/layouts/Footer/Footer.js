@@ -16,7 +16,8 @@ const ironhack = "http://www.ironhack.com/en/locations/mexico-city"
 const Footer = () => {
   return (
     <div className="footerContainer">
-      <div>
+
+      <div className="containerListSocialFooter">
         <ul className="listSocialFooter">
           <li>
             <a href={facebook} target="_blank" rel="noopener noreferrer">
@@ -31,7 +32,7 @@ const Footer = () => {
         </ul>
       </div>
 
-      <div>
+      <div className="containerListFooter">
         <ul className="listFooter">
           <li>
             <Link to="/about">¿Qué son las Criptomonedas?</Link>
@@ -55,6 +56,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+
       <div className="copyRightLine">
         Copyright &copy; Develop by: <a href={linkedin} target="_blank" rel="noopener noreferrer">Horacio León</a> in <a href={ironhack} target="_blank" rel="noopener noreferrer">Ironhack México</a> {new Date().getFullYear()} all
         rights reserved

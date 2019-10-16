@@ -1,13 +1,13 @@
 import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../../context/auth/authContext";
-import Logo from '../../../assets/MundoBlockchain.png';
-import './navbar.css';
+import Logo from "../../../assets/MundoBlockchain.png";
+import "./navbar.css";
 
 const Navbar = () => {
   const authContext = useContext(AuthContext);
 
-  const { token,logout, user } = authContext;
+  const { token, logout, user, menu } = authContext;
 
   const bitsoLink = "https://bitso.com/?ref=avfk";
 
@@ -24,7 +24,7 @@ const Navbar = () => {
         <Link to="/screener">Mercado</Link>
       </li>
       <li>
-      <Link to="/newsSpanish">Noticias</Link>
+        <Link to="/newsSpanish">Noticias</Link>
       </li>
       <li>
         <a href={bitsoLink} target="_blank" rel="noopener noreferrer">
@@ -32,7 +32,7 @@ const Navbar = () => {
         </a>
       </li>
       <li>
-        <Link to="/portfolio"> Hola,{user && user.name} </Link>         
+        <Link to="/portfolio"> Hola,{user && user.name} </Link>
       </li>
       <li>
         <a onClick={onLogout} href="#!">
@@ -71,15 +71,19 @@ const Navbar = () => {
       <ul className="leftSide">
         <li>
           <a href="/">
-          <img src={Logo} className="Logo" alt="Mundo Blockchain"/>
+            <img src={Logo} className="Logo" alt="Mundo Blockchain" />
           </a>
         </li>
+        <li className="responsiveMenuIcon">
+          <i class="fas fa-bars"></i>
+        </li>
       </ul>
-      <ul className="rightSide"> 
-
-      {/* {getLinksMenu()}  */}
-      {token ? authLinks : guestLinks}
-      </ul>
+      <ul className="rightSide">{token ? authLinks : guestLinks}</ul>
+      <div className="responsiveMenu">
+        <ul>
+          {token ? authLinks : guestLinks}
+        </ul>
+      </div>
     </div>
   );
 };

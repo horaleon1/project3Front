@@ -1,3 +1,4 @@
+@media only screen and (min-width:992px){
 /* footer */
 .footerContainer {
   height: 100%;
@@ -41,4 +42,54 @@ a {
 
 .copyRightLine a:nth-child(1):hover{
   font-size: 22px;
+}
+}
+
+
+@media only screen and (max-width:990px){
+/* footer */
+.footerContainer {
+  height: 100%;
+  background-color: #01000f;
+  line-height: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: white;
+  border-top: 1px solid #ffffff;
+  display: grid;
+  align-content: center;
+  
+}
+.listFooter li a {
+  color: white;
+}
+.listFooter li a:hover {
+  color: #e73546;
+}
+.listFooter,
+a {
+  text-decoration: none;
+}
+.listFooter li,
+.listSocialFooter li {
+  text-align: center;
+}
+.listSocialFooter a {
+  color: #ffffff;
+}
+.listSocialFooter a:hover {
+  color: #e73546;
+}
+.copyRightLine a{
+  color: #ffffff;
+}
+.copyRightLine a:hover{
+  color: #e73546;  
+}
+.copyRightLine a:nth-child(1):hover{
+  font-size: 20px;
+}
+.copyRightLine,.containerListFooter, .containerListSocialFooter{
+  margin: 0% 15%;
+}
 }

@@ -61,7 +61,7 @@
 @media only screen and (max-width: 990px) {
   /* Price Component  */
   .barUser {
-    height: 34px;
+    height: 33px;
     background-color: #141747;
     color: white;
     width: 100%;
@@ -71,7 +71,7 @@
     overflow: hidden;
   }
   .dataBarUser {
-    padding-top: 7px;
+    padding-top: 6.5px;
     padding-left: 5px;
     color: white;
     font-size: 20px;
