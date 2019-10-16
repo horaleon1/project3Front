@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./news.css";
 // import {
 //   // TwitterTimelineEmbed
@@ -36,6 +36,7 @@ export default class News extends Component {
   }
 
   componentDidMount = () => {
+    window.scrollTo(0, 0);
     this.showLoader();
     cc.newsList("ES")
       .then(newsList => {

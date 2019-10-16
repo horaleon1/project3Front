@@ -52,6 +52,7 @@ const Login = (props) => {
       setAlert('El correo o la contraseña son incorrectos');
       clearErrors();
     }
+    window.scrollTo(0, 0);
   });
 
   const [user, setUser] = useState({

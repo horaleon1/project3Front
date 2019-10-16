@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TradingViewEmbed, widgetType } from "react-tradingview-embed";
 
 export default function App() {
+  useEffect(() => {
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  });
   return (
     <div className="scrennerContainer">
       <TradingViewEmbed

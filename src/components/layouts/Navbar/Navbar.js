@@ -7,7 +7,7 @@ import "./navbar.css";
 const Navbar = () => {
   const authContext = useContext(AuthContext);
 
-  const { token, logout, user, menu } = authContext;
+  const { token, logout, user } = authContext;
 
   const bitsoLink = "https://bitso.com/?ref=avfk";
 

@@ -67,8 +67,11 @@ const volumeUsd = (volume, price) => {
 };
 
 const ShowAlert = () => (
-  <div className="showAlert" >
-    <h3>La información no esta disponible en este momento, selecciona otra criptomoneda o intenta mas tarde.</h3>
+  <div className="showAlert">
+    <h3>
+      La información no esta disponible en este momento, selecciona otra
+      criptomoneda o intenta mas tarde.
+    </h3>
   </div>
 );
 
@@ -90,7 +93,7 @@ export default class CoinsLoading extends Component {
       twitterUser: "bitso",
       errorAlert: true,
       count: 3
-    }; 
+    };
   }
 
   activateG = () => {
@@ -124,9 +127,8 @@ export default class CoinsLoading extends Component {
 
     let countInt = 3;
     let interval = setInterval(() => {
-      
-      if (countInt > 0) countInt --;
-    
+      if (countInt > 0) countInt--;
+
       if (countInt <= 0) {
         clearInterval(interval);
         this.setState({ errorAlert: !this.state.errorAlert });
@@ -138,6 +140,7 @@ export default class CoinsLoading extends Component {
   };
 
   componentDidMount = () => {
+    window.scrollTo(0, 0);
     this.showLoader();
     cc.coinList()
       .then(coinList => {
@@ -167,8 +170,7 @@ export default class CoinsLoading extends Component {
     cc.priceFull(`${label}`, "USD")
       .then(priceFull => {
         // if (Object.keys(priceFull[label]).length > 0) {
-         if (Object.keys(priceFull[label]).length !== 0) {
-
+        if (Object.keys(priceFull[label]).length !== 0) {
           const prices = priceFull[label].USD;
           this.setState({ prices });
         }
@@ -482,7 +484,7 @@ export default class CoinsLoading extends Component {
             </Grid>
           </div>
 
-          {!this.state.errorAlert ? <ShowAlert /> : null }
+          {!this.state.errorAlert ? <ShowAlert /> : null}
 
           {/* //Grid loaded  5000 Coins // */}
           {!this.state.loading ? (

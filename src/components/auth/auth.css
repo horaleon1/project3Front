@@ -1,76 +1,157 @@
-/* Register // Login  */
-.containerRegister {
-  height: 100vh;
-  background-color: #141747;
+@media only screen and (min-width: 992px) {
+  /* Register // Login  */
+  .containerRegister {
+    height: 100vh;
+    background-color: #141747;
+  }
+  .containerResgiterForm {
+    position: relative;
+    font-size: 1.5em;
+    color: #ffffff;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+  }
+  .containerResgiterForm h1 {
+    padding-top: 160px;
+    text-align: center;
+  }
+  .formContainer:nth-child(1),
+  .containerRegister .submit {
+    margin-top: 50px;
+  }
+  .formContainer:not(:nth-child(1)) {
+    margin-top: 45px;
+  }
+  .formContainer input {
+    margin-left: 15px;
+    border-radius: 6px;
+    padding: 3px;
+    width: 200px;
+    border: 1px solid #141747;
+    z-index: 9999;
+    font-size: 17px;
+  }
+  .formContainer {
+    font-size: 1em;
+  }
+  .submitContainer {
+    display: grid;
+    justify-content: center;
+  }
+  .submit {
+    width: 140px;
+    font-size: 20px;
+    color: white;
+    background-color: #141747;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 0;
+    border: 1px solid white;
+    letter-spacing: 0.8px;
+  }
+  .submit:hover {
+    border: 2px solid #e73546;
+  }
+  .particlesRegister {
+    position: absolute;
+    width: 100%;
+    z-index: auto;
+  }
+  /* Alert  Register  */
+  .alerts {
+    margin-top: 40px;
+    color: #e73546;
+    font-size: 20px;
+  }
+  .loginRegister {
+    margin-top: 40px;
+    display: grid;
+    justify-content: center;
+  }
+  .loginRegister a {
+    color: #ffffff;
+  }
+  .loginRegister a:hover {
+    color: #e73546;
+  }
 }
-.containerResgiterForm {
-  position: relative;
-  font-size: 1.5em;
-  color: #ffffff;
-  width: 100%;
-  display: grid;
-  justify-content: center;
-}
-.containerResgiterForm h1 {
-  padding-top: 160px;
-  text-align: center;
-}
-.formContainer:nth-child(1),
-.containerRegister .submit {
-  margin-top: 50px;
-}
-.formContainer:not(:nth-child(1)) {
-  margin-top: 45px;
-}
-.formContainer input {
-  margin-left: 15px;
-  border-radius: 6px;
-  padding: 3px;
-  width: 200px;
-  border: 1px solid #141747;
-  z-index: 9999;
-  font-size: 17px;
-}
-.formContainer {
-  font-size: 1em;
-}
-.submitContainer{
-  display: grid;
-  justify-content: center;
-}
-.submit {
-  width: 140px;
-  font-size: 20px;
-  color: white;
-  background-color: #141747;
-  border-radius: 10px;
-  padding: 10px;
-  z-index: 0;
-  border: 1px solid white;
-  letter-spacing: 0.8px;
-}
-.submit:hover {
-  border: 2px solid #e73546;
-}
-.particlesRegister {
-  position: absolute;
-  width: 100%;
-  z-index: auto;
-}
-/* Alert  Register  */
-.alerts {
-  margin-top: 40px;
-  color: #e73546;
-  font-size: 20px;
-}
-.loginRegister{
- margin-top: 40px;
- display: grid;
-  justify-content: center;
-}
-.loginRegister a{
-  color: #ffffff;
-}
-.loginRegister a:hover{
-  color: #e73546;
+
+@media only screen and (max-width:990px) {
+  /* Register // Login  */
+  .containerRegister {
+    height: 100vh;
+    background-color: #141747;
+  }
+  .containerResgiterForm {
+    position: relative;
+    font-size: 1em;
+    color: #ffffff;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+  }
+  .containerResgiterForm h1 {
+    padding-top: 160px;
+    text-align: center;
+  }
+  .formContainer:nth-child(1),
+  .containerRegister .submit {
+    margin-top: 50px;
+  }
+  .formContainer:not(:nth-child(1)) {
+    margin-top: 45px;
+  }
+  .formContainer input {
+    margin-left: 15px;
+    border-radius: 6px;
+    padding: 3px;
+    border: 1px solid #141747;
+    z-index: 9999;
+    font-size: 12px;
+    display: inline;
+  }
+  .formContainer {
+    font-size: 1em;
+  }
+  .submitContainer {
+    display: grid;
+    justify-content: center;
+  }
+  .submit {
+    width: 140px;
+    font-size: 20px;
+    color: white;
+    background-color: #141747;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 0;
+    border: 1px solid white;
+    letter-spacing: 0.8px;
+  }
+  .submit:hover {
+    border: 2px solid #e73546;
+  }
+  .particlesRegister {
+    position: absolute;
+    width: 100%;
+    z-index: auto;
+  }
+  /* Alert  Register  */
+  .alerts {
+    margin-top: 40px;
+    color: #e73546;
+    font-size: 20px;
+  }
+  .loginRegister {
+    margin-top: 40px;
+    display: grid;
+    justify-content: center;
+  }
+  .loginRegister a {
+    color: #ffffff;
+  }
+  .loginRegister a:hover {
+    color: #e73546;
+  }
 }

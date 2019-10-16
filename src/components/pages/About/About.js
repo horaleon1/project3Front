@@ -4,6 +4,11 @@ import PricesB from "../../layouts/BarPricesAbout/BarPricesAbout";
 import "./about.css";
 
 export default class About extends Component {
+
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
+  
   render() {
     return (
       <div className="aboutContainer">

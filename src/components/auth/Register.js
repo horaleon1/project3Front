@@ -49,11 +49,12 @@ const Register = props  => {
       props.history.push('/login');
     }
 
-
     if (error === "User already exists") {
       setAlert('El usuario ya existe');
       clearErrors();
     }
+
+    window.scrollTo(0, 0);
   });
 
   const [user, setUser] = useState({
