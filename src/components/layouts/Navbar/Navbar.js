@@ -7,7 +7,8 @@ import './navbar.css';
 const Navbar = () => {
   const authContext = useContext(AuthContext);
 
-  const { isAutheticated,logout, user } = authContext;
+  const { token,logout, user } = authContext;
+  // const { isAutheticated,logout, user } = authContext;
 
   const bitsoLink = "https://bitso.com/?ref=avfk";
 
@@ -16,7 +17,7 @@ const Navbar = () => {
   };
 
   const authLinks = (
-    <Fragment>
+    <Fragment className="authLinks">
       <li>
         <Link to="/about">¿Qué son las Criptomonedas?</Link>
       </li>
@@ -24,14 +25,16 @@ const Navbar = () => {
         <Link to="/screener">Mercado</Link>
       </li>
       <li>
-        <Link to="/news">Noticias</Link>
+        
       </li>
       <li>
         <a href={bitsoLink} target="_blank" rel="noopener noreferrer">
           Comprar Bitcoin
         </a>
       </li>
-      <li>Hola, {user && user.name}</li>
+      <li>
+        <Link to="/portfolio"> Hola,{user && user.name} </Link>         
+      </li>
       <li>
         <a onClick={onLogout} href="#!">
           Salir
@@ -64,15 +67,15 @@ const Navbar = () => {
     </Fragment>
   );
 
-  let getLinksMenu=()=>{
-    console.log('isAuthenticated',isAutheticated);
-    if (isAutheticated){
+  // let getLinksMenu=()=>{
+  //   console.log('isAuthenticated',isAutheticated);
+  //   if (isAutheticated){
     
-      return authLinks;
-    }else{
-      return guestLinks;
-    }
-  }
+  //     return authLinks;
+  //   }else{
+  //     return guestLinks;
+  //   }
+  // }
 
   return (
     <div className="container">
@@ -83,7 +86,11 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
-      <ul className="rightSide"> {getLinksMenu()} </ul>
+      <ul className="rightSide"> 
+
+      {/* {getLinksMenu()}  */}
+      {token ? authLinks : guestLinks}
+      </ul>
     </div>
   );
 };

@@ -167,7 +167,7 @@ export default class CoinsLoading extends Component {
     cc.priceFull(`${label}`, "USD")
       .then(priceFull => {
         // if (Object.keys(priceFull[label]).length > 0) {
-         if (Object.keys(priceFull[label]).length != 0) {
+         if (Object.keys(priceFull[label]).length !== 0) {
 
           const prices = priceFull[label].USD;
           this.setState({ prices });

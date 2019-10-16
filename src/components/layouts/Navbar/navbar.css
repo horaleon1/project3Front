@@ -49,3 +49,6 @@
 .Logo:hover{
  transform: translateX(5px);
 }
+.authLinks li{
+  color: #ffffff;
+}
