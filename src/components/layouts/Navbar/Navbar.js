@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../../context/auth/authContext";
-import Logo from "../../../assets/MundoBlockchain.png";
+import LogoBlanco from '../../../assets/MundoBlockchain.png';
 import "./navbar.css";
 
 const Navbar = () => {
@@ -71,11 +71,11 @@ const Navbar = () => {
       <ul className="leftSide">
         <li>
           <a href="/">
-            <img src={Logo} className="Logo" alt="Mundo Blockchain" />
+            <img src={LogoBlanco} className="logo" alt="Mundo Blockchain" />
           </a>
         </li>
         <li className="responsiveMenuIcon">
-          <i class="fas fa-bars"></i>
+          <i className="fas fa-bars"></i>
         </li>
       </ul>
       <ul className="rightSide">{token ? authLinks : guestLinks}</ul>
