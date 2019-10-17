@@ -1,10 +1,13 @@
-.sidenav2 {
-    height:100%;
-    width: 240px; 
+@media only screen and (min-width: 990px) {
+  .sidenav2 {
+    height: 100%;
+    width: 240px;
     float: left;
     position: relative;
-    z-index: 1;
     margin-top: 30px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    padding-bottom: 40px;
   }
   .sidenav ul {
     margin-left: 20px;
@@ -31,33 +34,33 @@
   .sidenav2Balance ul li {
     padding-bottom: 20px;
   }
-  
-  .coinsLoading{
+
+  .coinsLoading {
     margin-top: 50px;
     background-color: #ffffff;
   }
-  .loadingCoins ul:not(#display2){
+  .loadingCoins ul:not(#display2) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
     list-style: none;
     background-color: #ffffff;
   }
-  .coinsLoading ul li{
+  .coinsLoading ul li {
     width: 95%;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     border: 1px solid lightgrey;
   }
   .coinsLoading ul li:hover {
     cursor: pointer;
     border: 2px solid #141747;
   }
-  
-  .firstDataCoin ul li{
+
+  .firstDataCoin ul li {
     display: grid;
     border-radius: 10px;
   }
-  .loadingCoins{
+  .loadingCoins {
     margin-bottom: 30px;
     margin-left: 30px;
   }
@@ -71,7 +74,7 @@
     margin-top: 22%;
     background-color: #ffffff;
   }
-  .loadingCoins ul li h3{
+  .loadingCoins ul li h3 {
     padding-top: 30px;
     margin-left: 25px;
     margin-bottom: 10px;
@@ -116,100 +119,99 @@
   .infoSelectedData img {
     margin-left: 0px;
   }
-  .firstDataCoin{
+  .firstDataCoin {
     padding-top: 20px;
     margin-left: 50px;
     display: grid;
     justify-content: center;
   }
-  .firstDataCoin ul{
+  .firstDataCoin ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
     width: 1000px;
     background-color: #ffffff;
   }
-  .firstDataCoin ul{
+  .firstDataCoin ul {
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .firstDataCoin ul li{
+  .firstDataCoin ul li {
     border: 1px solid gray;
     padding: 0px 15px;
     padding-bottom: 15px;
-  
   }
-  #horas{
+  #horas {
     font-size: 38px;
     margin: 10% 10% 10% 10%;
   }
-  .arrow{
+  .arrow {
     font-size: 2.3em;
     text-align: left;
     margin-left: 10%;
     margin-top: -25px;
   }
-  .arrow i{
+  .arrow i {
     padding-left: 20%;
   }
-  .arrow2{
+  .arrow2 {
     font-size: 2.3em;
     text-align: left;
     margin-left: 20%;
     margin-top: -25px;
   }
-  .arrow2 i{
+  .arrow2 i {
     padding-left: 20%;
   }
-  .prices ul{
+  .prices ul {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
-  .prices ul li{
+  .prices ul li {
     padding: 7px 14px;
-    width: 292px; 
+    width: 292px;
   }
-  .prices ul li:nth-child(2){
+  .prices ul li:nth-child(2) {
     border: 1.5px solid #141747;
   }
   /* //Favorite Icon Loading Coins */
-  .favoriteHeart{
-    color:lightgray;
+  .favoriteHeart {
+    color: lightgray;
     padding-left: 20px;
     padding-top: 10px;
   }
-  .favoriteHeart:hover{
-    color:#f91a1a;
+  .favoriteHeart:hover {
+    color: #f91a1a;
   }
   /* Graph and button Graph  */
-  .buttonGraph{
+  .buttonGraph {
     text-align: center;
     padding-top: 10px;
   }
   /* display on sidebar  */
-  .buttonGraph button{
+  .buttonGraph button {
     padding: 10px;
     border-radius: 10px;
     background-color: #141747;
-    color:#ffffff;
+    color: #ffffff;
     font-size: 20px;
     z-index: 9;
     text-align: center;
     width: 150px;
     margin-bottom: 5px;
   }
-  .graph{
+  .graph {
     margin-bottom: 20px;
     padding-top: 40px;
   }
-  
-  .financialInformation{
-   width: 90%;
-   margin-left: 2%;
-   margin-right: 5%;
-   margin-top: 30px;
+
+  .financialInformation {
+    width: 90%;
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-top: 30px;
   }
-  
+
   /* Button to go up  */
   .arriba h2 {
     font-size: 35px;
@@ -220,62 +222,367 @@
     color: #141747;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     float: left;
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-bottom: 230px;
   }
-  .arriba h2:hover{
+  .arriba h2:hover {
     color: #e73546;
     cursor: pointer;
   }
   /* display on sidebar  */
-  .twitter{
+  .twitter {
     text-align: center;
   }
-  .twitterButton{
+  .twitterButton {
     background-color: #00acee;
     text-align: center;
     border-radius: 10px;
     padding: 10px;
     font-size: 20px;
-    color:#ffffff;
+    color: #ffffff;
     margin-top: 5px;
     width: 150px;
   }
   /* display on top of the page */
-  .timelineTwitter{
+  .timelineTwitter {
     text-align: center;
     padding-top: 20px;
   }
-  .twitterShareButton{
+  .twitterShareButton {
     position: absolute;
     left: 28.5%;
   }
   /* display on sidebar  */
-  
-  .informationButton{
+
+  .informationButton {
     text-align: center;
   }
-  .informationButton button{
+  .informationButton button {
     background-color: #141747;
     text-align: center;
     border-radius: 10px;
     padding: 10px;
     font-size: 20px;
-    color:#ffffff;
+    color: #ffffff;
     margin-bottom: 5px;
     margin-top: 5px;
     width: 150px;
   }
-  .containerSearch{
+  .containerSearch {
     display: grid;
     justify-content: center;
   }
-  .showAlert{
+  .containerSearch h4{
+    display: none;
+  }
+  .showAlert {
     display: grid;
     justify-content: center;
     margin-bottom: 40px;
   }
-  .showAlert h3{
-    color:#e73546;
+  .showAlert h3 {
+    color: #e73546;
     font-size: 20px;
   }
+  .buttonsSidebarContainer{
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 990px) {
+  .sidenav2 {
+    height: 100%;
+    width: 100%;
+    padding-top: 30px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    float: left;
+  }
+  .second h1 {
+    font-size: 10px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: #2f3134;
+  }
+  .sidenav2Balance {
+    text-align: center;
+    padding-top: 60px;
+    color: #141747;
+    border-bottom: 1px solid #141747;
+    margin-left: 10%;
+    width: 90%;
+  }
+  .sidenav2Balance ul {
+    list-style: none;
+  }
+  .sidenav2Balance ul li {
+    padding-bottom: 20px;
+  }
+
+  .coinsLoading {
+    margin-top: 50px;
+    margin-left: 15px;
+    background-color: #ffffff;
+  }
+  .loadingCoins ul:not(#display2) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none;
+    background-color: #ffffff;
+  }
+  .coinsLoading ul li {
+    width: 70%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid lightgrey;
+  }
+  .coinsLoading ul li:hover {
+    cursor: pointer;
+    border: 2px solid #141747;
+  }
+
+  .firstDataCoin ul li {
+    display: grid;
+    border-radius: 10px;
+  }
+  .loadingCoins {
+    margin-bottom: 10px;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+  }
+  .loadingCoins ul li {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 10px;
+    margin:5px;
+    padding: 10px;
+  }
+  .coinsLoading ul li h1 {
+    font-size: 18px;
+    background-color: #ffffff;
+    padding-top: 8px;
+    padding-left: 5px;
+  }
+  .loadingCoins ul li h3 {
+    
+  }
+  .coinsLoadingImg {
+    height: 40px;
+    width: 40px;
+   
+  }
+  .eliminateCoin {
+    margin-left: 25px;
+    margin-right: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 2px;
+    border: 1px solid #e73546;
+    text-align: center;
+    border-radius: 5px;
+    color: #141747;
+  }
+  .searchContainer {
+    font-size: 20px;
+    margin: 20px 10px;
+    text-align: center;
+  }
+  .infoSelectedCrypto {
+    padding-top: 5px;
+  }
+  .infoSelectedCrypto h3 {
+    text-align: center;
+    padding-top: 15px;
+  }
+  .infoSelectedData {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .infoSelectedData h4 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .infoSelectedData img {
+    margin-left: 0px;
+  }
+  .firstDataCoin {
+    padding-top: 20px;
+    margin-left: 50px;
+    display: grid;
+    justify-content: center;
+  }
+  .firstDataCoin ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    width: 1000px;
+    background-color: #ffffff;
+  }
+  .firstDataCoin ul {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .firstDataCoin ul li {
+    border: 1px solid gray;
+    padding: 0px 15px;
+    padding-bottom: 15px;
+  }
+  #horas {
+    font-size: 38px;
+    margin: 10% 10% 10% 10%;
+  }
+  .arrow {
+    font-size: 2.3em;
+    text-align: left;
+    margin-left: 10%;
+    margin-top: -25px;
+  }
+  .arrow i {
+    padding-left: 20%;
+  }
+  .arrow2 {
+    font-size: 2.3em;
+    text-align: left;
+    margin-left: 20%;
+    margin-top: -25px;
+  }
+  .arrow2 i {
+    padding-left: 20%;
+  }
+  .prices ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .prices ul li {
+    padding: 7px 14px;
+    width: 292px;
+  }
+  .prices ul li:nth-child(2) {
+    border: 1.5px solid #141747;
+  }
+  /* //Favorite Icon Loading Coins */
+  .favoriteHeart {
+    color: lightgray;
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+  .favoriteHeart:hover {
+    color: #f91a1a;
+  }
+  /* Graph and button Graph  */
+  .buttonGraph {
+    text-align: center;
+    padding-top: 10px;
+  }
+  /* display on sidebar  */
+  .buttonGraph button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #141747;
+    color: #ffffff;
+    font-size: 12px;
+    z-index: 9;
+    text-align: center;
+    width: 80px;
+    margin-bottom: 5px;
+  }
+  .graph {
+    margin-bottom: 20px;
+    padding-top: 40px;
+  }
+
+  .financialInformation {
+    width: 90%;
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-top: 30px;
+  }
+
+  /* Button to go up  */
+  .arriba h2 {
+    font-size: 35px;
+    text-align: center;
+    width: 60px;
+    border-radius: 10px;
+    padding: 14px 10px;
+    color: #141747;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    float: left;
+    margin-top: 50px;
+    margin-bottom: 230px;
+  }
+  .arriba h2:hover {
+    color: #e73546;
+    cursor: pointer;
+  }
+  /* display on sidebar  */
+  .twitter {
+    text-align: center;
+  }
+  .twitterButton {
+    background-color: #00acee;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 5px;
+    width: 80px;
+    font-size: 12px;
+  }
+  /* display on top of the page */
+  .timelineTwitter {
+    text-align: center;
+    padding-top: 20px;
+  }
+  .twitterShareButton {
+    position: absolute;
+    left: 28.5%;
+  }
+  /* display on sidebar  */
+
+  .informationButton {
+    text-align: center;
+  }
+  .informationButton button {
+    background-color: #141747;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 11px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 80px;
+  }
+  .containerSearch {
+    display: grid;
+    justify-content: center;
+  }
+  .containerSearch h3{
+    display: none;
+  }
+  .containerSearch h4{
+    text-align: center;
+  }
+  .showAlert {
+    display: grid;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .showAlert h3 {
+    color: #e73546;
+    font-size: 12px;
+    width: 70%;
+  }
  
+}

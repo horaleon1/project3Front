@@ -13,13 +13,26 @@ cc.setApiKey(process.env.REACT_API);
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 300px 1fr;
+  @media (max-width: 990px) {
+    display: grid;
+  }
 `;
 const Input = styled.input`
   width: 90%;
   border-radius: 20px;
   border: 1px solid #141747;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   height: 2rem;
+
+  @media (max-width: 990px) {
+    width: 70%;
+    border-radius: 20px;
+    border: 1px solid #141747;
+    font-size: 0.8rem;
+    height: 1rem;
+    text-align: center;
+    margin-left: 15%;
+  }
 `;
 const LogoCoins = styled.div`
   font-size: 2.5em;
@@ -28,12 +41,26 @@ const LogoCoins = styled.div`
   letter-spacing: 2px;
   color: #141747;
   text-align: center;
+  @media (max-width: 990px) {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding-top: 50px;
+    letter-spacing: 2px;
+    color: #141747;
+    text-align: center;
+  }
 `;
 const LogoCoins2 = styled.div`
   font-size: 2.5em;
   margin-bottom: 20px;
   letter-spacing: 2px;
   color: #141747;
+  @media (max-width: 990px) {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #141747;
+  }
 `;
 const Recomendation = styled.div`
   font-size: 1.8em;
@@ -92,7 +119,8 @@ export default class CoinsLoading extends Component {
       loading: false,
       twitterUser: "bitso",
       errorAlert: true,
-      count: 3
+      count: 3,
+      coin: false
     };
   }
 
@@ -122,6 +150,7 @@ export default class CoinsLoading extends Component {
   showLoader = () => {
     this.setState({ loading: !this.state.loading });
   };
+
   errorAlert = () => {
     this.setState({ errorAlert: !this.state.errorAlert });
 
@@ -170,7 +199,8 @@ export default class CoinsLoading extends Component {
     cc.priceFull(`${label}`, "USD")
       .then(priceFull => {
         // if (Object.keys(priceFull[label]).length > 0) {
-        if (Object.keys(priceFull[label]).length !== 0) {
+        // if (Object.keys(priceFull[label]).length !== 0) {
+        if (typeof Object.keys(this.state.prices) !== "undefined") {
           const prices = priceFull[label].USD;
           this.setState({ prices });
         }
@@ -236,6 +266,7 @@ export default class CoinsLoading extends Component {
                   </h4>
                 </div>
               </div>
+
               {/* // Activate/deactive Button  Graph/// */}
 
               <div className="buttonGraph">
@@ -473,10 +504,16 @@ export default class CoinsLoading extends Component {
             </div>
           </div>
         ) : (
-          <LogoCoins>Selecciona una Criptomoneda para comenzar.</LogoCoins>
+          <LogoCoins>
+            {typeof Object.keys(this.state.prices) !== "undefined" &&
+            Object.keys(this.state.prices).length > 0
+              ? "Encuentra mas de 5,000 criptomonedas."
+              : "Selecciona una Criptomoneda para comenzar."}
+          </LogoCoins>
         )}
         <div className="containerSearch">
           {/* //Search Input// */}
+          <h4>Buscar</h4>
           <div className="searchContainer">
             <Grid>
               <h3>Buscar</h3>
