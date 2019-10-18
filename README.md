@@ -9,21 +9,20 @@ thousands invested.
 From news in English or Spanish, a list of the main cryptocurrencies, graphic so you can do a technical analysis without leaving the portal to a purchase prediction in up to 5000 different cryptocurrencies.
 
 
-<<<<<<< HEAD
-<img src="./src/assets/intro.png" alt="" height="400px" width="750px"><br><br>
 
-<img src="./src/assets/about.png" alt="" height="400px" width="750px"><br><br>
+<img src="./src/assets/intro.png" alt="" height="300px" width="750px"><br><br>
 
-<img src="./src/assets/screener.png" alt="" height="400px" width="750px"><br><br>
+<img src="./src/assets/about.png" alt="" height="300px" width="750px"><br><br>
+
+<img src="./src/assets/screener.png" alt="" height="300px" width="750px"><br><br>
 
 
 <h2>Sign up and create a user to check finacial information of more than 5,000 cryptocurecies</h2>
 
-<img src="./src/assets/allCoins.png" alt="" height="400px" width="750px"><br><br>
-<img src="./src/assets/graph.png" alt="" height="400px" width="750px"><br><br>
-<img src="./src/assets/financialInformation.png" alt="" height="400px" width="750px"><br><br>
-=======
-<img src="./src/assets/intro.png" alt="" height="200px" width="350px">
->>>>>>> 22f240e5feb29c2f313ff80a920262466a1dc638
+<img src="./src/assets/allCoins.png" alt="" height="300px" width="750px"><br><br>
+<img src="./src/assets/graph.png" alt="" height="300px" width="750px"><br><br>
+<img src="./src/assets/financialInformation.png" alt="" height="300px" width="750px"><br><br>
+
+
 
 
