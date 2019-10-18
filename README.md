@@ -9,6 +9,6 @@ thousands invested.
 From news in English or Spanish, a list of the main cryptocurrencies, graphic so you can do a technical analysis without leaving the portal to a purchase prediction in up to 5000 different cryptocurrencies.
 
 
-<img src="./assets/intro.png" alt="" height="200px" width="350px">
+<img src="./src/assets/intro.png" alt="" height="200px" width="350px">
 
 
