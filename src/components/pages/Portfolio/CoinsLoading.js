@@ -74,7 +74,6 @@ const Recomendation2 = styled.div`
 `;
 const Loader = () => (
   <h1 className="loader">
-    {" "}
     <i className="fas fa-spinner fa-spin"></i>
   </h1>
 );
@@ -120,8 +119,13 @@ export default class CoinsLoading extends Component {
       twitterUser: "bitso",
       errorAlert: true,
       count: 3,
-      coin: false
+      coin: false,
+      mapFilterCoins: "",
+      errorNotice: false
     };
+  }
+  activateErrorNotice = () => {
+    this.setState({ errorNotice: !this.state.errorNotice })
   }
 
   activateG = () => {
@@ -131,6 +135,7 @@ export default class CoinsLoading extends Component {
   noInfoAlert = () => {
     this.setState({ alert: !this.state.alert });
   };
+
   activateInformaction = () => {
     this.setState({ information: !this.state.information });
   };
@@ -209,35 +214,51 @@ export default class CoinsLoading extends Component {
         Promise.reject();
         console.log(error);
         this.errorAlert();
+        // this.activateErrorNotice();
         return;
       });
   };
 
   selectedCoin = value => {
-    this._handlePrice(value);
+    if(this.state.errorNotice){
+    this._handlePrice(this.state.mapFilterCoins[value]);         
+    }else{
+    this._handlePrice(value);              
+    }
+    // console.log(this.state.mapFilterCoins);
 
+    console.log(value, "value");
+  
     window.scrollTo(0, 0);
+
+    // this.setState({ mapFilterCoins: 0 });
   };
 
   filterCoins = e => {
     let coins = this.state.coinList;
-
     let inputValue = e.target.value;
-
     let coinSymbols = Object.values(coins.Data);
+    let coinSymbols2 = Object.keys(coins.Data);
 
+    // filtrado handle the filter coin to display all coins all the time on screen
     let filtrado = coinSymbols.filter((el, i) => {
       return el.Symbol.includes(inputValue.toUpperCase());
+    });
+    // Filtrado 2 handle the filter coin after click and display information
+    let filtrado2 = coinSymbols2.filter((el, i) => {
+      return el.includes(inputValue.toUpperCase());
     });
 
     if (inputValue.length === 0) {
       this.setState({ coinListCopy: coins.Data });
     } else {
-      this.setState({ coinListCopy: filtrado });
-      console.log(filtrado, "filtrado");
-      console.log(this.coinListCopy, "copy");
-      console.log("Ingresa el simbolo o ticker completo");
+      this.setState({ errorNotice: !this.state.errorNotice })
+
+      this.setState({ coinListCopy: filtrado }); 
+      
+      this.setState({ mapFilterCoins: filtrado2 })
     }
+    this.setState({ errorNotice: !this.state.errorNotice })
   };
 
   render() {
@@ -312,6 +333,7 @@ export default class CoinsLoading extends Component {
         {/* //////////////////Graph ////////////////*/}
         {this.state.grafica ? (
           <div className="graph">
+            <h4 style={{color:"red", textAlign:"center", paddingBottom:"10px"}}>Las únicas gráficas disponibles son de activos en BINANCE en pares de BTC </h4>
             <TradingViewWidget
               symbol={`BINANCE:${this.state.prices.FROMSYMBOL}BTC`}
             />
